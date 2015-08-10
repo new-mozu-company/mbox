@@ -1,0 +1,530 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  small,
+  .small {
+    font-weight: inherit;
+    line-height: 1;
+  }
+}
+
+// h1, .h1,
+// h2, .h2,
+// h3, .h3,
+// h4, .h4,
+// h5, .h5,
+// h6, .h6 {
+//   small,
+//   .small,
+//   &.small {
+//     font-size: 80%;
+//   }
+// }
+
+// h1, .h1,
+// h2, .h2,
+// h3, .h3,
+// h4, .h4,
+// h5, .h5,
+// h6, .h6 {
+//   .large,
+//   &.large {
+//     font-size: 120%;
+//   }
+// }
+
+@include heading-variant-small('h1', $font-size-h1);
+@include heading-variant-small('h2', $font-size-h2);
+@include heading-variant-small('h3', $font-size-h3);
+@include heading-variant-small('h3', $font-size-h3);
+@include heading-variant-small('h5', $font-size-h5);
+@include heading-variant-small('h6', $font-size-h6);
+
+
+@include heading-variant-large('h1', $font-size-h1);
+@include heading-variant-large('h2', $font-size-h2);
+@include heading-variant-large('h3', $font-size-h3);
+@include heading-variant-large('h3', $font-size-h3);
+@include heading-variant-large('h5', $font-size-h5);
+@include heading-variant-large('h6', $font-size-h6);
+
+.hspace, %hspace {
+  margin-top: ($line-height-computed / 2);
+  margin-bottom: ($line-height-computed / 2);
+}
+
+h1, .h1, %h1 {
+  font-family: $headings-font-family;
+  line-height: $headings-line-height;
+  color: $black;
+  font-size: $font-size-h1;
+  font-weight: $medium;
+  //margin-top: $line-height-computed;
+  margin-top: 24px;
+  margin-bottom: ($line-height-computed / 2);
+}
+h2, .h2, %h2 {
+  line-height: $headings-line-height;
+  color: $black;
+  font-family: $gotham-narrow;
+  font-size: $font-size-h2;
+  font-weight: $book;
+  margin-top: $line-height-computed;
+  margin-bottom: ($line-height-computed / 2);
+}
+h3, .h3, %h3 {
+  line-height: $headings-line-height;
+  font-family: $gotham-narrow;
+  font-size: $font-size-h3;
+  font-weight: $book;
+  color: $darker-grey;
+  //margin-top: $line-height-computed;
+  margin-top: 12px;
+  margin-bottom: ($line-height-computed / 2);
+}
+h4, .h4, %h4 {
+  font-family: $headings-font-family;
+  line-height: $headings-line-height;
+  color: $black;
+  font-weight: $bold;
+  font-size: $font-size-h4;
+  text-transform: uppercase;
+  font-style: normal;
+  margin-top: ($line-height-computed / 2);
+  margin-bottom: ($line-height-computed / 2);
+}
+h5, .h5, %h5 {
+  font-family: $headings-font-family;
+  line-height: $headings-line-height;
+  color: $black;
+  font-weight: $bold;
+  font-size: $font-size-h5;
+  margin-top: ($line-height-computed / 2);
+  margin-bottom: ($line-height-computed / 2);
+}
+h6, .h6, %h6 {
+  font-family: $headings-font-family;
+  line-height: $headings-line-height;
+  font-size: $font-size-h6;
+  font-weight: normal;
+  color: $dark-grey;
+  margin-top: ($line-height-computed / 2);
+  margin-bottom: ($line-height-computed / 2);
+}
+//h6, .h6 { font-size: $font-size-h6; }
+
+.h-subhead, %h-subhead {
+  font-family: $gotham;
+  font-size: 16px;
+  font-weight: $book;
+  color: $darker-grey;
+  @extend %hspace;
+}
+
+.h-prehead, %h-prehead {
+  font-family: $gotham;
+  font-size: 13px;
+  font-weight: $bold;
+  text-transform: uppercase;
+  color: $grey;
+  letter-spacing: 0.05rem;
+  @extend %hspace;
+  &.horizontal-line:after {
+    content: '__________';
+    display: block;
+  }
+}
+
+//event
+.h-event-title, %h-event-title {
+  font-family: $gotham;
+  font-size: 26px;
+  font-weight: $book;
+  text-transform: uppercase;
+  color: $black;
+  @extend %hspace;
+}
+.h-event-date, %h-event-date {
+  font-family: $gotham;
+  font-size: 13px;
+  font-weight: $bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  color: $black;
+  @extend %hspace;
+}
+
+//press
+.h-press-date, %h-press-date {
+  font-family: $gotham;
+  font-size: 13px;
+  font-weight: $bold;
+  text-transform: uppercase;
+  color: $grey;
+  @extend %hspace;
+}
+
+
+// Body text
+// -------------------------
+
+p {
+  margin: 0 0 ($line-height-computed / 2);
+}
+
+// Body text
+// -------------------------
+// Links
+
+a {
+  color: $red;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: darken($red, 5%);
+
+  }
+  &:focus {
+    @include tab-focus();
+  }
+}
+
+a.cta, a%cta {
+  font-weight: $bold;
+  text-transform: uppercase;
+}
+a.cta.display-inline {
+  font-size: 85%;
+}
+
+// Emphasis & misc
+// -------------------------
+
+// Ex: 14px base font * 85% = about 12px
+small,
+.small  {
+  font-size: $font-size-h6;
+  font-weight: normal;
+}
+
+// Undo browser default styling
+cite    { font-style: normal; }
+
+// Alignment
+// -------------------------
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+
+@media (max-width: $screen-xs-max) {
+  .xs-text-center {text-align: center;}
+  .xs-text-left {text-align: left;}
+  .xs-text-right {text-align: right;}
+  .xs-text-justify {text-align: justify;}
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .sm-text-center {text-align: center;}
+  .sm-text-left {text-align: left;}
+  .sm-text-right {text-align: right;}
+  .sm-text-justify {text-align: justify;}
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  .md-text-center {text-align: center;}
+  .md-text-left {text-align: left;}
+  .md-text-right {text-align: right;}
+  .md-text-justify {text-align: justify;}
+}
+
+@media (min-width: $screen-lg-min) {
+  .lg-text-center {text-align: center;}
+  .lg-text-left {text-align: left;}
+  .lg-text-right {text-align: right;}
+  .lg-text-justify {text-align: justify;}
+}
+
+// Text Width
+// -------------------------
+.text-narrow {
+  font-family: $gotham-narrow;
+}
+.text-wide {
+  font-family: $gotham;
+}
+
+
+// Text Transform
+// -------------------------
+
+.ttu,
+.text-uppercase {
+  text-transform: uppercase;
+}
+.ttn,
+.text-default-case {
+  text-transform: none;
+}
+
+// Text Weight and Style
+// -------------------------
+.text-bold {
+  font-weight: bold;
+}
+.text-light {
+  font-weight: $light;
+}
+.text-book {
+  font-weight: $book;
+}
+.text-medium {
+  font-weight: $medium;
+}
+.text-normal {
+  font-weight: normal;
+}
+.text-italic {
+  font-style: italic;
+}
+
+// Text color
+// -------------------------
+// .text-white {color:$white;}
+// .text-black {color:$black;}
+// .text-red {color:$red;}
+// .text-grey {color:$grey;}
+// .text-dark-grey {color:$dark-grey;}
+// .text-darker-grey {color:$darker-grey;}
+// .text-light-grey {color:$light-grey;}
+// .text-lighter-grey {color:$lighter-grey;}
+
+@include text-emphasis-variant('.text-white', $white);
+@include text-emphasis-variant('.text-black', $black);
+@include text-emphasis-variant('.text-red', $red);
+@include text-emphasis-variant('.text-grey', $grey);
+@include text-emphasis-variant('.text-dark-grey', $dark-grey);
+@include text-emphasis-variant('.text-darker-grey', $darker-grey);
+@include text-emphasis-variant('.text-light-grey', $light-grey);
+@include text-emphasis-variant('.text-lighter-grey', $lighter-grey);
+
+// Contextual colors
+// .text-muted {
+//   color: $text-muted;
+// }
+
+// @include text-emphasis-variant('.text-white', $white);
+
+// @include text-emphasis-variant('.text-success', $state-success-text);
+
+// @include text-emphasis-variant('.text-info', $state-info-text);
+
+// @include text-emphasis-variant('.text-warning', $state-warning-text);
+
+// @include text-emphasis-variant('.text-danger', $state-danger-text);
+
+// Contextual backgrounds
+// For now we'll leave these alongside the text classes until v4 when we can
+// safely shift things around (per SemVer rules).
+// .bg-primary {
+//   // Given the contrast here, this is the only class to have its color inverted
+//   // automatically.
+//   color: #fff;
+// }
+// @include bg-variant('.bg-primary', $brand-primary);
+
+// @include bg-variant('.bg-success', $state-success-bg);
+
+// @include bg-variant('.bg-info', $state-info-bg);
+
+// @include bg-variant('.bg-warning', $state-warning-bg);
+
+// @include bg-variant('.bg-danger', $state-danger-bg);
+
+
+// Lists
+// --------------------------------------------------
+
+// Unordered and Ordered lists
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: ($line-height-computed / 2);
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+}
+
+// List options
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+ul.basic,
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.list-nobullet {
+  list-style: none;
+  padding-left: 20px;
+}
+// Inline turns list items into inline-block
+.list-inline {
+  @extend .list-unstyled;
+  margin-left: -5px;
+
+  > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+// Description Lists
+dl {
+  margin-top: 0; // Remove browser default
+  margin-bottom: $line-height-computed;
+}
+dt,
+dd {
+  line-height: $line-height-base;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0; // Undo browser default
+}
+
+// Horizontal description lists
+//
+// Defaults to being stacked without any of the below styles applied, until the
+// grid breakpoint is reached (default of ~768px).
+
+@media (min-width: $grid-float-breakpoint) {
+  .dl-horizontal {
+    dt {
+      float: left;
+      width: ($component-offset-horizontal - 20);
+      clear: left;
+      text-align: right;
+      @include text-overflow();
+    }
+    dd {
+      margin-left: $component-offset-horizontal;
+      @include clearfix(); // Clear the floated `dt` if an empty `dd` is present
+    }
+  }
+}
+
+// MISC
+// ----
+
+// Blockquotes
+blockquote {
+  padding: ($line-height-computed / 2) $line-height-computed;
+  margin: 0 0 $line-height-computed;
+  font-size: $blockquote-font-size;
+  color: $darker-grey;
+  font-style: italic;
+  font-weight: $book;
+  p,
+  ul,
+  ol {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .quote-marks {
+    position: relative;
+    display: block;
+    padding-left: 15px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -23px;
+      width: 31px;
+      height: 19px;
+      background: url(/sites/all/themes/mozu_aurora/images/re-design/bg-testimonial-quote.png) no-repeat;
+    }
+    &:after {
+      content: '';
+      vertical-align: top;
+      display: inline-block;
+      width: 19px;
+      height: 16px;
+      margin: 0 0 0 6px;
+      background: url(/sites/all/themes/mozu_aurora/images/re-design/bg-testimonial-quote.png) no-repeat -41px 0;
+      position: relative;
+      top: 4px;
+    }
+  }
+  // Note: Deprecated small and .small as of v3.1.0
+  // Context: https://github.com/twbs/bootstrap/issues/11660
+  footer {
+    margin-top: 15px;
+    img {
+      float: left;
+      margin: 0 15px 15px;
+    }
+    .quote-author {
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-style: normal;
+    }
+    .quote-author-info {
+        font-family: $font-family-base;
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+        color: $text-color;
+        text-transform: none;
+        font-weight: normal;
+        font-style: normal;
+        margin: 0 0 ($line-height-computed / 2);
+    }
+  }
+}
+
+// Opposite alignment of blockquote
+//
+// Heads up: `blockquote.pull-right` has been deprecated as of v3.1.0.
+.blockquote-reverse {
+  padding-right: 15px;
+  padding-left: 0;
+  //border-right: 5px solid $blockquote-border-color;
+  //border-left: 0;
+  text-align: right;
+  .quote-marks {
+    position: relative;
+    display: block;
+    padding-right: 15px;
+    padding-left: 0;
+  }
+  footer {
+    img {
+      float: right;
+    }
+  }
+}
+
+// Quotes
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+
+// Addresses
+address {
+  margin-bottom: $line-height-computed;
+  font-style: normal;
+  line-height: $line-height-base;
+}

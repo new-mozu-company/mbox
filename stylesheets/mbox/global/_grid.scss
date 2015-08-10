@@ -1,0 +1,152 @@
+//
+// Grid system
+// --------------------------------------------------
+
+
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+.container {
+  @include container-fixed();
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+}
+
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but without any defined
+// width for fluid, full width layouts.
+
+.container-fluid {
+  @include container-fixed();
+}
+
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+
+.row {
+  @include make-row();
+}
+
+
+// Columns
+//
+// Common styles for small and large grid columns
+
+@include make-grid-columns();
+
+
+// Extra small grid
+//
+// Columns, offsets, pushes, and pulls for extra small devices like
+// smartphones.
+
+@include make-grid(xs);
+
+
+// Small grid
+//
+// Columns, offsets, pushes, and pulls for the small device range, from phones
+// to tablets.
+
+@media (min-width: $screen-sm-min) {
+  @include make-grid(sm);
+}
+
+
+// Medium grid
+//
+// Columns, offsets, pushes, and pulls for the desktop device range.
+
+@media (min-width: $screen-md-min) {
+  @include make-grid(md);
+}
+
+
+// Large grid
+//
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+
+@media (min-width: $screen-lg-min) {
+  @include make-grid(lg);
+}
+
+// Gutter sizes
+// -------------------------
+
+.row.gutter-xs {margin-left: -.1em;margin-right: -.1em;}
+.row.gutter-s {margin-left: -1em;margin-right: -1em;}
+.row.gutter-m {margin-left: -2em;margin-right: -2em;}
+.row.gutter-l {margin-left: -3em;margin-right: -3em;}
+.row.gutter-0 {margin-left: 0em;margin-right: 0em;}
+
+.gutter-xs > [class*='col-'] {padding-right:.1em;padding-left:.1em;}
+.gutter-s > [class*='col-'] {padding-right:1em;padding-left:1em;}
+.gutter-m > [class*='col-'] {padding-right:2em;padding-left:2em;}
+.gutter-l > [class*='col-'] {padding-right:3em;padding-left:3em;}
+.gutter-0 > [class*='col-'] {padding-right:0;padding-left:0;}
+
+@media (max-width: $screen-xs-max) {
+  .row.xs-gutter-xs {margin-left: -.1em;margin-right: -.1em;}
+  .row.xs-gutter-s {margin-left: -1em;margin-right: -1em;}
+  .row.xs-gutter-m {margin-left: -2em;margin-right: -2em;}
+  .row.xs-gutter-l {margin-left: -3em;margin-right: -3em;}
+  .row.xs-gutter-0 {margin-left: 0em;margin-right: 0em;}
+  .xs-gutter-xs > [class*='col-'] {padding-right:.1em;padding-left:.1em;}
+  .xs-gutter-s > [class*='col-'] {padding-right:1em; padding-left:1em;}
+  .xs-gutter-m > [class*='col-'] {padding-right:2em; padding-left:2em;}
+  .xs-gutter-l > [class*='col-'] {padding-right:3em; padding-left:3em;}
+  .xs-gutter-0 > [class*='col-'] {padding-right:0; padding-left:0;}
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  .row.sm-gutter-xs {margin-left: -.1em;margin-right: -.1em;}
+  .row.sm-gutter-s {margin-left: -1em;margin-right: -1em;}
+  .row.sm-gutter-m {margin-left: -2em;margin-right: -2em;}
+  .row.sm-gutter-l {margin-left: -3em;margin-right: -3em;}
+  .row.sm-gutter-0 {margin-left: 0em;margin-right: 0em;}
+  .sm-gutter-xs > [class*='col-'] {padding-right:.1em;padding-left:.1em;}
+  .sm-gutter-s > [class*='col-'] {padding-right:1em; padding-left:1em;}
+  .sm-gutter-m > [class*='col-'] {padding-right:2em; padding-left:2em;}
+  .sm-gutter-l > [class*='col-'] {padding-right:3em; padding-left:3em;}
+  .sm-gutter-0 > [class*='col-'] {padding-right:0; padding-left:0;}
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  .row.md-gutter-xs {margin-left: -.1em;margin-right: -.1em;}
+  .row.md-gutter-s {margin-left: -1em;margin-right: -1em;}
+  .row.md-gutter-m {margin-left: -2em;margin-right: -2em;}
+  .row.md-gutter-l {margin-left: -3em;margin-right: -3em;}
+  .row.md-gutter-0 {margin-left: 0em;margin-right: 0em;}
+  .md-gutter-xs > [class*='col-'] {padding-right:.1em;padding-left:.1em;}
+  .md-gutter-s > [class*='col-'] {padding-right:1em; padding-left:1em;}
+  .md-gutter-m > [class*='col-'] {padding-right:2em; padding-left:2em;}
+  .md-gutter-l > [class*='col-'] {padding-right:3em; padding-left:3em;}
+  .md-gutter-0 > [class*='col-'] {padding-right:0; padding-left:0;}
+}
+
+@media (min-width: $screen-lg-min) {
+  .row.lg-gutter-xs {margin-left: -.1em;margin-right: -.1em;}
+  .row.lg-gutter-s {margin-left: -1em;margin-right: -1em;}
+  .row.lg-gutter-m {margin-left: -2em;margin-right: -2em;}
+  .row.lg-gutter-l {margin-left: -3em;margin-right: -3em;}
+  .row.lg-gutter-0 {margin-left: 0em;margin-right: 0em;}
+  .lg-gutter-xs > [class*='col-'] {padding-right:.1em;padding-left:.1em;}
+  .lg-gutter-s > [class*='col-'] {padding-right:1em; padding-left:1em;}
+  .lg-gutter-m > [class*='col-'] {padding-right:2em; padding-left:2em;}
+  .lg-gutter-l > [class*='col-'] {padding-right:3em; padding-left:3em;}
+  .lg-gutter-0 > [class*='col-'] {padding-right:0; padding-left:0;}
+}
+

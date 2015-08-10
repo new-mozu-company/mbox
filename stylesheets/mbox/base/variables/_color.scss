@@ -1,0 +1,34 @@
+//
+// Colors, etc.
+//
+
+// Base color variables.
+$white:        #FFFFFF;
+$black:        #1d2021;
+
+//reds
+$red:            #df3018;  //Mozu red
+$darker-red:     darken($red, 5%); //primary action button hover
+$darkest-red:    darken($red, 10%);  //primary action button active
+
+//greys
+$grey:           #bbbebf;
+$dark-grey:      #727779;
+$darker-grey:    #3f4243;
+$light-grey:     #e8e8e8;
+$lighter-grey:   #eef0f0;
+
+// Deprecated variables and alternate spellings
+$grey-dark:              $dark-grey;
+$grey-darker:            $darker-grey;
+$grey-light:             $light-grey;
+$grey-lighter:           $lighter-grey;
+$gray-darker:            $darker-grey; // #222
+$gray-dark:              $dark-grey; // #333
+$gray:                   $grey; // #555
+$gray-light:             $light-grey; // #999
+$gray-lighter:           $lighter-grey; // #eee
+$light-gray:             $lighter-grey;  //website background color
+$slate:                  $darker-grey;
+$brand-primary:          $red !default;
+

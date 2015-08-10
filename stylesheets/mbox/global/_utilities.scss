@@ -1,0 +1,191 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+
+// Floats
+// -------------------------
+
+.clearfix {
+  @include clearfix();
+}
+.center-block {
+  @include center-block();
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+
+// Toggling content
+// -------------------------
+
+// Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  @include text-hide();
+}
+
+// Hide from screenreaders and browsers
+//
+// Credit: HTML5 Boilerplate
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+
+// For Affix plugin
+// -------------------------
+
+.affix {
+  position: fixed;
+}
+
+// Position Settings
+// -------------------------
+.pos-r {
+  position: relative;
+}
+.pos-s {
+  position: static;
+}
+.pos-a {
+  position: absolute;
+}
+
+// Display Settings
+// -------------------------
+.di,
+.display-inline {
+  display: inline;
+}
+.dib,
+.display-inlineblock {
+  display: inline-block;
+}
+.db,
+.display-block {
+  display: block;
+}
+
+
+
+// Margin
+// -------------------------
+.margin-0 {margin: 0;}
+.margin-s {margin: 1em;}
+.margin-m {margin: 2em;}
+.margin-l {margin: 3em;}
+.margin-xl {margin: 5em;}
+.margin-bottom-0 {margin-bottom: 0;}
+.margin-bottom-s {margin-bottom: 1em;}
+.margin-bottom-m {margin-bottom: 2em;}
+.margin-bottom-l {margin-bottom: 3em;}
+.margin-bottom-xl {margin-bottom: 5em;}
+.margin-top-0 {margin-top: 0;}
+.margin-top-s {margin-top: 1em;}
+.margin-top-m {margin-top: 2em;}
+.margin-top-l {margin-top: 3em;}
+.margin-top-xl {margin-top: 5em;}
+.margin-left-0 {margin-left: 0;}
+.margin-left-s {margin-left: 1em;}
+.margin-left-m {margin-left: 2em;}
+.margin-left-l {margin-left: 3em;}
+.margin-left-xl {margin-left: 5em;}
+.margin-right-0 {margin-right: 0;}
+.margin-right-s {margin-right: 1em;}
+.margin-right-m {margin-right: 2em;}
+.margin-right-l {margin-right: 3em;}
+.margin-right-xl {margin-right: 5em;}
+
+.neg-margin-s {margin: -1em;}
+.neg-margin-m {margin: -2em;}
+.neg-margin-l {margin: -3em;}
+.neg-margin-xl {margin: -5em;}
+.neg-margin-bottom-s {margin-bottom: -1em;}
+.neg-margin-bottom-m {margin-bottom: -2em;}
+.neg-margin-bottom-l {margin-bottom: -3em;}
+.neg-margin-bottom-xl {margin-bottom: -5em;}
+.neg-margin-top-s {margin-top: -1em;}
+.neg-margin-top-m {margin-top: -2em;}
+.neg-margin-top-l {margin-top: -3em;}
+.neg-margin-top-xl {margin-top: -5em;}
+.neg-margin-left-s {margin-left: -1em;}
+.neg-margin-left-m {margin-left: -2em;}
+.neg-margin-left-l {margin-left: -3em;}
+.neg-margin-left-xl {margin-left: -5em;}
+.neg-margin-right-s {margin-right: -1em;}
+.neg-margin-right-m {margin-right: -2em;}
+.neg-margin-right-l {margin-right: -3em;}
+.neg-margin-right-xl {margin-right: -5em;}
+
+
+// Padding
+// -------------------------
+.padding-0 {padding: 0;}
+.padding-s {padding: 1em;}
+.padding-m {padding: 2em;}
+.padding-l {padding: 3em;}
+.padding-xl {padding: 5em;}
+.padding-bottom-0 {padding-bottom: 0;}
+.padding-bottom-s {padding-bottom: 1em;}
+.padding-bottom-m {padding-bottom: 2em;}
+.padding-bottom-l {padding-bottom: 3em;}
+.padding-bottom-xl {padding-bottom: 5em;}
+.padding-top-0 {padding-top: 0;}
+.padding-top-s {padding-top: 1em;}
+.padding-top-m {padding-top: 2em;}
+.padding-top-l {padding-top: 3em;}
+.padding-top-xl {padding-top: 5em;}
+.padding-left-0 {padding-left: 0;}
+.padding-left-s {padding-left: 1em;}
+.padding-left-m {padding-left: 2em;}
+.padding-left-l {padding-left: 3em;}
+.padding-left-xl {padding-left: 5em;}
+.padding-right-0 {padding-right: 0;}
+.padding-right-s {padding-right: 1em;}
+.padding-right-m {padding-right: 2em;}
+.padding-right-l {padding-right: 3em;}
+.padding-right-xl {padding-right: 5em;}
+
+// Background color
+// -------------------------
+.bg-white {background-color:$white;}
+.bg-black {background-color:$black;}
+.bg-red {background-color:$red;}
+.bg-grey {background-color:$grey;}
+.bg-dark-grey {background-color:$dark-grey;}
+.bg-darker-grey {background-color:$darker-grey;}
+.bg-light-grey {background-color:$light-grey;}
+.bg-lighter-grey {background-color:$lighter-grey;}
+.bg-trans-white {background-color: rgba(255,255,255,.85);}
+
+// Border color
+// -------------------------
+.border-white {border: 1px solid $white;}
+.border-black {border: 1px solid $black;}
+.border-red {border: 1px solid $red;}
+.border-grey {border: 1px solid $grey;}
+.border-dark-grey {border: 1px solid $dark-grey;}
+.border-darker-grey {border: 1px solid $darker-grey;}
+.border-light-grey {border: 1px solid $light-grey;}
+.border-lighter-grey {border: 1px solid $lighter-grey;}
+
+.border-top {border-width: 1px 0px 0px 0px;}
+.border-right {border-width: 0px 1px 0px 0px;}
+.border-bottom {border-width: 0px 0px 1px 0px;}
+.border-left {border-width: 0px 0px 0px 1px;}
+
