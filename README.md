@@ -2,31 +2,36 @@
 
 Mbox is a Compass extension for Mozu that provides style boilerplate based on Bootstrap. It's built to be imported into your base sass files to provide access to a global grid, color palette, set of variables, and more.
 
-Feature list:
-THEME
-*Background Color
-*Borders
-*Typography
-*Type Usage
-*Grid System
+### Feature List
 
-OBJECTS
-*Buttons
-*Lists
-*Forms
-*Tables
+#### Theme
 
-COMPONENTS
-*Blockquote
-*Jumbotron
-*Dropdowns
+*  Background Color
+*  Borders
+*  Typography
+*  Type Usage
+*  Grid System
 
-UTILITIES
-*Display & Position
-*Visibility
-*Margin & Padding
+#### Objects
+
+*  Buttons
+*  Lists
+*  Forms
+*  Tables
+
+#### Components
+
+*  Blockquote
+*  Jumbotron
+*  Dropdowns
+
+#### Utilities
+*  Display & Position
+*  Visibility
+*  Margin & Padding
 
 For a full list of available classes and styles, see [http://www.mozu.com/style-guide](http://www.mozu.com/style-guide)
+
 
 ## Installation
 
@@ -47,9 +52,11 @@ Or install it yourself as:
 ## Usage
 
 Add this to your config.rb:
+
     require 'mbox'
 
 Add this to your base scss file:
+
     @import 'mbox';
 
 Then you can start using the mbox classes and variables!
