@@ -43,6 +43,11 @@ gem 'mbox', :git => 'https://github.com/volusiondx/mbox.git'
 And then execute:
 
     $ bundle
+
+When you want to update the mbox gem to get the latest changes, run:
+
+    $ bundle update ––source mbox
+
 <!--
 Or install it yourself as:
 
