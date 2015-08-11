@@ -62,59 +62,69 @@ h1, h2, h3, h4, h5, h6,
 
 h1, .h1, %h1 {
   font-family: $headings-font-family;
-  line-height: $headings-line-height;
-  color: $black;
   font-size: $font-size-h1;
   font-weight: $medium;
+  font-style: normal;
+  color: $black;
+  text-transform: none;
+  line-height: $headings-line-height;
   //margin-top: $line-height-computed;
   margin-top: 24px;
   margin-bottom: ($line-height-computed / 2);
 }
 h2, .h2, %h2 {
-  line-height: $headings-line-height;
-  color: $black;
   font-family: $gotham-narrow;
   font-size: $font-size-h2;
   font-weight: $book;
+  font-style: normal;
+  color: $black;
+  text-transform: none;
+  line-height: $headings-line-height;
   margin-top: $line-height-computed;
   margin-bottom: ($line-height-computed / 2);
 }
 h3, .h3, %h3 {
-  line-height: $headings-line-height;
   font-family: $gotham-narrow;
   font-size: $font-size-h3;
   font-weight: $book;
+  font-style: normal;
   color: $darker-grey;
+  text-transform: none;
+  line-height: $headings-line-height;
   //margin-top: $line-height-computed;
   margin-top: 12px;
   margin-bottom: ($line-height-computed / 2);
 }
 h4, .h4, %h4 {
   font-family: $headings-font-family;
-  line-height: $headings-line-height;
-  color: $black;
-  font-weight: $bold;
   font-size: $font-size-h4;
-  text-transform: uppercase;
+  font-weight: $bold;
   font-style: normal;
+  color: $black;
+  text-transform: uppercase;
+  line-height: $headings-line-height;
   margin-top: ($line-height-computed / 2);
   margin-bottom: ($line-height-computed / 2);
 }
 h5, .h5, %h5 {
   font-family: $headings-font-family;
-  line-height: $headings-line-height;
-  color: $black;
-  font-weight: $bold;
   font-size: $font-size-h5;
+  font-weight: $bold;
+  font-style: normal;
+  color: $black;
+  text-transform: none;
+  line-height: $headings-line-height;
   margin-top: ($line-height-computed / 2);
   margin-bottom: ($line-height-computed / 2);
 }
 h6, .h6, %h6 {
   font-family: $headings-font-family;
-  line-height: $headings-line-height;
   font-size: $font-size-h6;
   font-weight: normal;
+  font-style: normal;
   color: $dark-grey;
+  text-transform: none;
+  line-height: $headings-line-height;
   margin-top: ($line-height-computed / 2);
   margin-bottom: ($line-height-computed / 2);
 }
@@ -124,7 +134,9 @@ h6, .h6, %h6 {
   font-family: $gotham;
   font-size: 16px;
   font-weight: $book;
+  font-style: normal;
   color: $darker-grey;
+  text-transform: none;
   @extend %hspace;
 }
 
@@ -132,8 +144,9 @@ h6, .h6, %h6 {
   font-family: $gotham;
   font-size: 13px;
   font-weight: $bold;
-  text-transform: uppercase;
+  font-style: normal;
   color: $grey;
+  text-transform: uppercase;
   letter-spacing: 0.05rem;
   @extend %hspace;
   &.horizontal-line:after {
@@ -147,17 +160,19 @@ h6, .h6, %h6 {
   font-family: $gotham;
   font-size: 26px;
   font-weight: $book;
-  text-transform: uppercase;
+  font-style: normal;
   color: $black;
+  text-transform: uppercase;
   @extend %hspace;
 }
 .h-event-date, %h-event-date {
   font-family: $gotham;
   font-size: 13px;
   font-weight: $bold;
+  font-style: normal;
+  color: $black;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
-  color: $black;
   @extend %hspace;
 }
 
@@ -166,8 +181,9 @@ h6, .h6, %h6 {
   font-family: $gotham;
   font-size: 13px;
   font-weight: $bold;
-  text-transform: uppercase;
+  font-style: normal;
   color: $grey;
+  text-transform: uppercase;
   @extend %hspace;
 }
 
