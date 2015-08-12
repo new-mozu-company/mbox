@@ -27,21 +27,32 @@ $font-size-h3:            24px !default; // ~24px
 $font-size-h4:            14px !default; // ~18px
 $font-size-h5:            15px !default;
 $font-size-h6:            ceil(($font-size-base * 0.75)) !default; // ~12px
-$font-size-smallest: $base-font-size * 0.6875;
-$font-size-small:    $base-font-size * 0.85;
-$font-size-medium:   $base-font-size * 0.875;
-$font-size-large:    $base-font-size * 1.125;
-$font-size-largest:  $base-font-size * 1.75;
-$font-size-huge:  $base-font-size * 2.3125;
+
+$font-size-smallest:      $base-font-size * 0.6875;
+$font-size-small:         $base-font-size * 0.85;
+$font-size-medium:        $base-font-size * 0.875;
+$font-size-large:         $base-font-size * 1.125;
+$font-size-largest:       $base-font-size * 1.75;
+$font-size-huge:          $base-font-size * 2.3125;
+
+$h1-font-size:            $font-size-h1;
+$h2-font-size:            $font-size-h2;
+$h3-font-size:            $font-size-h3;
+$h4-font-size:            $font-size-h4;
+$h5-font-size:            $font-size-h5;
+$h6-font-size:            $font-size-h6;
+
 
 //based on Perfect 5th Modular Scale: http://modularscale.com/scale/?px1=18&px2=&ra1=1.5&ra2=0
 $abs-bg-url : '/sites/all/themes/mozu_aurora/images/';
 
 // Project-specific fonts
-$futura: "europa", "FuturaPT", Verdana, Tahoma, "DejaVu Sans", sans-serif;
-$gotham: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
-$gotham-narrow: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif;
-$courier: "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+$sans-serif: $helvetica;
+$gotham: 'Gotham SSm A', 'Gotham SSm B', $sans-serif;
+$gotham-narrow: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', $sans-serif;
+$futura: "europa", "FuturaPT", Verdana, Tahoma, "DejaVu Sans", $sans-serif;
+$courier: "Courier New", "DejaVu Sans Mono", monospace, $sans-serif;
+
 $base-font: $gotham;
 
 // Font weights
@@ -80,7 +91,7 @@ $selection    : $visited;
 
 // Heading font defaults
 //** By default, this inherits from the `<body>`.
-$headings-font-family:    inherit !default;
+$headings-font-family:    $gotham !default;
 $headings-font-weight:    normal !default;
 $headings-line-height:    1.33 !default;
 $headings-color:          inherit !default;

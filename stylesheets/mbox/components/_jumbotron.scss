@@ -21,6 +21,8 @@
     margin-bottom: ($jumbotron-padding / 2);
     font-size: $jumbotron-font-size;
     font-weight: 200;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
   }
   .h-subhead {
     margin-top: 0;

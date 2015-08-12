@@ -137,6 +137,8 @@ h6, .h6, %h6 {
   font-style: normal;
   color: $darker-grey;
   text-transform: none;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
   @extend %hspace;
 }
 
@@ -235,37 +237,37 @@ cite    { font-style: normal; }
 
 // Alignment
 // -------------------------
-.text-left           { text-align: left; }
-.text-right          { text-align: right; }
-.text-center         { text-align: center; }
-.text-justify        { text-align: justify; }
+.text-left           { text-align: left!important;}
+.text-right          { text-align: right!important;}
+.text-center         { text-align: center!important;}
+.text-justify        { text-align: justify!important;}
 
 @media (max-width: $screen-xs-max) {
-  .xs-text-center {text-align: center;}
-  .xs-text-left {text-align: left;}
-  .xs-text-right {text-align: right;}
-  .xs-text-justify {text-align: justify;}
+  .xs-text-center {text-align: center!important;}
+  .xs-text-left {text-align: left!important;}
+  .xs-text-right {text-align: right!important;}
+  .xs-text-justify {text-align: justify!important;}
 }
 
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-  .sm-text-center {text-align: center;}
-  .sm-text-left {text-align: left;}
-  .sm-text-right {text-align: right;}
-  .sm-text-justify {text-align: justify;}
+  .sm-text-center {text-align: center!important;}
+  .sm-text-left {text-align: left!important;}
+  .sm-text-right {text-align: right!important;}
+  .sm-text-justify {text-align: justify!important;}
 }
 
 @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-  .md-text-center {text-align: center;}
-  .md-text-left {text-align: left;}
-  .md-text-right {text-align: right;}
-  .md-text-justify {text-align: justify;}
+  .md-text-center {text-align: center!important;}
+  .md-text-left {text-align: left!important;}
+  .md-text-right {text-align: right!important;}
+  .md-text-justify {text-align: justify!important;}
 }
 
 @media (min-width: $screen-lg-min) {
-  .lg-text-center {text-align: center;}
-  .lg-text-left {text-align: left;}
-  .lg-text-right {text-align: right;}
-  .lg-text-justify {text-align: justify;}
+  .lg-text-center {text-align: center!important;}
+  .lg-text-left {text-align: left!important;}
+  .lg-text-right {text-align: right!important;}
+  .lg-text-justify {text-align: justify!important;}
 }
 
 // Text Width
