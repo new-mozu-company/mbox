@@ -15,31 +15,6 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
-// h1, .h1,
-// h2, .h2,
-// h3, .h3,
-// h4, .h4,
-// h5, .h5,
-// h6, .h6 {
-//   small,
-//   .small,
-//   &.small {
-//     font-size: 80%;
-//   }
-// }
-
-// h1, .h1,
-// h2, .h2,
-// h3, .h3,
-// h4, .h4,
-// h5, .h5,
-// h6, .h6 {
-//   .large,
-//   &.large {
-//     font-size: 120%;
-//   }
-// }
-
 @include heading-variant-small('h1', $font-size-h1);
 @include heading-variant-small('h2', $font-size-h2);
 @include heading-variant-small('h3', $font-size-h3);
@@ -128,8 +103,7 @@ h6, .h6, %h6 {
   margin-top: ($line-height-computed / 2);
   margin-bottom: ($line-height-computed / 2);
 }
-//h6, .h6 { font-size: $font-size-h6; }
-
+//subhead
 .h-subhead, %h-subhead {
   font-family: $gotham;
   font-size: 16px;
@@ -141,7 +115,7 @@ h6, .h6, %h6 {
   -moz-osx-font-smoothing: auto;
   @extend %hspace;
 }
-
+//prehead
 .h-prehead, %h-prehead {
   font-family: $gotham;
   font-size: 13px;
@@ -156,7 +130,6 @@ h6, .h6, %h6 {
     display: block;
   }
 }
-
 //event
 .h-event-title, %h-event-title {
   font-family: $gotham;
@@ -229,7 +202,6 @@ a.cta.display-inline {
 small,
 .small  {
   font-size: $font-size-h6;
-  font-weight: normal;
 }
 
 // Undo browser default styling
@@ -315,15 +287,6 @@ cite    { font-style: normal; }
 
 // Text color
 // -------------------------
-// .text-white {color:$white;}
-// .text-black {color:$black;}
-// .text-red {color:$red;}
-// .text-grey {color:$grey;}
-// .text-dark-grey {color:$dark-grey;}
-// .text-darker-grey {color:$darker-grey;}
-// .text-light-grey {color:$light-grey;}
-// .text-lighter-grey {color:$lighter-grey;}
-
 @include text-emphasis-variant('.text-white', $white);
 @include text-emphasis-variant('.text-black', $black);
 @include text-emphasis-variant('.text-red', $red);
@@ -332,21 +295,6 @@ cite    { font-style: normal; }
 @include text-emphasis-variant('.text-darker-grey', $darker-grey);
 @include text-emphasis-variant('.text-light-grey', $light-grey);
 @include text-emphasis-variant('.text-lighter-grey', $lighter-grey);
-
-// Contextual colors
-// .text-muted {
-//   color: $text-muted;
-// }
-
-// @include text-emphasis-variant('.text-white', $white);
-
-// @include text-emphasis-variant('.text-success', $state-success-text);
-
-// @include text-emphasis-variant('.text-info', $state-info-text);
-
-// @include text-emphasis-variant('.text-warning', $state-warning-text);
-
-// @include text-emphasis-variant('.text-danger', $state-danger-text);
 
 // Contextual backgrounds
 // For now we'll leave these alongside the text classes until v4 when we can

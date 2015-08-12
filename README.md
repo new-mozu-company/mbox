@@ -44,7 +44,7 @@ And then execute:
 
     $ bundle
 
-When you want to update the mbox gem to get the latest changes, run:
+To update the mbox gem and get the latest changes, run:
 
     $ bundle update ––source mbox
 
@@ -81,7 +81,9 @@ Then you can start using the mbox classes and variables!
 
 5. Create new Pull Request
 
+As you develop locally, it may be helpful to point the gemfile of your application to a local copy of mbox with this:
 
+    gem 'mbox', :path => '/local/path/to/your/mbox/'
 
 
 

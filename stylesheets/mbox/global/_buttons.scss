@@ -10,6 +10,8 @@
   display: inline-block;
   margin-bottom: 0; // For input.btn
   font-weight: $btn-font-weight;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
   text-transform: uppercase;
   text-align: center;
   vertical-align: middle;
@@ -58,24 +60,6 @@
 // Alternate buttons
 // --------------------------------------------------
 
-// .btn-default {
-//   @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
-// }
-// .btn-primary {
-//   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
-// }
-// Success appears as green
-// .btn-success {
-//   @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
-// }
-// Info appears as blue-green
-// .btn-info {
-//   @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
-// }
-// Warning appears as orange
-// .btn-warning {
-//   @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
-// }
 // Danger and error appear as red
 .btn-danger,
 .btn-red,
