@@ -2,10 +2,52 @@
 // Modals
 // --------------------------------------------------
 
-// .modal-open      - body class for killing the scroll
-// .modal           - container to scroll within
-// .modal-dialog    - positioning shell for the actual modal
-// .modal-content   - actual modal w/ bg and corners and shit
+/*doc
+---
+title: Modal
+name: modal
+category: components
+---
+
+Requires the modal plugin from bootstrap.js.
+
+```html_example
+<!-- Button trigger modal -->
+<button type="button" class="btn" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some modal content</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-grey-outline" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-grey-outline">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+### Working with the modal
+
+The modal plugin adds the following classes to the DOM which may be helpful for understanding and controlling the modal.
+
+Classes            | Description
+------------------ | ------------
+`.modal-open`      | body class for killing the scroll
+`.modal`           | container to scroll within
+`.modal-dialog`    | positioning shell for the actual modal
+`.modal-content`   | actual modal with background and corners and stuff
+*/
 
 // Kill the scroll on the body
 .modal-open {

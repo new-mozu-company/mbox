@@ -1,7 +1,24 @@
 //
 // Pager pagination
 // --------------------------------------------------
+/*doc
+---
+title: Pager
+name: pager
+parent: pagination
+---
 
+A simpler way to paginate.
+
+```html_example
+<nav>
+  <ul class="pager">
+    <li><a href="#">Previous</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+</nav>
+```
+*/
 
 .pager {
   padding-left: 0;
@@ -15,15 +32,18 @@
     > span {
       display: inline-block;
       padding: 5px 14px;
-      background-color: $pager-bg;
-      border: 1px solid $pager-border;
+      background-color: $white;
+      border: 1px solid $dark-grey;
       border-radius: $pager-border-radius;
+      color: $dark-grey;
     }
 
     > a:hover,
     > a:focus {
       text-decoration: none;
-      background-color: $pager-hover-bg;
+      background-color: $white;
+      border: 1px solid $red;
+      color: $red;
     }
   }
 
@@ -46,8 +66,8 @@
     > a:hover,
     > a:focus,
     > span {
-      color: $pager-disabled-color;
-      background-color: $pager-bg;
+      color: $light-grey;
+      background-color: $white;
       cursor: not-allowed;
     }
   }

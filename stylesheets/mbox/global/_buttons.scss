@@ -5,6 +5,40 @@
 
 // Base styles
 // --------------------------------------------------
+/*doc
+---
+title: Buttons
+name: buttons
+category: basics
+---
+
+Button styles can be applied to any element. Typically you'll want
+to use either a `<button>` or an `<a>` element.
+
+If your button is actually a link to another page, please use the
+`<a>` element, while if your button performs an action, such as
+submitting a form or triggering some javascript event, then use a
+`<button>` element.
+
+### Dark on light
+```html_example
+<button class='btn btn-red'>Button text</button>
+<button class='btn btn-black'>Button text</button>
+<button class='btn btn-grey'>Button text</button>
+<button class='btn btn-red-outline'>Button text</button>
+<button class='btn btn-black-outline'>Button text</button>
+<button class='btn btn-grey-outline'>Button text</button>
+<button class='btn btn-link'>Button text</button>
+```
+
+### Light on dark
+```html_example
+<div class="well bg-grey">
+  <button class='btn btn-white'>Button text</button>
+  <button class='btn btn-white-outline'>Button text</button>
+</div>
+```
+*/
 
 .btn, %btn {
   display: inline-block;
@@ -129,6 +163,26 @@
 
 // Button Sizes
 // --------------------------------------------------
+/*doc
+---
+parent: buttons
+name: buttonSizes
+title: Button Sizes
+---
+There are three 4 sizes for buttons: Large, medium (default)
+and extra small. Simply apply the size modifier class for the desired size.
+There is also an additional modifier that will make the button take the
+full width of the container. It may be used with the any of the button
+size and style modifiers.
+
+Button                                                            | Modifier class            |  Source code
+----------------------------------------------------------------- | ------------------------- | -------------------------
+<button class="btn btn-red btn-lg">Large</button>                 | `.btn-lg`                 | `<button class="btn btn-red btn-lg">Large</button> `
+<button class="btn btn-red">Default</button>                      | *none*                    | `<button class="btn btn-red">Default</button>`
+<button class="btn btn-red btn-sm">Small</button>                 | `.btn-sm`                 | `<button class="btn btn-red btn-sm">Small</button>`
+<button class="btn btn-red btn-xs">Extra Small</button>           | `.btn-xs`                 | `<button class="btn btn-red btn-xs">Extra Small</button>`
+<button class="btn btn-red btn-block">Full width</button>         | `.btn-block`              | `<button class="btn btn-red btn-block">Full width</button>`
+*/
 
 .btn-lg {
   // line-height: ensure even-numbered height of button next to large input
@@ -145,7 +199,12 @@
 
 // Block button
 // --------------------------------------------------
+/* doc
+```html_example
+<div class='btn btn-red btn-block'>Button text</div>
 
+```
+*/
 .btn-block {
   display: block;
   width: 100%;

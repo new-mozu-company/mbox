@@ -1,0 +1,167 @@
+/*doc
+---
+title: Color
+name: color
+category: basics
+---
+
+See also [background color][backgroundcolor], [border color][borders], or [text color][textutilities] utilities.
+
+<div class="row">
+  <div class="col-sm-2 margin-bottom-l">
+    <div class="bg-red text-white padding-s">$red<br>#df3018</div>
+  </div>
+  <div class="col-sm-2 margin-bottom-l">
+    <div class="bg-black text-white padding-s">$black<br>#1d2021</div>
+  </div>
+  <div class="col-sm-2 margin-bottom-l">
+    <div class="bg-darker-grey text-white padding-s">$darker-grey<br>#3f4243</div>
+  </div>
+  <div class="col-sm-2 margin-bottom-l">
+    <div class="bg-dark-grey text-white padding-s">$dark-grey<br>#727779</div>
+  </div>
+  <div class="col-sm-2 margin-bottom-l">
+    <div class="bg-grey padding-s">$grey<br>#bbbebf</div>
+  </div>
+  <div class="col-sm-2 margin-bottom-l">
+    <div class="bg-light-grey padding-s">$light-grey<br>#e8e8e8</div>
+  </div>
+  <div class="col-sm-2 margin-bottom-l">
+    <div class="bg-lighter-grey padding-s">$lighter-grey<br>#eef0f0</div>
+  </div>
+  <div class="col-sm-2 margin-bottom-l">
+    <div class="bg-white border-light-grey padding-s">$white<br>#FFFFFF</div>
+  </div>
+  <div class="col-sm-2 margin-bottom-l">
+    <div class="bg-trans-white border-light-grey padding-s">$trans-white<br>rgba(255,255,255,.85)</div>
+  </div>
+</div>
+
+*/
+
+/*doc
+---
+title: Background color
+name: backgroundcolor
+category: utilities
+---
+
+```html_example
+<div class="row">
+  <div class="col-sm-1">
+    <div class="bg-red padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="bg-black padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="bg-darker-grey padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="bg-dark-grey padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="bg-grey padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="bg-light-grey padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="bg-lighter-grey padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="bg-white border-light-grey padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="bg-trans-white border-light-grey padding-m"></div>
+  </div>
+</div>
+```
+*/
+
+/*doc
+---
+title: Borders
+name: borders
+category: utilities
+---
+
+### Border color
+```html_example
+<div class="row">
+  <div class="col-sm-1">
+    <div class="border-red padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="border-black padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="border-darker-grey padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="border-dark-grey padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="border-grey padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="border-light-grey padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="border-lighter-grey padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="border-white padding-m bg-light-grey"></div>
+  </div>
+</div>
+```
+
+### Border position
+```html_example
+<div class="row">
+  <div class="col-sm-1">
+    <div class="border-red bg-light-grey padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="border-top border-red bg-light-grey padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="border-right border-red bg-light-grey padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="border-bottom border-red bg-light-grey padding-m"></div>
+  </div>
+  <div class="col-sm-1">
+    <div class="border-left border-red bg-light-grey padding-m"></div>
+  </div>
+</div>
+```
+*/
+// Background color
+// -------------------------
+.bg-white {background-color:$white!important;}
+.bg-black {background-color:$black!important;}
+.bg-red {background-color:$red!important;}
+.bg-grey {background-color:$grey!important;}
+.bg-dark-grey {background-color:$dark-grey!important;}
+.bg-darker-grey {background-color:$darker-grey!important;}
+.bg-light-grey {background-color:$light-grey!important;}
+.bg-lighter-grey {background-color:$lighter-grey!important;}
+.bg-trans-white {background-color: $trans-white!important;}
+
+// Border color
+// -------------------------
+.border-white {border: 1px solid $white!important;}
+.border-black {border: 1px solid $black!important;}
+.border-red {border: 1px solid $red!important;}
+.border-grey {border: 1px solid $grey!important;}
+.border-dark-grey {border: 1px solid $dark-grey!important;}
+.border-darker-grey {border: 1px solid $darker-grey!important;}
+.border-light-grey {border: 1px solid $light-grey!important;}
+.border-lighter-grey {border: 1px solid $lighter-grey!important;}
+
+.border-top {border-width: 1px 0px 0px 0px!important;}
+.border-right {border-width: 0px 1px 0px 0px!important;}
+.border-bottom {border-width: 0px 0px 1px 0px!important;}
+.border-left {border-width: 0px 0px 0px 1px!important;}
+

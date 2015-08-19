@@ -2,6 +2,47 @@
 // Source: http://stubbornella.org/content/?p=497
 // --------------------------------------------------
 
+/*doc
+---
+title: Media object
+name: mediaobject
+category: components
+---
+
+Displays a media object (images, video, audio) to the left or right of a content block.
+
+### Media left
+
+```html_example
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" src="http://placehold.it/100x100" alt="title">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">Media heading</h4>
+    <p>Some content</p>
+  </div>
+</div>
+```
+### Media right
+
+```html_example
+<div class="media">
+  <div class="media-right">
+    <a href="#">
+      <img class="media-object" src="http://placehold.it/100x100" alt="title">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">Media heading</h4>
+    <p>Some content</p>
+  </div>
+</div>
+```
+
+*/
 
 // Common styles
 // -------------------------
@@ -13,42 +54,74 @@
   zoom: 1;
 }
 
-// Proper spacing between instances of .media
-.media,
-.media .media {
+.media {
+  // Proper spacing between instances of .media
   margin-top: 15px;
-}
-.media:first-child {
-  margin-top: 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
-// For images and videos, set to block
+.media,
+.media-body {
+  zoom: 1;
+  overflow: hidden;
+}
+
+.media-body {
+  width: 10000px;
+}
+
 .media-object {
   display: block;
+
+  // Fix collapse in webkit from max-width: 100% and display: table-cell.
+  &.img-thumbnail {
+    max-width: none;
+  }
+}
+
+.media-left {
+  float: left;
+}
+.media-right {
+  float: right;
+}
+
+.media-right,
+.media > .pull-right {
+  padding-left: 10px;
+}
+
+.media-left,
+.media > .pull-left {
+  padding-right: 10px;
+}
+
+.media-left,
+.media-right,
+.media-body {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.media-middle {
+  vertical-align: middle;
+}
+
+.media-bottom {
+  vertical-align: bottom;
 }
 
 // Reset margins on headings for tighter default spacing
 .media-heading {
-  margin: 0 0 5px;
+  margin-top: 0;
+  margin-bottom: 5px;
 }
-
-
-// Media image alignment
-// -------------------------
-
-.media {
-  > .pull-left {
-    margin-right: 10px;
-  }
-  > .pull-right {
-    margin-left: 10px;
-  }
-}
-
 
 // Media list variation
-// -------------------------
-
+//
 // Undo default ul/ol styles
 .media-list {
   padding-left: 0;

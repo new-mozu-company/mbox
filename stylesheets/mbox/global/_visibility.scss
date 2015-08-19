@@ -1,0 +1,178 @@
+// Toggling content
+// -------------------------
+/*doc
+---
+title: Visibility
+name: visibility
+category: utilities
+---
+
+### Basic Visibility
+
+```html_example
+<div class="show">Fap messenger bag roof party, craft beer cronut literally ennui sustainable.</div>
+<div class="hidden">Shoreditch butcher asymmetrical, squid flannel cold-pressed VHS 90's cray lumbersexual roof party tilde chillwave +1.</div>
+<div class="invisible">Cliche pork belly wolf biodiesel fingerstache.</div>
+<div class="text-hide">Wolf locavore keytar VHS craft beer tote bag, gluten-free fingerstache Echo Park lomo migas.</div>
+<div class="sr-only">Hella food truck direct trade yr, Pitchfork Brooklyn before they sold out ugh dreamcatcher.</div>
+```
+*/
+
+.show {
+  display: block !important;
+}
+// Hide from screenreaders and browsers
+// Credit: HTML5 Boilerplate
+.hidden,
+.hide {
+  display: none !important;
+  visibility: hidden !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  @include text-hide();
+}
+// Only display content to screen readers
+// See: http://a11yproject.com/posts/how-to-hide-content/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+//
+// Responsive: Utility classes
+// --------------------------------------------------
+
+
+// IE10 in Windows (Phone) 8
+//
+// Support for responsive views via media queries is kind of borked in IE10, for
+// Surface/desktop in split view and for Windows Phone 8. This particular fix
+// must be accompanied by a snippet of JavaScript to sniff the user agent and
+// apply some conditional CSS to *only* the Surface/desktop Windows 8. Look at
+// our Getting Started page for more information on this bug.
+//
+// For more information, see the following:
+//
+// Issue: https://github.com/twbs/bootstrap/issues/10497
+// Docs: http://getbootstrap.com/getting-started/#browsers
+// Source: http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+
+/*doc
+---
+title: Responsive visibility
+name: responsivevisibility
+parent: visibility
+---
+
+Class                | Extra small devices (<768px) | Small devices  (>768px)   | Medium devices  (>992px)      | Large devices (>1200px)
+-------------------- | ------------------- | ----------------- | --------------------- | -------------------
+`.visible-xs`        |  visible            | hidden            | hidden                | hidden
+`.visible-sm`        |  hidden             | visible           | hidden                | hidden
+`.visible-md`        |  hidden             | hidden            | visible               | hidden
+`.visible-lg`        |  hidden             | hidden            | hidden                | visible
+`.hidden-xs`         |  hidden             | visible           | visible               | visible
+`.hidden-sm`         |  visible            | hidden            | visible               | visible
+`.hidden-md`         |  visible            | visible           | hidden                | visible
+`.hidden-lg`         |  visible            | visible           | visible               | hidden
+
+### visible
+```html_example
+<div class="row">
+  <div class="col-md-3 bg-grey">
+    <div class="visible-xs">visible-xs</div>
+  </div>
+  <div class="col-md-3 bg-grey">
+    <div class="visible-sm">visible-sm</div>
+  </div>
+  <div class="col-md-3 bg-grey">
+    <div class="visible-md">visible-md</div>
+  </div>
+  <div class="col-md-3 bg-grey">
+    <div class="visible-lg">visible-lg</div>
+  </div>
+</div>
+```
+
+### hidden
+```html_example
+<div class="row">
+  <div class="col-md-3 bg-grey">
+    <div class="hidden-xs">hidden-xs</div>
+  </div>
+  <div class="col-md-3 bg-grey">
+    <div class="hidden-sm">hidden-sm</div>
+  </div>
+  <div class="col-md-3 bg-grey">
+    <div class="hidden-md">hidden-md</div>
+  </div>
+  <div class="col-md-3 bg-grey">
+    <div class="hidden-lg">hidden-lg</div>
+  </div>
+</div>
+```
+*/
+
+@-ms-viewport {
+  width: device-width;
+}
+
+
+// Visibility utilities
+
+@include responsive-invisibility('.visible-xs, .visible-sm, .visible-md, .visible-lg');
+
+@media (max-width: $screen-xs-max) {
+  @include responsive-visibility('.visible-xs');
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  @include responsive-visibility('.visible-sm');
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @include responsive-visibility('.visible-md');
+}
+
+@media (min-width: $screen-lg-min) {
+  @include responsive-visibility('.visible-lg');
+}
+
+@media (max-width: $screen-xs-max) {
+  @include responsive-invisibility('.hidden-xs');
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  @include responsive-invisibility('.hidden-sm');
+}
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  @include responsive-invisibility('.hidden-md');
+}
+
+@media (min-width: $screen-lg-min) {
+  @include responsive-invisibility('.hidden-lg');
+}
+
+
+// Print utilities
+//
+// Media queries are placed on the inside to be mixin-friendly.
+
+@include responsive-invisibility('.visible-print');
+
+@media print {
+  @include responsive-visibility('.visible-print');
+}
+
+@media print {
+  @include responsive-invisibility('.hidden-print');
+}

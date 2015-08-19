@@ -1,7 +1,51 @@
 //
 // Grid system
 // --------------------------------------------------
-
+/*doc
+---
+title: Grid System
+name: gridsystem
+category: layout
+---
+### basic container
+```html_example
+<div class="container">
+  <div class="row">
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+  </div>
+</div>
+```
+### fluid container
+```html_example
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+    <div class="col-md-1 border-grey">col-md-1</div>
+  </div>
+</div>
+```
+*/
 
 // Container widths
 //
@@ -85,6 +129,108 @@
 
 // Gutter sizes
 // -------------------------
+/*doc
+---
+parent: gridsystem
+name: gutterwidth
+title: Gutter width
+---
+### gutter l
+```html_example
+<div class="container">
+  <div class="row gutter-l">
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+  </div>
+</div>
+```
+### gutter m
+```html_example
+<div class="container">
+  <div class="row gutter-m">
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+  </div>
+</div>
+```
+### gutter s
+```html_example
+<div class="container">
+  <div class="row gutter-s">
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+  </div>
+</div>
+```
+### gutter xs
+```html_example
+<div class="container">
+  <div class="row gutter-xs">
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+  </div>
+</div>
+```
+### no gutter
+```html_example
+<div class="container">
+  <div class="row gutter-0">
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+    <div class="col-md-1"><div class="bg-grey">&nbsp;</div></div>
+  </div>
+</div>
+```
+*/
 
 .row.gutter-xs {margin-left: -.1em;margin-right: -.1em;}
 .row.gutter-s {margin-left: -1em;margin-right: -1em;}

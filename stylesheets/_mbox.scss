@@ -24,6 +24,7 @@
 @import 'mbox/global/tables';
 @import 'mbox/global/forms';
 @import 'mbox/global/buttons';
+@import 'mbox/global/color';
 
 // Components
 @import 'mbox/components/component-animations';
@@ -47,7 +48,7 @@
 
 // Utility classes
 @import 'mbox/global/utilities';
-@import 'mbox/global/responsive-utilities';
+@import 'mbox/global/visibility';
 
 
 //@import 'mbox/global/theme';

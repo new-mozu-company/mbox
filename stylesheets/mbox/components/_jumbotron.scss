@@ -2,6 +2,60 @@
 // Jumbotron
 // --------------------------------------------------
 
+/*doc
+---
+title: Jumbotron
+name: jumbotron
+category: components
+---
+### Basic Jumbotron
+
+```html_example
+<div class="jumbotron">
+  <h1>Hello, world!</h1>
+  <p>Some content</p>
+  <p><a class="btn btn-red" href="#" role="button">Learn more</a></p>
+</div>
+```
+
+### Full width jumbotron
+
+To make the jumbotron full width, place it outside all `.containers` and instead add a `.container` within.
+
+<pre>
+<code>
+&lt;div class="jumbotron"&gt;
+  &lt;div class="container"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+
+### Invert text
+
+```html_example
+<div class="jumbotron jumbotron-dark">
+  <h1>Hello, world!</h1>
+  <p>Some content</p>
+  <p><a class="btn btn-red" href="#" role="button">Learn more</a></p>
+</div>
+```
+
+### Jumbotron height
+
+To standardize the height across multiple jumbotrons, or to use a css background image,
+it may be helpful to use one of the classes below to set a minimum height.
+
+Classes                     | Attribute
+--------------------------- | ------------
+*default*                   | height determined by content
+`.jumbotron-height-300px`   | min-height: 300px
+`.jumbotron-height-330px`   | min-height: 330px
+`.jumbotron-height-400px`   | min-height: 400px
+`.jumbotron-height-500px`   | min-height: 500px
+
+*/
 
 .jumbotron {
   padding: $jumbotron-padding;
@@ -101,15 +155,15 @@
   @extend .text-white;
 }
 .jumbotron-height-300px {
-  min-height: 300px
+  min-height: 300px;
 }
 .jumbotron-height-330px {
-  min-height: 330px
+  min-height: 330px;
 }
 .jumbotron-height-400px {
-  min-height: 400px
+  min-height: 400px;
 }
 .jumbotron-height-500px {
-  min-height: 500px
+  min-height: 500px;
 }
 

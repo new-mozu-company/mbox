@@ -62,14 +62,35 @@ img {
   vertical-align: middle;
 }
 
+/*doc
+---
+title: Images
+name: images
+category: basics
+---
+### Responsive images
+Ensures image doesn't scale beyond its parent
+
+```html_example
+<img src="http://loremflickr.com/g/320/240/puppy?randomize=1" class="img-responsive">
+```
+
+### Image thumbnails
+
+```html_example
+<img src="http://loremflickr.com/g/320/240/puppy?randomize=2" class="img-thumbnail">
+```
+
+### Perfect circle
+
+```html_example
+<img src="http://loremflickr.com/g/320/320/puppy?randomize=3" class="img-circle">
+```
+*/
+
 // Responsive images (ensure images don't scale beyond their parents)
 .img-responsive {
   @include img-responsive();
-}
-
-// Rounded corners
-.img-rounded {
-  border-radius: $border-radius-large;
 }
 
 // Image thumbnails
@@ -94,6 +115,16 @@ img {
 
 
 // Horizontal rules
+/*doc
+---
+title: Horizontal rule
+name: horizontalrule
+category: basics
+---
+```html_example
+<hr>
+```
+*/
 
 hr {
   margin-top:    $line-height-computed;
@@ -102,18 +133,149 @@ hr {
   border-top: 1px solid $hr-border;
 }
 
+// Lists
+// --------------------------------------------------
+/*doc
+---
+title: Lists
+name: lists
+category: basics
+---
 
-// Only display content to screen readers
+### Default
+```html_example
+<ul>
+  <li>Chillwave</li>
+  <li>Kickstarter</li>
+  <li>Bicycle rights</li>
+</ul>
+```
+
+### Unstyled
+```html_example
+<ul class="list-unstyled">
+  <li>Direct trade</li>
+  <li>Godard</li>
+  <li>Biodiesel</li>
+</ul>
+```
+
+### No bullet
+```html_example
+<ul class="list-nobullet">
+  <li>Banksy</li>
+  <li>Fixie</li>
+  <li>Umami</li>
+</ul>
+```
+
+### Inline
+```html_example
+<ul class="list-inline">
+  <li>Pour-over</li>
+  <li>Drinking vinegar</li>
+  <li>Kale chips</li>
+</ul>
+```
+
+### Description Lists
+```html_example
+<dl>
+  <dt>Lo-fi</dt>
+  <dd>Kitsch heirloom meggings</dd>
+  <dt>Scenester</dt>
+  <dd>Retro kale chips McSweeney's</dd>
+  <dt>Godard</dt>
+  <dd>Hashtag normcore tofu</dd>
+</dl>
+```
+
+### Horizontal description lists
+```html_example
+<dl class="dl-horizontal">
+  <dt>Migas</dt>
+  <dd>Fixie before they sold out post-ironic</dd>
+  <dt>Gastropub</dt>
+  <dd>PBR next level Etsy twee ugh roof party</dd>
+  <dt>XOXO</dt>
+  <dd>Cray cardigan Schlitz</dd>
+</dl>
+```
+
+*/
+
+// Unordered and Ordered lists
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: ($line-height-computed / 2);
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+}
+
+ul {
+  padding-left: 20px;
+  list-style: initial;
+}
+// List options
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+ul.basic,
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.list-nobullet {
+  list-style: none;
+  padding-left: 20px;
+}
+// Inline turns list items into inline-block
+.list-inline {
+  @extend .list-unstyled;
+  margin-left: -5px;
+
+  > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+// Description Lists
+dl {
+  margin-top: 0; // Remove browser default
+  margin-bottom: $line-height-computed;
+}
+dt,
+dd {
+  line-height: $line-height-base;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0; // Undo browser default
+}
+
+// Horizontal description lists
 //
-// See: http://a11yproject.com/posts/how-to-hide-content/
+// Defaults to being stacked without any of the below styles applied, until the
+// grid breakpoint is reached (default of ~768px).
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
+@media (min-width: $grid-float-breakpoint) {
+  .dl-horizontal {
+    dt {
+      float: left;
+      width: ($component-offset-horizontal - 20);
+      clear: left;
+      text-align: right;
+      @include text-overflow();
+    }
+    dd {
+      margin-left: $component-offset-horizontal;
+      @include clearfix(); // Clear the floated `dt` if an empty `dd` is present
+    }
+  }
 }

@@ -1,7 +1,39 @@
 //
 // Wells
 // --------------------------------------------------
+/*doc
+---
+title: Wells
+name: wells
+category: components
+---
 
+Gives content an inset effect.
+
+### Default
+
+```html_example
+<div class="well">
+  Lassie, Timmy fell down the well!
+</div>
+```
+
+### Large
+
+```html_example
+<div class="well well-lg">
+  Lassie, Timmy fell down the well!
+</div>
+```
+
+### Small
+
+```html_example
+<div class="well well-sm">
+  Lassie, Timmy fell down the well!
+</div>
+```
+*/
 
 // Base class
 .well {

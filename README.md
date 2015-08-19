@@ -44,10 +44,6 @@ And then execute:
 
     $ bundle
 
-To update the mbox gem and get the latest changes, run:
-
-    $ bundle update ––source mbox
-
 <!--
 Or install it yourself as:
 
@@ -64,8 +60,17 @@ Add this to your base scss file:
 
     @import 'mbox';
 
-Then you can start using the mbox classes and variables!
+The mbox styles will be compiled into your css the next time you run:
 
+    $ compass watch or bundle exec compass watch
+
+Congratulations! Now you can start using the mbox classes and variables!
+
+## Updating
+
+To update the mbox gem and get the latest changes, run:
+
+    $ bundle update ––source mbox
 
 ## Development
 

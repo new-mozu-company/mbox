@@ -5,6 +5,42 @@
 // use in the normalize.scss file.
 // @see http://compass-style.org/reference/compass/typography/vertical_rhythm/
 
+
+/*doc
+---
+title: Font variables
+name: fontvariables
+category: sass variables
+---
+
+### Font size
+
+Variable                  | Value             | Description
+------------------------- | ----------------- | -------------------------------------
+`$base-font-size`         | 13px              | The font size set on the root html element
+
+
+
+### Font family
+
+Variable                  | Value             | Description
+------------------------- | ----------------- | -------------------------------------
+`$gotham`                 | 'Gotham SSm A', 'Gotham SSm B', $sans-serif;                        | The default font family set on the root html element
+`$gotham-narrow`          | 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', $sans-serif;          | The emphasis font family set on h2 and h3s
+
+
+
+### Font weight
+
+Variable                  | Value             | Description
+------------------------- | ----------------- | -------------------------------------
+`$light`                  | 100               | The lightest weight of Gotham/Gotham Narrow
+`$book`                   | 300               | The second to lightest weight of Gotham/Gotham Narrow
+`$medium`                 | 500               | The second to heaviest weight of Gotham/Gotham Narrow
+`$bold`                   | 700               | The heaviest weight of Gotham/Gotham Narrow
+
+*/
+
 // Base font size
 $base-font-size:   13px; // The font size set on the root html element.
 $font-size-base:          $base-font-size !default;
@@ -47,7 +83,7 @@ $h6-font-size:            $font-size-h6;
 $abs-bg-url : '/sites/all/themes/mozu_aurora/images/';
 
 // Project-specific fonts
-$sans-serif: $helvetica;
+$sans-serif: Helvetica;
 $gotham: 'Gotham SSm A', 'Gotham SSm B', $sans-serif;
 $gotham-narrow: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', $sans-serif;
 $futura: "europa", "FuturaPT", Verdana, Tahoma, "DejaVu Sans", $sans-serif;

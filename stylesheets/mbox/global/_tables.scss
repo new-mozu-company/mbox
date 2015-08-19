@@ -1,6 +1,112 @@
 //
 // Tables
 // --------------------------------------------------
+/*doc
+---
+title: Tables
+name: tables
+category: basics
+---
+
+### Basic Table
+
+```html_example
+<table class="table">
+  <caption>Table caption.</caption>
+  <thead>
+    <tr><th>#</th><th>First Name</th><th>Last Name</th><th>Username</th></tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">1</th><td>Harry</td><td>Potter</td><td>@patronusmaximus</td></tr>
+    <tr><th scope="row">2</th><td>Ron</td><td>Weasley</td><td>@gingerbunny</td></tr>
+    <tr><th scope="row">3</th><td>Hermione</td><td>Granger</td><td>@littlemissfancypants</td></tr>
+  </tbody>
+</table>
+```
+
+### Condensed Table
+
+```html_example
+<table class="table table-condensed">
+  <caption>Table caption.</caption>
+  <thead>
+    <tr><th>#</th><th>First Name</th><th>Last Name</th><th>Username</th></tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">1</th><td>Harry</td><td>Potter</td><td>@patronusmaximus</td></tr>
+    <tr><th scope="row">2</th><td>Ron</td><td>Weasley</td><td>@gingerbunny</td></tr>
+    <tr><th scope="row">3</th><td>Hermione</td><td>Granger</td><td>@littlemissfancypants</td></tr>
+  </tbody>
+</table>
+```
+
+### Bordered Table
+
+```html_example
+<table class="table table-bordered">
+  <caption>Table caption.</caption>
+  <thead>
+    <tr><th>#</th><th>First Name</th><th>Last Name</th><th>Username</th></tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">1</th><td>Harry</td><td>Potter</td><td>@patronusmaximus</td></tr>
+    <tr><th scope="row">2</th><td>Ron</td><td>Weasley</td><td>@gingerbunny</td></tr>
+    <tr><th scope="row">3</th><td>Hermione</td><td>Granger</td><td>@littlemissfancypants</td></tr>
+  </tbody>
+</table>
+```
+
+### Striped Table
+
+```html_example
+<table class="table table-striped">
+  <caption>Table caption.</caption>
+  <thead>
+    <tr><th>#</th><th>First Name</th><th>Last Name</th><th>Username</th></tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">1</th><td>Harry</td><td>Potter</td><td>@patronusmaximus</td></tr>
+    <tr><th scope="row">2</th><td>Ron</td><td>Weasley</td><td>@gingerbunny</td></tr>
+    <tr><th scope="row">3</th><td>Hermione</td><td>Granger</td><td>@littlemissfancypants</td></tr>
+  </tbody>
+</table>
+```
+### Hover Table
+
+```html_example
+<table class="table table-hover">
+  <caption>Table caption.</caption>
+  <thead>
+    <tr><th>#</th><th>First Name</th><th>Last Name</th><th>Username</th></tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">1</th><td>Harry</td><td>Potter</td><td>@patronusmaximus</td></tr>
+    <tr><th scope="row">2</th><td>Ron</td><td>Weasley</td><td>@gingerbunny</td></tr>
+    <tr><th scope="row">3</th><td>Hermione</td><td>Granger</td><td>@littlemissfancypants</td></tr>
+  </tbody>
+</table>
+```
+### Responsive Table
+Wrap any .table in .table-responsive to make it scroll horizontally on small devices (under 768px).
+
+```html_example
+<div class="table-responsive">
+  <table class="table table-bordered">
+  <caption>Table caption.</caption>
+  <thead>
+    <tr><th>#</th><th>First Name</th><th>Last Name</th><th>Username</th></tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">1</th><td>Harry</td><td>Potter</td><td>@patronusmaximus</td></tr>
+    <tr><th scope="row">2</th><td>Ron</td><td>Weasley</td><td>@gingerbunny</td></tr>
+    <tr><th scope="row">3</th><td>Hermione</td><td>Granger</td><td>@littlemissfancypants</td></tr>
+  </tbody>
+</table>
+</div>
+```
+
+*/
+
 
 
 table {
@@ -9,6 +115,7 @@ table {
 }
 th {
   text-align: left;
+  font-weight: bold;
 }
 
 

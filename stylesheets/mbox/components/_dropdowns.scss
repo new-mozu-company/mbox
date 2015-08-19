@@ -1,6 +1,64 @@
 //
 // Dropdown menus
 // --------------------------------------------------
+/*doc
+---
+title: Dropdowns
+name: dropdowns
+category: components
+---
+
+Requires the dropdown plugin from bootstrap.js.
+
+```html_example
+<div class="dropdown">
+  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu"><li><a href="/about-us">About</a></li>
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+  </ul>
+</div>
+```
+
+### Drop up
+
+```html_example
+<div class="dropup">
+  <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Dropup
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+  </ul>
+</div>
+```
+
+### Full width
+
+```html_example
+<div class="dropdown">
+  <button type="button" class="btn btn-block dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    Full Width Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu btn-block" role="menu"><li><a href="/about-us">About</a></li>
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+  </ul>
+</div>
+
+```
+
+
+*/
 
 // The dropdown wrapper (div)
 .dropdown {
@@ -166,7 +224,9 @@
 //
 // Just add .dropup after the standard .dropdown class and you're set, bro.
 // TODO: abstract this so that the navbar fixed styles are not placed here?
-
+.dropup {
+  position: relative;
+}
 .dropup,
 .navbar-fixed-bottom .dropdown {
   // Reverse the caret

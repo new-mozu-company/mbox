@@ -7,6 +7,94 @@
 //
 // <a href="#"><span class="glyphicon glyphicon-star"></span> Star</a>
 
+//
+// Dropdown menus
+// --------------------------------------------------
+/*doc
+---
+title: Glyphicons
+name: glyphicons
+category: components
+---
+
+### Usage
+Requires the Glyphicons Halflings font from Bootstrap in your root directory > fonts > glyphicons-halflings-regular.eot/svg/ttf/woff.
+
+```html_example
+<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+```
+
+### Frequently used
+<div class="row text-center">
+  <div class="col-sm-1">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="db small">glyphicon glyphicon-chevron-right</span>
+  </div>
+  <div class="col-sm-1">
+    <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+    <span class="db small">glyphicon glyphicon-chevron-down</span>
+  </div>
+  <div class="col-sm-1">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="db small">glyphicon glyphicon-chevron-left</span>
+  </div>
+  <div class="col-sm-1">
+    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+    <span class="db small">glyphicon glyphicon-chevron-up</span>
+  </div>
+  <div class="col-sm-1">
+    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+    <span class="db small">glyphicon glyphicon-ok</span>
+  </div>
+  <div class="col-sm-1">
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    <span class="db small">glyphicon glyphicon-remove</span>
+  </div>
+  <div class="col-sm-1">
+    <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+    <span class="db small">glyphicon glyphicon-earphone</span>
+  </div>
+  <div class="col-sm-1">
+    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+    <span class="db small">glyphicon glyphicon-menu-hamburger</span>
+  </div>
+  <div class="col-sm-1">
+    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+    <span class="db small">glyphicon glyphicon-user</span>
+  </div>
+  <div class="col-sm-1">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    <span class="db small">glyphicon glyphicon-plus</span>
+  </div>
+  <div class="col-sm-1">
+    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+    <span class="db small">glyphicon glyphicon-minus</span>
+  </div>
+  <div class="col-sm-1">
+    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+    <span class="db small">glyphicon glyphicon-heart</span>
+  </div>
+</div>
+<div class="row text-center">
+  <div class="col-sm-1">
+    <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+    <span class="db small">glyphicon glyphicon-heart-empty</span>
+  </div>
+  <div class="col-sm-1">
+    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+    <span class="db small">glyphicon glyphicon-star</span>
+  </div>
+  <div class="col-sm-1">
+    <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+    <span class="db small">glyphicon glyphicon-star-empty</span>
+  </div>
+  <div class="col-sm-1">
+    <span class="db small margin-top-s">See the <a href="http://getbootstrap.com/components/#glyphicons" title="Glyphicons on Bootstrap" class="cta db">full list</a></span>
+  </div>
+</div>
+
+*/
+
 // Import the fonts
 @font-face {
   font-family: 'Glyphicons Halflings';

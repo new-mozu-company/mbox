@@ -2,6 +2,53 @@
 // Code (inline and block)
 // --------------------------------------------------
 
+// Base styles
+// --------------------------------------------------
+/*doc
+---
+title: Code
+name: code
+category: basics
+---
+
+To display code, wrap it in `<pre> <code>` tags, and replace the carats with the `&lt;` or `&gt;`. Below is the output of a code block, followed by the html.
+
+### Basic code block
+
+```html_example
+<pre>
+<code>
+  &lt;div class="jumbotron my-jumbotron"&gt;
+    &lt;div class="container text-center"&gt;
+      &lt;h1&gt;This is a title&lt;/h1&gt;
+      &lt;div class="h-subhead"&gt;This is a subhead&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code>
+</pre>
+
+```
+
+### Scrollable code block
+
+```html_example
+<pre class="pre-scrollable">
+<code>
+  &lt;div class="jumbotron my-jumbotron"&gt;
+    &lt;div class="container text-center"&gt;
+      &lt;h1&gt;This is a title&lt;/h1&gt;
+      &lt;div class="h-subhead"&gt;This is a subhead&lt;/div&gt;
+      &lt;p&gt;This is a really long paragraph. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+      &lt;p&gt;Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+      &lt;p&gt;Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id ligula porta felis euismod semper.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code>
+</pre>
+
+```
+
+*/
 
 // Inline and block code styles
 code,

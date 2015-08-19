@@ -1,7 +1,21 @@
 //
 // Breadcrumbs
 // --------------------------------------------------
+/*doc
+---
+title: Breadcrumbs
+name: breadcrumbs
+category: components
+---
 
+```html_example
+<ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Library</a></li>
+  <li class="active">Data</li>
+</ol>
+```
+*/
 
 .breadcrumb {
   padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;
