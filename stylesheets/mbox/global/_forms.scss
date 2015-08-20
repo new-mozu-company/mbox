@@ -579,9 +579,9 @@ Wrap the Marketo embed code in `.marketo-form` with an optional class for the nu
         max-width: none;
         background-color: rgba(223,48,24,.85);
         border: 1px solid rgba(223,48,24,.85);
-        -moz-border-radius: 2px;
-        -webkit-border-radius: 2px;
-        border-radius: 2px;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        border-radius: 0px;
       }
     }
     .mktoButtonRow,
@@ -755,9 +755,10 @@ div.fancy-select div.trigger {
   line-height: 1.2;
   padding: 15px;
   margin-right: 0px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  clear:both;
 
   transition: all 240ms ease-out;
   -webkit-transition: all 240ms ease-out;
@@ -783,9 +784,9 @@ div.fancy-select div.trigger.open {
   border: 1px solid #A8A8A8;
   color: $grey;
   box-shadow: none;
-  -moz-border-radius: 2px 2px 0px 0px;
-  -webkit-border-radius: 2px 2px 0px 0px;
-  border-radius: 2px 2px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  border-radius: 0px 0px 0px 0px;
 }
 
 div.fancy-select div.trigger.open:after {
@@ -808,9 +809,9 @@ div.fancy-select ul.options {
   overflow: auto;
   background: #fff;
   border: 1px solid #A8A8A8;
-  -moz-border-radius: 0px 0px 2px 2px;
-  -webkit-border-radius: 0px 0px 2px 2px;
-  border-radius: 0px 0px 2px 2px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  border-radius: 0px 0px 0px 0px;
   box-shadow: none;
   transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
   -webkit-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
