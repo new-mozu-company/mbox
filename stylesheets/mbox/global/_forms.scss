@@ -506,6 +506,7 @@ Wrap the Marketo embed code in `.marketo-form` with an optional class for the nu
     input[type=date],
     textarea.mktoField {
       box-shadow: none!important;
+      -webkit-appearance: none;
       border: 1px solid #cecece;
       color: $dark-grey;
       font-size: 15px;
@@ -535,6 +536,7 @@ Wrap the Marketo embed code in `.marketo-form` with an optional class for the nu
     input[type=date]:focus,
     textarea.mktoField:focus {
       box-shadow: none!important;
+      -webkit-appearance: none;
       border-color: #a8a8a8;
       outline: 0;
       background-color: #f3f3f3;
