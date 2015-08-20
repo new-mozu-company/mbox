@@ -134,6 +134,9 @@ category: utilities
   <div class="col-sm-1">
     <div class="border-left border-red bg-light-grey padding-m"></div>
   </div>
+  <div class="col-sm-1">
+    <div class="border-none bg-light-grey padding-m"></div>
+  </div>
 </div>
 ```
 */
@@ -164,4 +167,5 @@ category: utilities
 .border-right {border-width: 0px 1px 0px 0px!important;}
 .border-bottom {border-width: 0px 0px 1px 0px!important;}
 .border-left {border-width: 0px 0px 0px 1px!important;}
+.border-none {border-width: 0px 0px 0px 0px!important;}
 

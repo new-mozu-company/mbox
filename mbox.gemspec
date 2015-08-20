@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
 
   # Basic Info
   spec.name          = "mbox"
-  spec.version       = "0.1.0"
+  spec.version       = "0.1.1"
   spec.date         = "2015-08-10"
   spec.authors       = ["Katie"]
   spec.email         = ["katie_garcia@volusion.com"]

@@ -512,11 +512,12 @@ Wrap the Marketo embed code in `.marketo-form` with an optional class for the nu
       font-weight: 200;
       padding: 15px 52px 15px 15px;
       margin-right: 0px;
-      -moz-border-radius: 2px;
-      -webkit-border-radius: 2px;
-      border-radius: 2px;
-      line-height: 1.2em;
+      -moz-border-radius: 0px;
+      -webkit-border-radius: 0px;
+      border-radius: 0px;
+      line-height: 18px;
       margin: 0;
+      height: auto;
       &.mktoInvalid {
         border-color: #DF3018;
       }
@@ -608,106 +609,99 @@ Wrap the Marketo embed code in `.marketo-form` with an optional class for the nu
           &:active,
           &:focus,
           &:visited {
-            border:transparent;
+            border:1px solid transparent;
           }
         }
       }
     }
     .mktoTemplateBox {
+      margin-top: 0;
       p {
         text-align: center;
       }
     }
-}
-  &.form--linkedin {
-    margin-top: 120px;
-    position: relative;
-    .cf_widget_socialsignon {
-      position: absolute;
-      top: -110px;
-      left: 0;
-      width: 100%;
-      padding-left: 40px;
-      padding-right: 40px;
-      @media all and (max-width:650px) {
-        padding-left: 0;
-        padding-right: 0;
-      }
-      .cf_sign_on {
-        width: 100%;
-        margin-bottom: 0!important;
-        border: none;
-        -webkit-border-radius: 0px;
-        -moz-border-radius: 0px;
-        border-radius: 0px;
-        background-color: transparent;
-        padding: 0;
-      }
-      .cf_sign_on_caption {
-        display: none;
-      }
-      .cf_sign_on_button {
-        height: 75px;
-        line-height: 68px;
-        width: 100%;
-        padding-left: 100px;
-        background-image: url(/sites/all/themes/mozu_aurora/images/autofill-with-linkedin.png);
-        background-position: left;
-        background-size: 100% auto;
-        background-repeat: no-repeat;
-        background-color: transparent;
-        filter:none;
-        border: none;
-        color: #333;
-        font-size: 19px;
-        font-weight: 500;
-        font-family: $gotham;
-        text-indent: -9999px;
-        max-width: 500px;
-        margin: 0 auto;
-        float: none;
-        &:before {
-          content:'Click here to auto-fill with ';
-        }
-        &:after {
-          content:'or';
-          position: absolute;
-          top: -17px;
-          left: 47.75%;
-          width: 27px;
-          height: 27px;
-          -webkit-border-radius: 50%;
-          -moz-border-radius: 50%;
-          border-radius: 50%;
-          border: 1px solid $grey;
-          background-color: #fff;
-          line-height: 27px;
-          text-align: center;
-          font-size: 15px;
-          font-weight: 500;
-          color: $grey;
-          display: block;
-          text-indent: 0;
-          top: 95px;
-        }
-        .cf_synd_icon_li_sm {
-          display: none;
-        }
-      }
-      /* logged in */
-      .cf_switch_user {
-        margin-top: 30px;
-        .cf_avatar {
-          margin-right: 15px;
-        }
-        .cf_user_switcher {
-            padding-top: 0px;
-            line-height: 50px;
-        }
+    //linkedin widget (without modifier wrap)
+    div.cf_widget {
+      display:block;
+      a {
+        color: $red;
       }
     }
+    .cf_widget div.cf_sign_on_caption {
+      display:none;
+    }
+    .cf_widget_socialsignon {
+     position:relative;
+     padding-bottom:15px !important;
+     margin-bottom:25px !important;
+     border-bottom:1px solid #cfcfcf;
+     &:after {
+       content:"";
+       width:22px;
+       height:22px;
+       background:url("images/or.jpg") bottom center no-repeat;
+       position:absolute;
+       bottom:-11px;
+       left:50%;
+     }
+     .cf_sign_on {
+      background: transparent;
+      border: none;
+      width: 100%;
+      padding: 0;
+      height: 40px;
+      margin-bottom: 2em;
+     }
+     .cf_sign_on_button {
+       background:none;
+       border:0;
+       border-radius:0;
+       float:none;
+       position:absolute;
+       width:100%;
+       height:100%;
+       z-index:1;
+       text-indent:-9999px;
+       padding:0;
+       @media all and (max-width:480px) {
+        width: 100%;
+       }
+       .cf_synd_icon_li_sm {
+          background: url("images/linkedin-autofill.png") center center no-repeat;
+          height: 52px;
+          width: 100%;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          background-size: contain;
+       }
+     }
+    }
+    //logged in state
+    .cf_widget_socialsignon {
+      .cf_switch_user .cf_avatar {
+        margin-top: 0;
+        margin-right: 10px;
+      }
+      .cf_user_switcher {
+        padding-top: 10px;
+      }
+    }
+    //returning user state
+    a.mktoNotYou {
+      color: $red;
+      display: block;
+      margin-top: 20px;
+    }
+  }/* .mktoForm */
+
+  //form variants
+  &.form--linkedin {
+    border:none;
+    padding: 0;
   }
-}
+
+}/* .marketo-form */
+
 /* Base options */
 .form-no-label label.mktoLabel {
   display: none !important;
