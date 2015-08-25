@@ -32,7 +32,9 @@ Mbox is a Compass extension for Mozu that provides style boilerplate based on Bo
 For a full list of available classes and styles, see [http://www.mozu.com/style-guide](http://www.mozu.com/style-guide)
 
 
-## Installation
+## Usage with Compass
+
+### Installation
 
 Add this line to your application's Gemfile:
 
@@ -50,7 +52,7 @@ Or install it yourself as:
     $ gem install mbox
 -->
 
-## Usage
+### Integration
 
 Add this to your config.rb:
 
@@ -60,17 +62,32 @@ Add this to your base scss file:
 
     @import 'mbox';
 
+### Compiling
+
 The mbox styles will be compiled into your css the next time you run:
 
     $ compass watch or bundle exec compass watch
 
 Congratulations! Now you can start using the mbox classes and variables!
 
-## Updating
+### Updating
 
 To update the mbox gem and get the latest changes, run:
 
     $ bundle update ––source mbox
+
+## Usage with npm
+
+Add this your package.json file:
+
+    "mbox": "https://github.com/volusiondx/mbox"
+
+Add this to your base scss file:
+
+    @import './node_modules/mbox/stylesheets/_mbox.scss’;
+
+Compile with your build tool of choice
+
 
 ## Development
 
