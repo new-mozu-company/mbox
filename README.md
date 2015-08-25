@@ -2,6 +2,8 @@
 
 Mbox is a Compass extension for Mozu that provides style boilerplate based on Bootstrap. It's built to be imported into your base sass files to provide access to a global grid, color palette, set of variables, and more.
 
+See the full [style guide](http://mbox.netlify.com/).
+
 ### Feature List
 
 #### Theme
@@ -28,8 +30,6 @@ Mbox is a Compass extension for Mozu that provides style boilerplate based on Bo
 *  Display & Position
 *  Visibility
 *  Margin & Padding
-
-For a full list of available classes and styles, see [http://www.mozu.com/style-guide](http://www.mozu.com/style-guide)
 
 
 ## Usage with Compass
