@@ -445,13 +445,51 @@ category: basics
 
 ### Marketo forms
 
-Wrap the Marketo embed code in `.marketo-form` with an optional class for the number of form columns. To leverage the dropdown styles shown here, you must also use the Fancy Select library and call the `.fancySelect()` method on the form.
+Wrap the Marketo embed code in `.marketo-form` with an optional class for the number of form columns.
+To leverage the dropdown styles shown here, you must also use the Mozu custom implementation (for all features) or use the Fancy Select library and call the `.fancySelect()` method on the form (for dropdown styles only).
+
+#### Form Variations
+
+style               | class                 | usage         | features/notes
+------------------- | --------------------- | ------------- | -------------
+default             | `.marketo-form`       | use default marketo embed code | <ul><li>ugly dropdowns</li></ul>
+mozu custom         | `.marketo-form`       | use custom embed code (below)<br>requires marketoForms.js | <ul><li>fancy dropdown</li><li>on-page thank you message</li><li>push to data layer</li><li>additional functions on load and submit (optional)</li></ul>
+1 column            | `.form--1-col`        | add class to .marketo-form element |
+2 column            | `.form--2-col`        | add class to .marketo-form element | columns must be configured in Marketo
+3 column            | `.form--3-col`        | add class to .marketo-form element | columns must be configured in Marketo
+autofill with linkedin | `.form--linkedin`  | add class to .marketo-form element | social sign on must be turned on in Marketo
+
 
 ```html_example
-<!-- sample marketo embed code
+<!-- default marketo embed code
 <script src="//app-sjg.marketo.com/js/forms2/js/forms2.min.js"></script>
   <form id="mktoForm_35"></form>
 <script>MktoForms2.loadForm("//app-sjg.marketo.com", "702-MYH-396", 35);</script>
+-->
+
+<!-- custom marketo embed code
+<div class="marketo-form">
+  <div class="thankyou-msg"></div>
+</div>
+<script>
+jQuery(document).ready(function(){
+    formatForm.init({
+        formContainerClass: 'marketo-form',
+        formMarketoID: '35',
+        onSubmitShowClass: 'thankyou-msg',
+        onSubmitHideClass: 'mktoForm',
+        dataLayerOnOff: true,
+        dataLayerEvent: 'track',
+        dataLayerEventWhat: 'Lead Form Submitted',
+        dataLayerEventWhere: 'Main Content',
+        dataLayerEventHow: 'Click Submit',
+        dataLayerContactType: 'gatedContent'
+        // dataLayerContactTypeFieldID: '#Inquiry_type__c',
+        // onLoadFunction: null,
+        // onSubmitFunction: null
+    });
+});
+</script>
 -->
 
 <div class="marketo-form form--2-col">
