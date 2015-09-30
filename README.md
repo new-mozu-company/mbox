@@ -1,35 +1,8 @@
-# Mbox Bootstrap
+# Mbox
 
-Mbox Bootstrap is a Compass extension for Mozu that provides style boilerplate based on Bootstrap. It's built to be imported into your base sass files to provide access to a global grid, color palette, set of variables, and more.
+Mbox is a collection of Compass extensions and NPM packages for Mozu.
 
 See the full [style guide](http://mbox.netlify.com/).
-
-### Feature List
-
-#### Theme
-
-*  Background Color
-*  Borders
-*  Typography
-*  Type Usage
-*  Grid System
-
-#### Objects
-
-*  Buttons
-*  Lists
-*  Forms
-
-#### Components
-
-*  Blockquote
-*  Jumbotron
-*  Dropdowns
-
-#### Utilities
-*  Display & Position
-*  Visibility
-*  Margin & Padding
 
 
 ## Usage with Compass
@@ -60,7 +33,7 @@ Add this to your config.rb:
 
 Add this to your base scss file:
 
-    @import 'mbox/mbox-bootstrap';
+    @import 'mbox/mbox';
 
 ### Compiling
 
@@ -84,7 +57,7 @@ Add this your package.json file:
 
 Add this to your base scss file:
 
-    @import './node_modules/mbox/mbox-bootstrap/stylesheets/_mbox.scss’;
+    @import './node_modules/mbox/mbox/stylesheets/_mbox.scss’;
 
 Compile with your build tool of choice
 

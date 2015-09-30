@@ -1,7 +1,7 @@
 require 'compass'
 
 base_directory  = File.join(File.dirname(__FILE__), '..')
-stylesheets_dir = File.join(base_directory, 'stylesheets')
+stylesheets_dir = File.join(base_directory, 'sass')
 templates_dir   = File.join(base_directory, 'templates')
 
 Compass::Frameworks.register('mbox-base',

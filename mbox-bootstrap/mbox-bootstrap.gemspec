@@ -1,26 +1,26 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 #$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-#require 'mbox-partials/version'
+#require 'mbox-bootstrap/version'
 
 Gem::Specification.new do |spec|
 
   # Basic Info
-  spec.name          = "  "
-  spec.version       = "0.0.1"
-  spec.date         = "2015-09-24"
+  spec.name          = "mbox-bootstrap"
+  spec.version       = "0.1.2"
+  spec.date         = "2015-08-10"
   spec.authors       = ["Katie"]
   spec.email         = ["katie_garcia@volusion.com"]
-  spec.summary       = "Code Blocks for Mozu"
-  spec.description   = "Mozu header, footer and nav"
+  spec.summary       = "Styles for Mozu"
+  spec.description   = "Mozu style tools based on Bootstrap"
   spec.homepage      = ""
-  spec.homepage      = "http://mbox.netlify.com/"
+  #spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
   # Gem Files
   spec.files = %w(README.mkdn)
   spec.files += Dir.glob("lib/**/*.*")
-  spec.files += Dir.glob("sass/**/*.*")
+  spec.files += Dir.glob("stylesheets/**/*.*")
   spec.files += Dir.glob("templates/**/*.*")
 
   # Gem Bookkeeping

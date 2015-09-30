@@ -1,27 +1,28 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 #$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-#require 'mbox-base/version'
+#require 'mbox/version'
 
 Gem::Specification.new do |spec|
 
   # Basic Info
-  spec.name          = "mbox-base"
-  spec.version       = "0.1.2"
+  spec.name          = "mbox"
+  spec.version       = "0.1.4"
   spec.date         = "2015-08-10"
   spec.authors       = ["Katie"]
   spec.email         = ["katie_garcia@volusion.com"]
-  spec.summary       = "Base for other Mbox Stylesets"
-  spec.description   = "Variables, colors and type settings to be imported and shared by mbox-bootstrap and mbox-materialize"
+  spec.summary       = "Mbox Bundle"
+  spec.description   = "Mozu shared styles and code"
   spec.homepage      = ""
-  spec.homepage      = "http://mbox.netlify.com/"
+  #spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
   # Gem Files
   spec.files = %w(README.mkdn)
-  spec.files += Dir.glob("lib/**/*.*")
-  spec.files += Dir.glob("stylesheets/**/*.*")
-  spec.files += Dir.glob("templates/**/*.*")
+
+  spec.add_dependency 'mbox-base', '>0.0.0'
+  spec.add_dependency 'mbox-bootstrap', '>0.0.0'
+  spec.add_dependency 'mbox-materialize', '>0.0.0'
 
   # Gem Bookkeeping
   spec.rubygems_version = %q{1.3.6}

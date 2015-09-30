@@ -54,7 +54,7 @@ Add this your package.json file:
 
 Add this to your base scss file:
 
-    @import './node_modules/mbox-base/stylesheets/_mbox-base.scss’;
+    @import './node_modules/mbox-base/sass/_mbox-base.scss’;
 
 Compile with your build tool of choice
 
