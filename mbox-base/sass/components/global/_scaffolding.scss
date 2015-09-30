@@ -1,0 +1,307 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+
+// Reset the box-sizing
+//
+// Heads up! This reset may cause conflicts with some third-party widgets.
+// For recommendations on resolving such conflicts, see
+// http://getbootstrap.com/getting-started/#third-box-sizing
+* {
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+// Body reset
+
+html {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  height: 100%;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $body-bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  height: 100%;
+}
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+// Figures
+//
+// We reset this here because previously Normalize had no `figure` margins. This
+// ensures we don't break anyone's use of the element.
+
+figure {
+  margin: 0;
+}
+
+
+// Images
+
+img {
+  vertical-align: middle;
+}
+
+/*doc
+---
+title: Images
+name: images
+category: basics
+---
+### Responsive images
+Ensures image doesn't scale beyond its parent
+
+```html_example
+<img src="http://loremflickr.com/g/320/240/puppy?randomize=1" class="img-responsive">
+```
+
+### Image thumbnails
+
+```html_example
+<img src="http://loremflickr.com/g/320/240/puppy?randomize=2" class="img-thumbnail">
+```
+
+### Perfect circle
+
+```html_example
+<img src="http://loremflickr.com/g/320/320/puppy?randomize=3" class="img-circle">
+```
+*/
+
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// Perfect circle
+.img-circle {
+  border-radius: 50%; // set radius in percents
+}
+
+
+// Horizontal rules
+/*doc
+---
+title: Horizontal rule
+name: horizontalrule
+category: basics
+---
+```html_example
+<hr>
+```
+*/
+
+hr {
+  margin-top:    $line-height-computed;
+  margin-bottom: $line-height-computed;
+  border: 0;
+  border-top: 1px solid $hr-border;
+}
+
+// Lists
+// --------------------------------------------------
+/*doc
+---
+title: Lists
+name: lists
+category: basics
+---
+
+### Default
+```html_example
+<ul>
+  <li>Chillwave</li>
+  <li>Kickstarter</li>
+  <li>Bicycle rights</li>
+</ul>
+```
+
+### Unstyled
+```html_example
+<ul class="list-unstyled">
+  <li>Direct trade</li>
+  <li>Godard</li>
+  <li>Biodiesel</li>
+</ul>
+```
+
+### No bullet
+```html_example
+<ul class="list-nobullet">
+  <li>Banksy</li>
+  <li>Fixie</li>
+  <li>Umami</li>
+</ul>
+```
+
+### Inline
+```html_example
+<ul class="list-inline">
+  <li>Pour-over</li>
+  <li>Drinking vinegar</li>
+  <li>Kale chips</li>
+</ul>
+```
+
+### Description Lists
+```html_example
+<dl>
+  <dt>Lo-fi</dt>
+  <dd>Kitsch heirloom meggings</dd>
+  <dt>Scenester</dt>
+  <dd>Retro kale chips McSweeney's</dd>
+  <dt>Godard</dt>
+  <dd>Hashtag normcore tofu</dd>
+</dl>
+```
+
+### Horizontal description lists
+```html_example
+<dl class="dl-horizontal">
+  <dt>Migas</dt>
+  <dd>Fixie before they sold out post-ironic</dd>
+  <dt>Gastropub</dt>
+  <dd>PBR next level Etsy twee ugh roof party</dd>
+  <dt>XOXO</dt>
+  <dd>Cray cardigan Schlitz</dd>
+</dl>
+```
+
+*/
+
+// Unordered and Ordered lists
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: ($line-height-computed / 2);
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+}
+
+ul {
+  padding-left: 20px;
+  list-style: initial;
+}
+// List options
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+ul.basic,
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.list-bullet {
+  margin-left: 20px;
+  > li {
+    list-style: initial;
+  }
+}
+.list-nobullet {
+  list-style: none;
+  padding-left: 20px;
+}
+// Inline turns list items into inline-block
+.list-inline {
+  @extend .list-unstyled;
+  margin-left: -5px;
+
+  > li {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+// Description Lists
+dl {
+  margin-top: 0; // Remove browser default
+  margin-bottom: $line-height-computed;
+}
+dt,
+dd {
+  line-height: $line-height-base;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0; // Undo browser default
+}
+
+// Horizontal description lists
+//
+// Defaults to being stacked without any of the below styles applied, until the
+// grid breakpoint is reached (default of ~768px).
+
+@media (min-width: $screen-md-min ) {
+  .dl-horizontal {
+    dt {
+      float: left;
+      width: 160px;
+      clear: left;
+      text-align: right;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    dd {
+      margin-left: 180px;
+      @include clearfix(); // Clear the floated `dt` if an empty `dd` is present
+    }
+  }
+}
+
+// Hero jumbotron
+.jumbotron {
+  overflow: hidden;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  h1, .h1 {
+    text-transform: uppercase;
+    margin-top: 82px;
+    @media all and (max-width:767px) {
+      margin-top: 60px;
+    }
+  }
+  p, h2, .h-subhead {
+    font-family: $gotham;
+    font-size: 16px;
+    font-weight: 200;
+    font-style: normal;
+    margin-top: 0;
+    text-transform: none;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+  }
+}

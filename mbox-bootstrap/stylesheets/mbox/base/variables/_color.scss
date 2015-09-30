@@ -1,0 +1,68 @@
+//
+// Colors, etc.
+//
+/*doc
+---
+title: Color variables
+name: colorvariables
+category: sass variables
+---
+
+Variable                  | Value
+------------------------- | -----------------
+`$white`                  | #ffffff
+`$trans-white`            | rgba(255,255,255,.85)
+`$black`                  | #1d2021
+`$red`                    | #df3018
+`$darker-red`             | darken($red, 5%)
+`$darkest-red`            | darken($red, 10%)
+`$darker-grey`            | #3f4243
+`$dark-grey`              | #727779
+`$grey`                   | #bbbebf
+`$light-grey`             | #e8e8e8
+`$lighter-grey`           | #eef0f0
+
+*/
+
+// Base color variables.
+$white:        #ffffff;
+$trans-white:  rgba(255,255,255,.85);
+$black:        #1d2021;
+
+//reds
+$red:            #df3018;  //Mozu red
+$darker-red:     darken($red, 5%); //primary action button hover
+$darkest-red:    darken($red, 10%);  //primary action button active
+
+//greys
+$darker-grey:    #3f4243;
+$dark-grey:      #727779;
+$grey:           #bbbebf;
+$light-grey:     #e8e8e8;
+$lighter-grey:   #eef0f0;
+
+
+// Deprecated variables and alternate spellings
+$grey-darker:            $darker-grey;
+$grey-dark:              $dark-grey;
+$grey-light:             $light-grey;
+$grey-lighter:           $lighter-grey;
+
+$gray-darker:            $darker-grey;
+$gray-dark:              $dark-grey;
+$gray-light:             $light-grey;
+$gray-lighter:           $lighter-grey;
+
+$darker-gray:            $darker-grey;
+$dark-gray:              $dark-grey;
+$light-gray:             $light-grey;
+$lighter-gray:           $lighter-grey;
+
+$gray:                   $grey;
+$medium-grey:            $grey;
+$medium-gray:            $grey;
+
+$slate:                  $darker-grey;
+$off-white:              $lighter-grey;
+
+$brand-primary:          $red !default;

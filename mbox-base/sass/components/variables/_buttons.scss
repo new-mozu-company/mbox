@@ -1,0 +1,157 @@
+// Button variants
+// -------------------------
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+@mixin button-variant($color, $background, $border) {
+  color: $color!important;
+  background-color: $background;
+  border-color: $border;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $color;
+    background-color: transparentize($background, .2);
+  }
+  .open & { &.dropdown-toggle {
+    color: $color;
+    background-color: transparentize($background, .2);
+  } }
+  &:active,
+  &.active {
+    background-image: none;
+  }
+  .open & { &.dropdown-toggle {
+    background-image: none;
+  } }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: $background;
+          border-color: $border;
+    }
+  }
+}
+// Outline Button variants
+// -------------------------
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+@mixin outline-button-variant($color, $border) {
+  color: $color;
+  background-color: transparent;
+  border-color: transparentize($border, .7);
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $color;
+    border-color: $border;
+  }
+  .open & { &.dropdown-toggle {
+    color: $color;
+    border-color: $border;
+  } }
+  &:active,
+  &.active {
+    background-image: none;
+  }
+  .open & { &.dropdown-toggle {
+    background-image: none;
+  } }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      border-color: transparentize($border, .7);
+    }
+  }
+}
+
+$padding-base-vertical:     20px !default;
+$padding-base-horizontal:   30px !default;
+
+$padding-large-vertical:    24px !default;
+$padding-large-horizontal:  48px !default;
+
+$padding-small-vertical:    12px !default;
+$padding-small-horizontal:  24px !default;
+
+$padding-xs-vertical:       2px !default;
+$padding-xs-horizontal:     6px !default;
+
+$line-height-large:         1.25 !default;
+$line-height-small:         1.53 !default;
+
+$border-radius-base:        0px !default;
+$border-radius-large:       0px !default;
+$border-radius-small:       0px !default;
+
+//button colors
+// $btn-bright                  : $red;
+// $btn-bright-text             : $light_font;
+// $btn-bright-hover            : #fc974d;
+// $btn-bright-hover-text       : $light_font;
+// $btn-bright-active           : $dark_orange;
+// $btn-bright-active-text      : $light_font;
+
+// $btn-basic                   : #8ec31b;
+// $btn-basic-text              : $light_font;
+// $btn-basic-hover             : #9ad41f;
+// $btn-basic-hover-text        : $light_font;
+// $btn-basic-active            : $dark_green;
+// $btn-basic-active-text       : $light_font;
+
+// $btn-dark                    : $medium_blue;
+// $btn-dark-text               : $light_font;
+// $btn-dark-hover              : #076583;
+// $btn-dark-hover-text         : $light_font;
+// $btn-dark-active             : #065067;
+// $btn-dark-active-text        : $sky_blue;
+
+// $btn-light                    : $sky_blue;
+// $btn-light-text               : $dark_blue;
+// $btn-light-hover              : $white;
+// $btn-light-hover-text         : $medium_blue;
+// $btn-light-active             : $light_blue;
+// $btn-light-active-text        : $dark_blue;
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-font-weight:                700 !default;
+
+$btn-default-color:              #333 !default;
+$btn-default-bg:                 #fff !default;
+$btn-default-border:             #ccc !default;
+
+// $btn-primary-color:              #fff !default;
+// $btn-primary-bg:                 $brand-primary !default;
+// $btn-primary-border:             darken($btn-primary-bg, 5%) !default;
+
+// $btn-success-color:              #fff !default;
+// $btn-success-bg:                 $brand-success !default;
+// $btn-success-border:             darken($btn-success-bg, 5%) !default;
+
+// $btn-info-color:                 #fff !default;
+// $btn-info-bg:                    $brand-info !default;
+// $btn-info-border:                darken($btn-info-bg, 5%) !default;
+
+// $btn-warning-color:              #fff !default;
+// $btn-warning-bg:                 $brand-warning !default;
+// $btn-warning-border:             darken($btn-warning-bg, 5%) !default;
+
+$btn-link-disabled-color:        $light-grey !default;
+
+// $btn-danger-color:               #fff !default;
+// $btn-danger-bg:                  $brand-danger !default;
+// $btn-danger-border:              darken($btn-danger-bg, 5%) !default;

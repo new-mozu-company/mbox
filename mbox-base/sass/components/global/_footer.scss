@@ -1,0 +1,44 @@
+/* base black footer */
+.site-footer {
+    background: #12191a;
+    color: #7a7d7e;
+    padding: 20px 20px 10px;
+}
+
+.footer__privacy {
+    @media all and (min-width:650px) {
+        // @include span-columns(8);
+        width: 74%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    p {
+        margin: 0 0 10px 0;
+        font-size: 12px;
+        line-height: 18px;
+        -webkit-font-smoothing: auto;
+        a {
+            color: #7a7d7e;
+            &:hover {
+                color: #B1B5B6;
+            }
+        }
+    }
+}
+
+.footer__social {
+    @media all and (min-width:650px) {
+        //@include span-columns(4);
+        width: 25%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .social-block {
+        float:right;
+        padding: 0;
+        margin: 0 0 10px 0;
+        @media all and (max-width:767px) {
+            float:none;
+        }
+    }
+}

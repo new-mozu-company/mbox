@@ -1,0 +1,284 @@
+.site-container {
+  position: relative;
+}
+
+
+.top-bar {
+  background-color: rgba(255,255,255,0.88);
+  .nav-primary {
+    ul {
+      li {
+        &:last-child {
+          a {
+            color: white;
+          }
+        }
+        a {
+          color: $black;
+        }
+      }
+    }
+  }
+}
+.top-bar {
+  z-index: 100;
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: 68px;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  @media all and (max-width:768px) {
+  position: relative;
+  }
+  .wrap {
+    max-width: 100%;
+    position: relative;
+  }
+  &.fixed {
+    position: fixed;
+    background-color: rgba(255,255,255,0.88);
+    -webkit-box-shadow: 0 2px 3px 0 rgba(1,1,1,0.2);
+    -moz-box-shadow: 0 2px 3px 0 rgba(1,1,1,0.2);
+    box-shadow: 0 2px 3px 0 rgba(1,1,1,0.2);
+    .responsive-menu-icon:before {
+      color: $black;
+    }
+    .nav-primary {
+      ul {
+        li {
+          &:last-child {
+            a {
+              color: white;
+            }
+          }
+          a {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+  //logo
+  .site-title {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    -moz-transition:  left .5s ease;
+    -o-transition: left .5s ease;
+    -webkit-transition: left .5s ease;
+    transition: left .5s ease;
+    a {
+      display: block;
+    }
+  }
+}
+//move logo when nav opens
+@media all and (max-width:767px) {
+  .js-nav-open {
+    .top-bar .site-title {
+      left: -220px;
+    }
+  }
+}
+
+.top-bar-foreground {
+  z-index: 102;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  &.fixed {
+    position: fixed;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+}
+
+.top-bar-spacer {
+  // position: relative;
+  // z-index: 99;
+  // background-color: transparent;
+}
+
+/* ********* */
+/* request demo button */
+/* ********* */
+//btn
+.header__demo-btn {
+  // position: absolute;
+  // right: 97px;
+  // top: 20px;
+  // padding: 0px 15px !important;
+  // line-height: 30px !important;
+  // border-radius:0 !important;
+  // font-size:11.05px !important;
+  // font-weight:700 !important;
+  z-index: 500;
+  position: absolute;
+  right: 95px;
+  top: 20px;
+  padding: 0px 15px;
+  line-height: 30px;
+}
+//hide btn on mobile;
+//show when nav opens
+@media all and (max-width:767px) {
+  .header__demo-btn {
+    right: 0px;
+    opacity: 0;
+    z-index: -1;
+  }
+  .js-nav-open {
+    .header__demo-btn {
+      right: 95px;
+      opacity: 1;
+      z-index: inherit;
+    }
+  }
+}
+
+/* ********* */
+//hamburger
+/* ********* */
+.header__hamburger {
+    display: block;
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    text-indent: -9999px;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    -webkit-transition: background 0.3s;
+            transition: background 0.3s;
+  &:focus {
+    outline: none;
+    background-color: transparent;
+  }
+  &:hover {
+    background-color: transparent;
+  }
+  span {
+    position: absolute;
+    width: 100%;
+    display: block;
+    background-color: transparent;
+    height: 4px;
+  }
+  span::before,
+  span::after {
+    position: absolute;
+    display: block;
+    left: 10%;
+    width: 80%;
+    height: 4px;
+    background-color: white;
+    content: "";
+    -webkit-transition-duration: 0.3s, 0.3s, .3s;
+            transition-duration: 0.3s, 0.3s, .3s;
+    -webkit-transition-delay: 0.3s, 0, .3s;
+            transition-delay: 0.3s, 0, .3s;
+  }
+  span::before {
+    top: -6px;
+    -webkit-transition-property: top, -webkit-transform, background-color;
+            transition-property: top, transform, background-color;
+  }
+  span::after {
+    bottom: -6px;
+    -webkit-transition-property: bottom, -webkit-transform, background-color;
+            transition-property: bottom, transform, background-color;
+  }
+}
+//invert hamburger buns on scroll
+//invert hamburger buns on light colored hero
+.fixed,
+.header-light,
+body:not(.home):not(.single-resources) {
+ .header__hamburger {
+    span::before,
+    span::after {
+      background-color: $black;
+    }
+  }
+}
+//invert hamburger buns mobile
+@media all and (max-width:767px) {
+  .header__hamburger {
+    span::before,
+    span::after {
+      background-color: $black;
+    }
+  }
+}
+//switch to x when nav open
+.js-nav-open {
+  .header__hamburger {
+    span {
+      background: none;
+    }
+    span::before {
+      top: 0;
+      background: #fff;
+      -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+    }
+    span::after {
+      bottom: 0;
+      background: #fff;
+      -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+    }
+    span::before,
+    span::after {
+      -webkit-transition-delay: 0, 0.3s;
+              transition-delay: 0, 0.3s;
+    }
+  }
+  //invert hamburger buns on scroll
+  //invert hamburger buns on light colored hero
+  .fixed,
+  .header-light,
+  body:not(.home):not(.single-resources) {
+    .header__hamburger {
+      span::before,
+      span::after {
+        background-color: #fff;
+      }
+    }
+  }
+  //invert hamburger buns mobile
+  @media all and (max-width:767px) {
+    .header__hamburger {
+      span::before,
+      span::after {
+        background-color: #fff;
+      }
+    }
+  }
+}

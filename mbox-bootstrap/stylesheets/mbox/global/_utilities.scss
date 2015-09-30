@@ -1,0 +1,310 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+
+// Floats
+// -------------------------
+
+/*doc
+---
+title: Clears & Floats
+name: clearsandfloats
+category: utilities
+---
+
+Class                                | Attribute
+------------------------------------ | -----------------
+`.clearfix`                          | clears floats; useful for breaking columns at certain viewports, i.e. <div class="clearfix visible-xs-block"></div>
+`.center-block`                      | display: block; margin-left: auto; margin-right: auto;
+`.pull-right`                        | float:right
+`.pull-left`                         | float:left
+
+*/
+.clearfix {
+  @include clearfix();
+}
+.center-block {
+  @include center-block();
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+// Display Settings
+// -------------------------
+/*doc
+---
+title: Display & Position
+name: displayandposition
+category: utilities
+---
+
+### Display
+
+Class                                | Attribute
+------------------------------------ | -----------------
+`.display-inline` or `.di`           | display:inline
+`.display-inlineblock` or `.dib`     | display:inline-block
+`.display-block` or `.db`            | display:block
+
+### Position
+
+Class                                | Attribute
+------------------------------------ | -----------------
+`.affix`                             | position: fixed
+`.pos-r`                             | position: relative
+`.pos-s`                             | position: static
+`.pos-a`                             | position: absolute
+
+*/
+.di,
+.display-inline {
+  display: inline!important;
+}
+.dib,
+.display-inlineblock {
+  display: inline-block!important;
+}
+.db,
+.display-block {
+  display: block!important;
+}
+
+// For Affix plugin
+// -------------------------
+.affix {
+  position: fixed!important;
+}
+
+// Position Settings
+// -------------------------
+.pos-r {
+  position: relative!important;
+}
+.pos-s {
+  position: static!important;
+}
+.pos-a {
+  position: absolute!important;
+}
+
+
+// Margin
+// -------------------------
+/*doc
+---
+title: Margin
+name: margin
+category: utilities
+---
+
+### Construction
+
+Side                                 | Class
+------------------------------------ | -----------------
+all sides                            | `.margin-[0,s,m,l,xl]`
+one side                             | `.margin-[top,right,bottom,left]-[0,s,m,l,xl]`
+negative margin on all sides         | `.neg-margin-[s,m,l,xl]`
+negative margin on one side          | `.neg-margin-[top,right,bottom,left]-[s,m,l,xl]`
+
+### Full list
+
+#### Positive margin
+Side                | None                 | Small (1em)               | Medium (2em)              | Large (3em)               | XL (5em)
+------------------- | -------------------- | -------------------- | -------------------- | -------------------- | --------------------
+all sides           | `.margin-0`          | `.margin-s`          | `.margin-m`          | `.margin-l`          | `.margin-xl`
+top                 | `.margin-top-0`      | `.margin-top-s`      | `.margin-top-m`      | `.margin-top-l`      | `.margin-top-xl`
+right               | `.margin-right-0`    | `.margin-right-s`    | `.margin-right-m`    | `.margin-right-l`    | `.margin-right-xl`
+bottom              | `.margin-bottom-0`   | `.margin-bottom-s`   | `.margin-bottom-m`   | `.margin-bottom-l`   | `.margin-bottom-xl`
+left                | `.margin-left-0`     | `.margin-left-s`     | `.margin-left-m`     | `.margin-left-l`     | `.margin-left-xl`
+
+#### Negative margin
+Side                | None                 | Small (-1em)               | Medium (-2em)              | Large (-3em)               | XL (-5em)
+------------------- | -------------------- | -------------------- | -------------------- | -------------------- | --------------------
+all sides           | `.margin-0`          | `.neg-margin-s`          | `.neg-margin-m`          | `.neg-margin-l`          | `.neg-margin-xl`
+top                 | `.margin-top-0`      | `.neg-margin-top-s`      | `.neg-margin-top-m`      | `.neg-margin-top-l`      | `.neg-margin-top-xl`
+right               | `.margin-right-0`    | `.neg-margin-right-s`    | `.neg-margin-right-m`    | `.neg-margin-right-l`    | `.neg-margin-right-xl`
+bottom              | `.margin-bottom-0`   | `.neg-margin-bottom-s`   | `.neg-margin-bottom-m`   | `.neg-margin-bottom-l`   | `.neg-margin-bottom-xl`
+left                | `.margin-left-0`     | `.neg-margin-left-s`     | `.neg-margin-left-m`     | `.neg-margin-left-l`     | `.neg-margin-left-xl`
+
+### Examples
+
+#### Bottom margin
+```html_example
+<div class="row">
+  <div class="col-sm-2">
+    <div class="bg-grey margin-bottom-0">margin-bottom-0</div>
+    <div class="bg-light-grey">&nbsp;</div>
+  </div>
+  <div class="col-sm-2">
+    <div class="bg-grey margin-bottom-s">margin-bottom-s</div>
+    <div class="bg-light-grey">&nbsp;</div>
+  </div>
+  <div class="col-sm-2">
+    <div class="bg-grey margin-bottom-m">margin-bottom-m</div>
+    <div class="bg-light-grey">&nbsp;</div>
+  </div>
+  <div class="col-sm-2">
+    <div class="bg-grey margin-bottom-l">margin-bottom-l</div>
+    <div class="bg-light-grey">&nbsp;</div>
+  </div>
+  <div class="col-sm-2">
+    <div class="bg-grey margin-bottom-xl">margin-bottom-xl</div>
+    <div class="bg-light-grey">&nbsp;</div>
+  </div>
+</div>
+```
+
+#### Negative bottom margin
+```html_example
+<div class="row">
+  <div class="col-sm-2">
+    <div class="bg-grey neg-margin-bottom-0">neg-margin-bottom-0</div>
+    <div class="bg-light-grey">&nbsp;</div>
+  </div>
+  <div class="col-sm-2">
+    <div class="bg-grey neg-margin-bottom-s">neg-margin-bottom-s</div>
+    <div class="bg-light-grey">&nbsp;</div>
+  </div>
+  <div class="col-sm-2">
+    <div class="bg-grey neg-margin-bottom-m">neg-margin-bottom-m</div>
+    <div class="bg-light-grey">&nbsp;</div>
+  </div>
+  <div class="col-sm-2">
+    <div class="bg-grey neg-margin-bottom-l">neg-margin-bottom-l</div>
+    <div class="bg-light-grey">&nbsp;</div>
+  </div>
+  <div class="col-sm-2">
+    <div class="bg-grey neg-margin-bottom-xl">neg-margin-bottom-xl</div>
+    <div class="bg-light-grey">&nbsp;</div>
+  </div>
+</div>
+```
+*/
+
+/*doc
+---
+title: Padding
+name: padding
+category: utilities
+---
+
+### Construction
+
+Side                                 | Class
+------------------------------------ | -----------------
+all sides                            | `.padding-[0,s,m,l,xl]`
+one side                             | `.padding-[top,right,bottom,left]-[0,s,m,l,xl]`
+
+### Full list
+
+Side                | None                  | Small (1em)           | Medium (2em)          | Large (3em)           | XL (5em)
+------------------- | --------------------- | --------------------- | --------------------- | --------------------- | --------------------
+all sides           | `.padding-0`          | `.padding-s`          | `.padding-m`          | `.padding-l`          | `.padding-xl`
+top                 | `.padding-top-0`      | `.padding-top-s`      | `.padding-top-m`      | `.padding-top-l`      | `.padding-top-xl`
+right               | `.padding-right-0`    | `.padding-right-s`    | `.padding-right-m`    | `.padding-right-l`    | `.padding-right-xl`
+bottom              | `.padding-bottom-0`   | `.padding-bottom-s`   | `.padding-bottom-m`   | `.padding-bottom-l`   | `.padding-bottom-xl`
+left                | `.padding-left-0`     | `.padding-left-s`     | `.padding-left-m`     | `.padding-left-l`     | `.padding-left-xl`
+
+### Example
+
+```html_example
+<div class="row">
+  <div class="col-sm-2">
+    <div class="bg-grey padding-bottom-0">padding-bottom-0</div>
+  </div>
+  <div class="col-sm-2">
+    <div class="bg-grey padding-bottom-s">padding-bottom-s</div>
+  </div>
+  <div class="col-sm-2">
+    <div class="bg-grey padding-bottom-m">padding-bottom-m</div>
+  </div>
+  <div class="col-sm-2">
+    <div class="bg-grey padding-bottom-l">padding-bottom-l</div>
+  </div>
+  <div class="col-sm-2">
+    <div class="bg-grey padding-bottom-xl">padding-bottom-xl</div>
+  </div>
+</div>
+```
+
+*/
+.margin-0 {margin: 0;}
+.margin-s {margin: 1em;}
+.margin-m {margin: 2em;}
+.margin-l {margin: 3em;}
+.margin-xl {margin: 5em;}
+.margin-bottom-0 {margin-bottom: 0;}
+.margin-bottom-s {margin-bottom: 1em;}
+.margin-bottom-m {margin-bottom: 2em;}
+.margin-bottom-l {margin-bottom: 3em;}
+.margin-bottom-xl {margin-bottom: 5em;}
+.margin-top-0 {margin-top: 0;}
+.margin-top-s {margin-top: 1em;}
+.margin-top-m {margin-top: 2em;}
+.margin-top-l {margin-top: 3em;}
+.margin-top-xl {margin-top: 5em;}
+.margin-left-0 {margin-left: 0;}
+.margin-left-s {margin-left: 1em;}
+.margin-left-m {margin-left: 2em;}
+.margin-left-l {margin-left: 3em;}
+.margin-left-xl {margin-left: 5em;}
+.margin-right-0 {margin-right: 0;}
+.margin-right-s {margin-right: 1em;}
+.margin-right-m {margin-right: 2em;}
+.margin-right-l {margin-right: 3em;}
+.margin-right-xl {margin-right: 5em;}
+
+.neg-margin-s {margin: -1em;}
+.neg-margin-m {margin: -2em;}
+.neg-margin-l {margin: -3em;}
+.neg-margin-xl {margin: -5em;}
+.neg-margin-bottom-s {margin-bottom: -1em;}
+.neg-margin-bottom-m {margin-bottom: -2em;}
+.neg-margin-bottom-l {margin-bottom: -3em;}
+.neg-margin-bottom-xl {margin-bottom: -5em;}
+.neg-margin-top-s {margin-top: -1em;}
+.neg-margin-top-m {margin-top: -2em;}
+.neg-margin-top-l {margin-top: -3em;}
+.neg-margin-top-xl {margin-top: -5em;}
+.neg-margin-left-s {margin-left: -1em;}
+.neg-margin-left-m {margin-left: -2em;}
+.neg-margin-left-l {margin-left: -3em;}
+.neg-margin-left-xl {margin-left: -5em;}
+.neg-margin-right-s {margin-right: -1em;}
+.neg-margin-right-m {margin-right: -2em;}
+.neg-margin-right-l {margin-right: -3em;}
+.neg-margin-right-xl {margin-right: -5em;}
+
+
+// Padding
+// -------------------------
+.padding-0 {padding: 0;}
+.padding-s {padding: 1em;}
+.padding-m {padding: 2em;}
+.padding-l {padding: 3em;}
+.padding-xl {padding: 5em;}
+.padding-bottom-0 {padding-bottom: 0;}
+.padding-bottom-s {padding-bottom: 1em;}
+.padding-bottom-m {padding-bottom: 2em;}
+.padding-bottom-l {padding-bottom: 3em;}
+.padding-bottom-xl {padding-bottom: 5em;}
+.padding-top-0 {padding-top: 0;}
+.padding-top-s {padding-top: 1em;}
+.padding-top-m {padding-top: 2em;}
+.padding-top-l {padding-top: 3em;}
+.padding-top-xl {padding-top: 5em;}
+.padding-left-0 {padding-left: 0;}
+.padding-left-s {padding-left: 1em;}
+.padding-left-m {padding-left: 2em;}
+.padding-left-l {padding-left: 3em;}
+.padding-left-xl {padding-left: 5em;}
+.padding-right-0 {padding-right: 0;}
+.padding-right-s {padding-right: 1em;}
+.padding-right-m {padding-right: 2em;}
+.padding-right-l {padding-right: 3em;}
+.padding-right-xl {padding-right: 5em;}
