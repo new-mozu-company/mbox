@@ -20,9 +20,9 @@ Gem::Specification.new do |spec|
   # Gem Files
   spec.files = %w(README.mkdn)
 
-  spec.add_dependency 'mbox-base', '>0.0.0'
-  spec.add_dependency 'mbox-bootstrap', '>0.0.0'
-  spec.add_dependency 'mbox-materialize', '>0.0.0'
+  # spec.add_dependency 'mbox-base', '>0.0.0'
+  # spec.add_dependency 'mbox-bootstrap', '>0.0.0'
+  # spec.add_dependency 'mbox-materialize', '>0.0.0'
 
   # Gem Bookkeeping
   spec.rubygems_version = %q{1.3.6}
