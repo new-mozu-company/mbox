@@ -53,7 +53,7 @@ submitting a form or triggering some javascript event, then use a
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid transparent;
   white-space: nowrap;
-  @include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+  @include button-size(0, $padding-base-horizontal, $font-size-base, 47px, $border-radius-base);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none; // IE10+
@@ -195,14 +195,14 @@ Button                                                            | Modifier cla
 
 .btn-lg {
   // line-height: ensure even-numbered height of button next to large input
-  @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
+  @include button-size(0, $padding-large-horizontal, $font-size-large, 60px, $border-radius-large);
 }
 .btn-sm, %btn-sm {
   // line-height: ensure proper height of button next to small input
-  @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-base, $line-height-small, $border-radius-small);
+  @include button-size(0, $padding-small-horizontal, $font-size-small, 32px, $border-radius-small);
 }
 .btn-xs {
-  @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-base, $line-height-small, $border-radius-small);
+  @include button-size(0, $padding-xs-horizontal, $font-size-small, 24px, $border-radius-small);
 }
 
 

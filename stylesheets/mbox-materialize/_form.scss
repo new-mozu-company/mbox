@@ -60,8 +60,7 @@ textarea.materialize-textarea {
   padding: 0;
   box-shadow: none;
   @include box-sizing(content-box);
-  transition: all .3s;
-
+  transition: color .3s, border .3s, background-color .3s, opacity .3s;
 
   // Disabled input style
   &:disabled, &[readonly="readonly"] {

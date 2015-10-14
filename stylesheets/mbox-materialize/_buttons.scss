@@ -1,7 +1,21 @@
 // shared styles
+.btn {
+  // height: $button-height;
+  // line-height: $button-line-height;
+  // padding: 0 2rem;
+  // vertical-align: middle;
+  // // Gets rid of tap active state
+  // -webkit-tap-highlight-color: transparent;
+  // i {
+  //   font-size: $button-font-size-shared;
+  //   line-height: inherit;
+  // }
+  // cursor: pointer;
+}
+
 .btn-flat {
   border: none;
-  border-radius: 2px;
+  border-radius: 0px;
   display: inline-block;
   height: $button-height;
   line-height: $button-line-height;
@@ -13,30 +27,29 @@
   // Gets rid of tap active state
   -webkit-tap-highlight-color: transparent;
 }
+
 // Disabled shared style
-.btn-floating.disabled, .btn-floating:disabled {
+.btn.disabled, .btn-floating.disabled, .btn:disabled, .btn-floating:disabled {
   background-color: $button-bg-color-disabled !important;
   box-shadow: none;
   color: $button-color-disabled !important;
   cursor: default;
   * {
     pointer-events: none;
-  };
+  }
+
   &:hover {
     background-color: $button-bg-color-disabled;
     color: $button-color-disabled;
   }
 }
 // Shared icon styles
-.btn-floating {
+.btn-floating, .btn-flat {
   i {
     font-size: $button-font-size-shared;
     line-height: inherit;
   }
 }
-
-// Raised Button
-// Basic (raised) button has been deprecated in favor of the default buttons in mbox-base
 
 // Floating button
 .btn-floating {
@@ -78,6 +91,7 @@
       line-height: $button-floating-size * 1.5;
     }
   }
+
 }
 // button fix
 button.btn-floating {
@@ -112,11 +126,19 @@ button.btn-floating {
 }
 
 // Flat button
-// Deprecated
+.btn-flat {
+  box-shadow: none;
+  background-color: transparent;
+  color: $button-color-flat;
+  cursor: pointer;
 
-// Large button
-// Deprecated
-
+  &.disabled {
+    color: lighten(#999, 10%);
+    cursor: default;
+  }
+}
 
 // Block button
-// Deprecated
+.btn-block {
+  display: block;
+}

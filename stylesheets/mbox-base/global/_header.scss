@@ -36,6 +36,7 @@
   transition-duration: 0.4s;
   @media all and (max-width:768px) {
   position: relative;
+  background-color: rgba(255,255,255,0);
   }
   .wrap {
     max-width: 100%;
@@ -216,8 +217,7 @@
 //invert hamburger buns on scroll
 //invert hamburger buns on light colored hero
 .fixed,
-.header-light,
-body:not(.home):not(.single-resources) {
+.header-light {
  .header__hamburger {
     span::before,
     span::after {
@@ -263,8 +263,7 @@ body:not(.home):not(.single-resources) {
   //invert hamburger buns on scroll
   //invert hamburger buns on light colored hero
   .fixed,
-  .header-light,
-  body:not(.home):not(.single-resources) {
+  .header-light {
     .header__hamburger {
       span::before,
       span::after {

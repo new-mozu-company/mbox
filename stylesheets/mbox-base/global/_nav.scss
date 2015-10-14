@@ -160,7 +160,8 @@ ul.social-block {
     list-style: none;
     display: inline;
     a {
-        background-image: url(images/template-social-sprite.png);
+        //deprecated in favor of svg icons
+        //background-image: url(images/template-social-sprite.png);
         background-repeat: no-repeat;
         display: inline-block;
         margin-right: 15px;

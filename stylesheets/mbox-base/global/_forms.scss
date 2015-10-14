@@ -1,0 +1,428 @@
+//global .marketo-form styles
+.marketo-form {
+  border: 1px solid $grey;
+  padding: 44px 40px 40px;
+  margin-bottom: 40px;
+
+  .errormessage {
+    display: none !important;
+  }
+  .mktoForm {
+    label.mktoLabel,
+    .mktoRequiredField label.mktoLabel {
+      color: $dark-grey;
+      font-size: 14px;
+      font-weight: bold;
+      padding-top: .3em;
+      padding-bottom: .3em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      width: 100%!important;
+      &:after {
+        content:'*';
+        margin-left: 2px;
+        color: $red;
+      }
+      .mktoAsterix {
+        display: none;
+      }
+    }
+    .mktoRadioList,
+    .mktoCheckboxList {
+      label {
+        font-weight: normal;
+      }
+    }
+    input[type=text],
+    input[type=url],
+    input[type=email],
+    input[type=tel],
+    input[type=number],
+    input[type=date],
+    textarea.mktoField {
+      box-shadow: none!important;
+      -webkit-appearance: none;
+      border: 1px solid #cecece;
+      color: $dark-grey;
+      font-size: 15px;
+      font-weight: 200;
+      padding: 15px 52px 15px 15px;
+      margin-right: 0px;
+      -moz-border-radius: 0px;
+      -webkit-border-radius: 0px;
+      border-radius: 0px;
+      line-height: 18px;
+      margin: 0;
+      height: auto;
+      &.mktoInvalid {
+        border-color: #DF3018;
+      }
+      &.mktoValid {
+        background-image: url(https://www.mozu.com/sites/all/themes/mozu_aurora/images/icon-checkmark.png)!important;
+        background-position: 94% 50%!important;
+        background-repeat: no-repeat;
+      }
+    }
+    input[type=text]:focus,
+    input[type=url]:focus,
+    input[type=email]:focus,
+    input[type=tel]:focus,
+    input[type=number]:focus,
+    input[type=date]:focus,
+    textarea.mktoField:focus {
+      box-shadow: none!important;
+      -webkit-appearance: none;
+      border-color: #a8a8a8;
+      outline: 0;
+      background-color: #f3f3f3;
+    }
+    select.mktoField {
+      border: 1px solid #cecece;
+    }
+    select.mktoField:focus {
+      border-color: $grey;
+    }
+    /* error message */
+    .mktoError {
+      width: 100%;
+      right: 0!important;
+      .mktoErrorArrow {
+        background-color: rgba(223,48,24,.9);
+        border: 1px solid rgba(223,48,24,.9);
+        border-right: none;
+        border-bottom: none;
+        display: inline-block;
+        height: 16px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        width: 16px;
+        margin-top: 5px;
+      }
+      .mktoErrorMsg {
+        display: block;
+        margin-top: 7px;
+        background-image: none;
+        // -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+        // -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.75);
+        // box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.4);
+        color: #fff;
+        font-size: 1em;
+        line-height: 1.2em;
+        padding: .4em .6em;
+        text-shadow: none;
+        width: 100%;
+        max-width: none;
+        background-color: rgba(223,48,24,.85);
+        border: 1px solid rgba(223,48,24,.85);
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        border-radius: 0px;
+      }
+    }
+    .mktoButtonRow,
+    .mktoTemplateBox {
+      width: 100%;
+      clear: both;
+      margin-bottom: 10px;
+      margin-top: 37px;
+      .mktoButtonWrap {
+        width: 100%;
+        margin-left: 0!important;
+        &.mktoSimple {
+          margin: 0 auto !important;
+        }
+        button.mktoButton {
+          @extend %btn;
+          @extend %btn-red;
+          border: transparent;
+          display: block!important;
+          margin: 0 auto;
+          line-height: 1;
+          padding: 16px 56px;
+          background: $red;
+          &:hover,
+          &:active,
+          &:focus,
+          &:visited {
+            border:1px solid transparent;
+          }
+        }
+      }
+    }
+    .mktoTemplateBox {
+      margin-top: 0;
+      p {
+        text-align: center;
+      }
+    }
+    //linkedin widget (without modifier wrap)
+    div.cf_widget {
+      display:block;
+      a {
+        color: $red;
+      }
+    }
+    .cf_widget div.cf_sign_on_caption {
+      display:none;
+    }
+    .cf_widget_socialsignon {
+     position:relative;
+     padding-bottom:15px !important;
+     margin-bottom:25px !important;
+     border-bottom:1px solid #cfcfcf;
+     &:after {
+       content:"";
+       width:22px;
+       height:22px;
+       background:url("images/or.jpg") bottom center no-repeat;
+       position:absolute;
+       bottom:-11px;
+       left:50%;
+     }
+     .cf_sign_on {
+      background: transparent;
+      border: none;
+      width: 100%;
+      padding: 0;
+      height: 40px;
+      margin-bottom: 2em;
+     }
+     .cf_sign_on_button {
+       background:none;
+       border:0;
+       border-radius:0;
+       float:none;
+       position:absolute;
+       width:100%;
+       height:100%;
+       z-index:1;
+       text-indent:-9999px;
+       padding:0;
+       @media all and (max-width:480px) {
+        width: 100%;
+       }
+       .cf_synd_icon_li_sm {
+          background: url("images/linkedin-autofill.png") center center no-repeat;
+          height: 52px;
+          width: 100%;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          background-size: contain;
+       }
+     }
+    }
+    //logged in state
+    .cf_widget_socialsignon {
+      .cf_switch_user .cf_avatar {
+        margin-top: 0;
+        margin-right: 10px;
+      }
+      .cf_user_switcher {
+        padding-top: 10px;
+      }
+    }
+    //returning user state
+    a.mktoNotYou {
+      color: $red;
+      display: block;
+      margin-top: 20px;
+    }
+  }/* .mktoForm */
+
+  //form variants
+  &.form--linkedin {
+    border:none;
+    padding: 0;
+  }
+
+}/* .marketo-form */
+
+/* Base options */
+.form-no-label label.mktoLabel {
+  display: none !important;
+}
+.form-no-label label[for=Company_Role__c].mktoLabel {
+  display: block !important;
+  margin-bottom: 2px;
+}
+.ie9 .form-no-label label.mktoLabel {
+  display: block !important;
+}
+.ie9 .form-no-label label.mktoLabel .mktoAsterix{
+  display: none !important;
+}
+.ie9 .form-no-label label.mktoLabel .placeholder {
+  display: block !important;
+  top:24px!important;
+}
+
+/* 1 column marketo form */
+.form--1-col {
+  .mktoGutter.mktoHasWidth, .mktoOffset {
+    display: none !important;
+  }
+  .mktoForm {
+    &.mktoHasWidth.mktoLayoutLeft {
+      width: 100% !important;
+    }
+    .mktoLabel.mktoHasWidth {
+      width: 100%!important;
+    }
+    input {
+      &[type="text"],
+      &[type="url"],
+      &[type="email"],
+      &[type="tel"],
+      &[type="number"],
+      &[type="date"] {
+        width: 100% !important;
+      }
+    }
+    textarea.mktoField, select.mktoField {
+      width: 100% !important;
+    }
+    .mktoFormCol {
+      float: none;
+      margin-bottom: 1em!important;
+    }
+    .mktoFieldWrap {
+      float: none;
+    }
+    .mktoButtonRow,
+    .mktoTemplateBox {
+      .mktoButtonWrap {
+        button.mktoButton {
+          width: 100%;
+          max-width: 100%;
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+/* 2 column marketo form */
+.form--2-col .mktoForm {
+  width: 100%!important;
+  margin: 0 auto 0;
+  .mktoFormRow {
+    .mktoFormCol {
+      width: 48%;
+      margin-right: 1%;
+      margin-left: 1%;
+      margin-bottom: 13px!important;
+      float: left;
+      .mktoOffset {
+        height: 0;
+      }
+      .mktoFieldWrap {
+        float:none;
+        width: 100%;
+        .mktoLabel.mktoHasWidth {
+          width: 100%!important;
+        }
+        .mktoGutter {
+          display: none;
+        }
+        .mktoField {
+          width: 100%!important;
+        }
+      }
+    }
+  }
+}
+
+/* 2 column marketo form */
+.form--3-col .mktoForm {
+  width: 100%!important;
+  margin: 0 auto 2em;
+  .mktoFormRow {
+    .mktoFormCol {
+      width: 31%;
+      margin-right: 1%;
+      margin-left: 1%;
+      margin-bottom: 13px!important;
+      float: left;
+      .mktoOffset {
+        height: 0;
+      }
+      .mktoFieldWrap {
+        float:none;
+        width: 100%;
+        .mktoLabel.mktoHasWidth {
+          width: 100%!important;
+        }
+        .mktoGutter {
+          display: none;
+        }
+        .mktoField {
+          width: 100%!important;
+        }
+      }
+    }
+  }
+}
+
+/* make forms 1 col on mobile devices */
+@media all and (max-width:650px) {
+  .marketo-form .mktoForm,
+  .form--1-col .mktoForm,
+  .form--2-col .mktoForm,
+  .form--3-col .mktoForm {
+    &.mktoHasWidth.mktoLayoutLeft {
+      width: 100% !important;
+    }
+    input {
+      &[type="text"],
+      &[type="url"],
+      &[type="email"],
+      &[type="tel"],
+      &[type="number"],
+      &[type="date"] {
+        width: 100% !important;
+      }
+    }
+    textarea.mktoField,
+    select.mktoField {
+      width: 100% !important;
+    }
+    .mktoFormRow {
+      .mktoFormCol {
+        width: 100%;
+        margin-right: 0;
+        float: none;
+        margin-bottom: 1em!important;
+      }
+      .mktoOffset {
+        display: none!important;
+      }
+      .mktoFieldWrap {
+        float: none;
+        .mktoLabel.mktoHasWidth {
+          width: 100%!important;
+        }
+        .mktoGutter.mktoHasWidth {
+          display: none !important;
+        }
+      }
+    }
+    .mktoButtonRow,
+    .mktoTemplateBox {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 1em;
+      .mktoButtonWrap {
+        margin: 0 auto !important;
+        button.mktoButton {
+          width: 100%;
+          max-width: 100%;
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
