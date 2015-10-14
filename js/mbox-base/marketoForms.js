@@ -45,7 +45,7 @@
 // onSubmitFunction: accepts function to be run once form is submitted; defualt is null
 //
 
-var formatForm = (function(){
+formatForm = (function(){
     var s = {
         setOptions: function (options) {
             var options = options || {};
@@ -60,8 +60,8 @@ var formatForm = (function(){
             var dataLayerEventHow = options.dataLayerEventHow || 'Click Submit';
             var dataLayerContactType = options.dataLayerContactType || null;
             var dataLayerContactTypeFieldID = options.dataLayerContactTypeFieldID || null;
-            var dataLayerOnLoadFunction = options.onLoadFunction || null;
-            var dataLayerOnSubmitFunction = options.onSubmitFunction || null;
+            var onLoadFunction = options.onLoadFunction || null;
+            var onSubmitFunction = options.onSubmitFunction || null;
             return options;
         }
     };
