@@ -1,4 +1,16 @@
 {
   "name": "mbox",
-  "version": "0.0.1"
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volusiondx/mbox.git"
+  },
+  "author": "Katie Garcia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/volusiondx/mbox/issues"
+  },
+  "homepage": "https://github.com/volusiondx/mbox"
 }
