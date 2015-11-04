@@ -133,11 +133,11 @@ formatForm = (function(){
                 if (options.dataLayerOnOff != false){
                     pushDataLayer(options);
                 }
+                if (options.onSubmitFunction!=null && options.onSubmitFunction!='') {
+                    options.onSubmitFunction();
+                }
                 return false;
             });
-            if (options.onSubmitFunction!=null && options.onSubmitFunction!='') {
-                options.onSubmitFunction();
-            }
         });
     }
     removePlaceholders = function(){
