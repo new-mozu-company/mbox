@@ -426,3 +426,145 @@
     }
   }
 }
+/* fancy select menus */
+div.fancy-select {
+  position: relative;
+  font-size: 15px;
+  color: #727779;
+}
+div.fancy-select.disabled {
+  opacity: 0.5;
+}
+div.fancy-select select:focus + div.trigger {
+  // box-shadow: 0 0 0 2px #727779;
+  border-color: #A8A8A8;
+}
+div.fancy-select select:focus + div.trigger.open {
+  box-shadow: none;
+}
+div.fancy-select div.trigger {
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  background: #ffffff;
+  width: 100%;
+  box-shadow: none;
+  border: 1px solid #cecece;
+  font-weight: 200;
+  line-height: 1.2;
+  padding: 15px;
+  margin-right: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  clear:both;
+  transition: all 240ms ease-out;
+  -webkit-transition: all 240ms ease-out;
+  -moz-transition: all 240ms ease-out;
+  -ms-transition: all 240ms ease-out;
+  -o-transition: all 240ms ease-out;
+}
+div.fancy-select div.trigger:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top-color: #727779;
+  top: 20px;
+  right: 9px;
+}
+div.fancy-select div.trigger.open {
+  background: #ffffff;
+  border: 1px solid #A8A8A8;
+  color: $grey;
+  box-shadow: none;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  border-radius: 0px 0px 0px 0px;
+}
+div.fancy-select div.trigger.open:after {
+  border-top-color: $light-grey;
+}
+div.fancy-select ul.options {
+  list-style: none;
+  margin: 0;
+  min-width: 200px;
+  width: 100%;
+  padding: 0;
+  position: absolute;
+  top: 95%;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 99;
+  max-height: 250px;
+  overflow: auto;
+  background: #fff;
+  border: 1px solid #A8A8A8;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  border-radius: 0px 0px 0px 0px;
+  box-shadow: none;
+  transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+  -webkit-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+  -moz-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+  -ms-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+  -o-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+}
+div.fancy-select ul.options.open {
+  visibility: visible;
+  top: 95%;
+  opacity: 1;
+  border-top: none;
+  /* have to use a non-visibility transition to prevent this iOS issue (bug?): */
+  /*http://stackoverflow.com/questions/10736478/css-animation-visibility-visible-works-on-chrome-and-safari-but-not-on-ios*/
+  transition: opacity 300ms ease-out, top 300ms ease-out;
+  -webkit-transition: opacity 300ms ease-out, top 300ms ease-out;
+  -moz-transition: opacity 300ms ease-out, top 300ms ease-out;
+  -ms-transition: opacity 300ms ease-out, top 300ms ease-out;
+  -o-transition: opacity 300ms ease-out, top 300ms ease-out;
+}
+div.fancy-select ul.options.overflowing {
+  top: auto;
+  bottom: 49px;
+  transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+  -webkit-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+  -moz-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+  -ms-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+  -o-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+}
+div.fancy-select ul.options.overflowing.open {
+  top: auto;
+  bottom: 49px;
+  border-bottom: none;
+  border-top:1px solid #A8A8A8;
+  transition: opacity 300ms ease-out, bottom 300ms ease-out;
+  -webkit-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+  -moz-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+  -ms-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+  -o-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+}
+div.fancy-select ul.options li {
+  padding: 5px 12px;
+  color: $dark-grey;
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 1;
+  transition: all 150ms ease-out;
+  -webkit-transition: all 150ms ease-out;
+  -moz-transition: all 150ms ease-out;
+  -ms-transition: all 150ms ease-out;
+  -o-transition: all 150ms ease-out;
+}
+div.fancy-select ul.options li.selected {
+  background: $lighter-grey;
+  color: $dark-grey;
+}
+div.fancy-select ul.options li.hover {
+  color: $dark-grey;
+  background-color: #f3f3f3;
+}
