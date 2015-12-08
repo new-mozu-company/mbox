@@ -231,29 +231,106 @@
       padding: 0 0;
     }//.col
   }//.gutter-0
-
   &.gutter-s {
     .col {
       padding: 0 $gutter-width / 10;
     }//.col
   }//.gutter-s
-
   &.gutter-m {
     .col {
       padding: 0 $gutter-width / 2;
     }//.col
   }//.gutter-s
-
   &.gutter-l {
     .col {
       padding: 0 $gutter-width;
     }//.col
   }//.gutter-l
-
   &.gutter-xl {
     .col {
       padding: 0 $gutter-width * 2;
     }//.col
   }//.gutter-l
 
+  @media #{$medium-and-up} {
+    &.mgutter-0 {
+      .col {
+        padding: 0 0;
+      }//.col
+    }//.mgutter-0
+    &.mgutter-s {
+      .col {
+        padding: 0 $gutter-width / 10;
+      }//.col
+    }//.mgutter-s
+    &.mgutter-m {
+      .col {
+        padding: 0 $gutter-width / 2;
+      }//.col
+    }//.mgutter-s
+    &.mgutter-l {
+      .col {
+        padding: 0 $gutter-width;
+      }//.col
+    }//.mgutter-l
+    &.mgutter-xl {
+      .col {
+        padding: 0 $gutter-width * 2;
+      }//.col
+    }//.mgutter-l
+  }
+  @media #{$large-and-up} {
+    &.lgutter-0 {
+      .col {
+        padding: 0 0;
+      }//.col
+    }//.lgutter-0
+    &.lgutter-s {
+      .col {
+        padding: 0 $gutter-width / 10;
+      }//.col
+    }//.lgutter-s
+    &.lgutter-m {
+      .col {
+        padding: 0 $gutter-width / 2;
+      }//.col
+    }//.lgutter-s
+    &.lgutter-l {
+      .col {
+        padding: 0 $gutter-width;
+      }//.col
+    }//.lgutter-l
+    &.lgutter-xl {
+      .col {
+        padding: 0 $gutter-width * 2;
+      }//.col
+    }//.lgutter-l
+  }
+  @media #{$xlarge-and-up} {
+    &.xlgutter-0 {
+      .col {
+        padding: 0 0;
+      }//.col
+    }//.xlgutter-0
+    &.xlgutter-s {
+      .col {
+        padding: 0 $gutter-width / 10;
+      }//.col
+    }//.xlgutter-s
+    &.xlgutter-m {
+      .col {
+        padding: 0 $gutter-width / 2;
+      }//.col
+    }//.xlgutter-s
+    &.xlgutter-l {
+      .col {
+        padding: 0 $gutter-width;
+      }//.col
+    }//.xlgutter-l
+    &.xlgutter-xl {
+      .col {
+        padding: 0 $gutter-width * 2;
+      }//.col
+    }//.xlgutter-l
+  }
 }
