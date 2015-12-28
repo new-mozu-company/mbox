@@ -140,21 +140,21 @@ video.responsive-video {
 
   li {
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 0 10px;
     line-height: 30px;
     border-radius: 0px;
     text-align: center;
 
-    a { color: #444; }
+    a { color: color("mozu-red", "base"); }
 
-    &.active a { color: #fff; }
+    &.active a { color: color("grey", "base"); }
 
-    &.active { background-color: $primary-color; }
+    &.active { }
 
     &.disabled a {
       cursor: default;
-      color: #999;
+      color: color("grey", "lighten-1");
     }
 
     i {

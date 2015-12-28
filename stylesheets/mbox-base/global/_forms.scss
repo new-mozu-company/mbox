@@ -136,7 +136,7 @@
         button.mktoButton {
           @extend %btn;
           @extend %btn-red;
-          border: transparent;
+          border: none;
           display: block!important;
           margin: 0 auto;
           line-height: 1;

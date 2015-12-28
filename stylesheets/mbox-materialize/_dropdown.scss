@@ -1,3 +1,27 @@
+/*doc
+---
+title: Dropdowns
+name: dropdowns
+parent: materializejavascript
+---
+
+Add a dropdown list to any button. For more information see [Materialize CSS Dropdowns][http://materializecss.com/dropdown.html].
+
+```html_example
+<!-- Dropdown Trigger -->
+  <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
+
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+  </ul>
+
+```
+
+*/
 .dropdown-content {
   @extend .z-depth-1;
   background-color: $dropdown-bg-color;
