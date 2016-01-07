@@ -26,8 +26,8 @@ function setGAdata() {
     /*If GA tracking attribute not present, create 
     it based on innerText, img alt tag, title, name, id, or href */ 
     if(!jQuery(this).attr("data-aData")){
-      var text = jQuery(this).context.innerText.toLowerCase();
-      text = text.replace(/[^\w\s]/gi, '');
+      var text = jQuery(this).context.textContent.toLowerCase();
+      text = text.trim().replace(/[^a-zA-Z0-9_\s]/g,'').replace(/\s\s+/g, ' ');
       if(text != undefined && text.length > 1 && text.length < 75 && text != 'buy now' && text != 'request a consultation' && text != 'apply now' && text != 'sign up' && text != 'more info' && text.indexOf('read more') == -1 && text != 'learn more'){
         title = 'link_'+text;
       }
@@ -76,7 +76,8 @@ function setGAdata() {
     /*If GA tracking attribute not present, create 
     it based on innerText, img alt tag, title, name, or id */ 
     if(!jQuery(this).attr("data-aData")){
-      var text = jQuery(this).context.innerText;
+      var text = jQuery(this).context.textContent;
+      text = text.trim().replace(/[^a-zA-Z0-9_-\s]/g,'').replace(/\s\s+/g, ' ');
       if(text != undefined && text.length > 1 && text.length < 50){
         title = 'button_'+text;
       }
@@ -218,7 +219,7 @@ function setGAdata() {
       /* If GA tracking attribute not present, create 
       it based on name, title, id, or placeholder */
       if(!jQuery(this).attr("data-aData")){
-        var text = jQuery(this).context.innerText;
+        var text = jQuery(this).context.textContent;
         if(text != undefined && text.length > 1 && text.length < 50){
           title = 'li_'+text;
         }
