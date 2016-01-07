@@ -207,19 +207,19 @@ See [Materialize CSS](http://materializecss.com/).
 
 ## Development
 
-1. Check out the repo
+1. Check out this repo
 
-1. Fork it
+2. Make your changes locally
 
-2. Create your feature branch `git checkout -b my-new-feature`
+3. In terminal, cd into the mbox folder and run the command `npm version minor` and note the new version number
 
-3. Commit your changes `git commit -m 'Add some feature'`
+4. Commit your changes and push them up to the master branch on github
 
-4. Push to the branch `git push origin my-new-feature`
+5. On github, go to "releases" and create a new release tagged with the version number from step 3 (title and description don't matter)
 
-5. Create new Pull Request
+6. Go into each site that pulls in mbox and update the version number next to "mbox" in the package.json file
 
-As you develop locally, it may be helpful to point the gemfile of your application to a local copy of mbox with this:
+_Note:_ As you develop locally, it may be helpful to point the gemfile of your application to a local copy of mbox with this:
 
     gem 'mbox', :path => '/local/path/to/your/mbox/'
 
