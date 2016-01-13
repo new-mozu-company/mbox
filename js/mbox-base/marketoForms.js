@@ -119,7 +119,7 @@ formatForm = (function(){
         MktoForms2.loadForm(newProtocol+"//app-sjg.marketo.com", "702-MYH-396", options.formMarketoID, function(form){
             //OnLoad actions
             removeColons();
-            removePlaceholders();
+            //removePlaceholders();
             swapSelectMenu(options);
             if (options.onLoadFunction!=null && options.onLoadFunction!='') {
                 options.onLoadFunction();
