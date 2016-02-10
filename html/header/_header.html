@@ -27,14 +27,45 @@
 </div>
 
 <script type="text/javascript">
-setTimeout(function(){
-  jQuery(window).scroll(function() {
-   if (jQuery(window).scrollTop() > 0) {
-       jQuery('.top-bar').addClass('fixed');
-   } else {
-       jQuery('.top-bar').removeClass('fixed');
-   }
-  });
-},100);
+fixTopBar = (function(){
+  return {
+    init: function(){
+      jQuery(window).scroll(function() {
+       if (jQuery(window).scrollTop() > 0) {
+           jQuery('.top-bar').addClass('fixed');
+       } else {
+           jQuery('.top-bar').removeClass('fixed');
+       }
+      });
+    }
+  };
+})();
 
+var jQueryLoadListener = jQueryLoadListener || { };
+jQueryLoadListener.Deferred = function () {
+  var functions = [];
+  var timer = function() {
+    if (window.jQuery) {
+        while (functions.length) {
+            functions.shift()(window.jQuery);
+        }
+    } else {
+        window.setTimeout(timer, 250);
+    }
+  };
+  timer();
+  return {
+    execute: function(onJQueryReady) {
+        if (window.jQuery) {
+            onJQueryReady(window.jQuery);
+        } else {
+            functions.push(onJQueryReady);
+        }
+    }
+  };
+}();
+
+jQueryLoadListener.Deferred.execute(function(){
+  fixTopBar.init();
+});//jQueryLoadListener
 </script>
