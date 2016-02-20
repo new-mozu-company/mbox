@@ -66,6 +66,7 @@ formatForm = (function(){
         }
     };
     //if not using https, prepend script links with "https"
+    var currURL = [location.protocol, '//', location.host, location.pathname].join('');
     var newProtocol = "";
     var currProtocol = window.location.protocol;
     if (currProtocol != "https:") {
@@ -128,14 +129,21 @@ formatForm = (function(){
 
             //OnSuccess actions
             form.onSuccess(function(values, followUpUrl){
-                //console.log('submitting form');
-                showThankYou(options);
+                //push to data layer
                 if (options.dataLayerOnOff != false){
                     pushDataLayer(options);
+                }
+                //if follow up url exists, redirect to that url
+                if (followUpUrl.indexOf(currURL) == -1) {
+                    window.location = followUpUrl;
+                } else {
+                    //show thank you messgae
+                    showThankYou(options);
                 }
                 if (options.onSubmitFunction!=null && options.onSubmitFunction!='') {
                     options.onSubmitFunction();
                 }
+                //prevent default behavior
                 return false;
             });
         });
