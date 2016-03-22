@@ -92,6 +92,39 @@ Class                                | Attribute
   position: absolute!important;
 }
 
+/*******************
+Absolute positioning
+*******************/
+/* absolute inside */
+.abs-left-inside {position: absolute; left: 0;}
+.abs-right-inside {position: absolute; right: 0;}
+.abs-top-inside {position: absolute; top: 0;}
+.abs-bottom-inside {position: absolute; bottom: 0;}
+
+.abs-middle-top-inside { position: absolute; top: 0; left: 50%; }
+.abs-middle-bottom-inside { position: absolute; bottom: 0; left: 50%; }
+.abs-left-top-inside { position: absolute; top: 0; left: 0; }
+.abs-left-middle-inside { position: absolute; top: 50%; left: 0; }
+.abs-left-bottom-inside { position: absolute; bottom: 0; left: 0; }
+.abs-right-top-inside { position: absolute; top: 0; right: 0; }
+.abs-right-middle-inside { position: absolute; top: 50%; right: 0; }
+.abs-right-bottom-inside { position: absolute; bottom: 0; right: 0; }
+
+/* absolute outside */
+.abs-left-outside {position: absolute; right: 100%;}
+.abs-right-outside {position: absolute; left: 100%;}
+.abs-top-outside {position: absolute; bottom: 100%;}
+.abs-bottom-outside {position: absolute; top: 100%;}
+
+.abs-middle-top-outside { position: absolute; bottom: 100%; left: 50%; }
+.abs-middle-bottom-outside { position: absolute; top: 100%; left: 50%; }
+.abs-left-top-outside { position: absolute; bottom:100%; right: 100%; }
+.abs-left-middle-outside { position: absolute; top: 50%; right: 100%; }
+.abs-left-bottom-outside { position: absolute; top: 100%; right: 100%; }
+.abs-right-top-outside { position: absolute; bottom: 100%; left:100%; }
+.abs-right-middle-outside { position: absolute; top: 50%; left:100%; }
+.abs-right-bottom-outside { position: absolute; top: 100%; left:100%; }
+
 
 // Margin
 // -------------------------
