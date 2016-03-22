@@ -12,5 +12,17 @@
   "bugs": {
     "url": "https://github.com/volusiondx/mbox/issues"
   },
-  "homepage": "https://github.com/volusiondx/mbox"
+  "homepage": "https://github.com/volusiondx/mbox",
+  "scripts": {
+    "build:clean": "rm -rf dist",
+    "build:js:concat": "mkdir -p dist/js && concat-cli -f js/**/*.js -o dist/js/mbox.js",
+    "build:js:uglify": "mkdir -p dist/js && uglifyjs dist/js/mbox.js -m -o dist/js/mbox.min.js",
+    "build:js": "npm run build:js:concat && npm run build:js:uglify",
+    "build": "npm run build:clean && npm run build:js",
+    "version": "npm run build && git add -A dist"
+  },
+  "devDependencies": {
+    "concat-cli": "4.0.0",
+    "uglify-js": "2.6.2"
+  }
 }

@@ -1,10 +1,11 @@
 (function($) {
 
-  // Input: Array of JSON objects {selector, offset, callback}
+  /* Input: Array options:  Array of JSON objects {selector, offset, callback}
+            Bool executeOnLoad:   Force execution of scrollFire on load 
+  */
+  Materialize.scrollFire = function(options, executeOnLoad) {
 
-  Materialize.scrollFire = function(options) {
-
-    var didScroll = false;
+    var didScroll = false | executeOnLoad;
 
     window.addEventListener("scroll", function() {
       didScroll = true;
