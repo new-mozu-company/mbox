@@ -75,21 +75,35 @@ $datepicker-selected-outfocus: desaturate(lighten($secondary-color, 35%), 15%) !
 
 /*** Global ***/
 // Media Query Ranges
-$small-screen-up: 601px !default;
-$medium-screen-up: 993px !default;
-$large-screen-up: 1201px !default;
-$xlarge-screen-up: 1601px !default;
-$small-screen: 600px !default;
-$medium-screen: 992px !default;
-$large-screen: 1200px !default;
-$xlarge-screen: 1600px !default;
+$xsmall-screen-max: 600px !default;
+$small-screen-min: 601px !default;
+$small-screen-max: 992px !default;
+$medium-screen-min: 993px !default;
+$medium-screen-max: 1200px !default;
+$large-screen-min: 1201px !default;
+$large-screen-max: 1600px !default;
+$xlarge-screen-min: 1601px !default;
 
-$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
-$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
-$xlarge-and-up: "only screen and (min-width : #{$xlarge-screen-up})" !default;
-$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
-$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
-$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+$xsmall-and-up: "only screen and (min-width : 0px)" !default;
+$xsmall-and-down: "only screen and (max-width : #{$xsmall-screen-max})" !default;
+$xsmall-only: "only screen and (min-width : 0px) and (max-width : #{$xsmall-screen-max})" !default;
+
+$small-and-up: "only screen and (min-width : #{$small-screen-min})" !default;
+$small-and-down: "only screen and (max-width : #{$small-screen-max})" !default;
+$small-only: "only screen and (min-width : #{$small-screen-min}) and (max-width : #{$small-screen-max})" !default;
+
+$medium-and-up: "only screen and (min-width : #{$medium-screen-min})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen-max})" !default;
+$medium-only: "only screen and (min-width : #{$medium-screen-min}) and (max-width : #{$medium-screen-max})" !default;
+
+$large-and-up: "only screen and (min-width : #{$large-screen-min})" !default;
+$large-and-down: "only screen and (max-width : #{$large-screen-max})" !default;
+$large-only: "only screen and (min-width : #{$large-screen-min}) and (max-width : #{$large-screen-max})" !default;
+
+$xlarge-and-up: "only screen and (min-width : #{$xlarge-screen-min})" !default;
+$xlarge-and-down: "only screen and (min-width : 0px)" !default;
+$xlarge-only: "only screen and (min-width : #{$xlarge-screen-min})" !default;
+
 
 // Grid Variables
 $num-cols: 12 !default;

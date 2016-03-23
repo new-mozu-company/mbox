@@ -3,3 +3,11 @@
     -moz-box-shadow: $args1, $args2;
     box-shadow: $args1, $args2;
 }
+// valign elements, parent must have height
+@mixin valign-middle($midPosition) {
+	position: relative;
+	top:$midPosition;
+	-webkit-transform: translateY(-$midPosition);
+     -ms-transform: translateY(-$midPosition);
+	transform: translateY(-$midPosition);
+}
