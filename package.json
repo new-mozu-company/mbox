@@ -14,15 +14,14 @@
   },
   "homepage": "https://github.com/volusiondx/mbox",
   "scripts": {
-    "build:clean": "rm -rf dist",
-    "build:js:concat": "mkdir -p dist/js && concat-cli -f js/**/*.js -o dist/js/mbox.js",
-    "build:js:uglify": "mkdir -p dist/js && uglifyjs dist/js/mbox.js -m -o dist/js/mbox.min.js",
-    "build:js": "npm run build:js:concat && npm run build:js:uglify",
-    "build": "npm run build:clean && npm run build:js",
+    "build": "gulp build",
     "version": "npm run build && git add -A dist"
   },
   "devDependencies": {
-    "concat-cli": "4.0.0",
-    "uglify-js": "2.6.2"
+    "del": "2.2.0",
+    "gulp": "3.9.1",
+    "gulp-concat": "2.6.0",
+    "gulp-rename": "1.2.2",
+    "gulp-uglify": "1.5.3"
   }
 }
