@@ -157,7 +157,7 @@ $h6-fontsize: 1rem !default;
 $footer-bg-color: $primary-color !default;
 
 // Flowtext
-$range : $large-screen - $small-screen !default;
+$range : $medium-screen-max - $xsmall-screen-max !default;
 $intervals: 20 !default;
 $interval-size: $range / $intervals !default;
 
