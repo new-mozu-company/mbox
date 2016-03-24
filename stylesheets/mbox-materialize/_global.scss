@@ -239,54 +239,141 @@ ul.staggered-list li {
 /*********************
   Media Query Classes
 **********************/
-.hide-on-small-only, .hide-on-small-and-down {
+.hide-on-xsmall,
+.hide-on-xsmall-and-down {
+  display: block;
+  @media #{$xsmall-and-down} {
+    display: none !important;
+  }
+}
+.hide-on-small-and-down {
+  display: block;
   @media #{$small-and-down} {
     display: none !important;
   }
 }
-.hide-on-med-and-down {
+.hide-on-small-and-up {
+  display: block;
+  @media #{$small-and-up} {
+    display: none !important;
+  }
+}
+.hide-on-small {
+  display: block;
+  @media only screen and (min-width: $small-screen-min) and (max-width: $small-screen-max) {
+    display: none !important;
+  }
+}
+.hide-on-medium-and-down {
+  display: block;
   @media #{$medium-and-down} {
     display: none !important;
   }
 }
-.hide-on-med-and-up {
+.hide-on-medium-and-up {
+  display: block;
   @media #{$medium-and-up} {
     display: none !important;
   }
 }
-.hide-on-med-only {
-  @media only screen and (min-width: $small-screen) and (max-width: $medium-screen) {
+.hide-on-medium {
+  display: block;
+  @media only screen and (min-width: $medium-screen-min) and (max-width: $medium-screen-max) {
     display: none !important;
   }
 }
-.hide-on-large-only {
+.hide-on-large-and-down {
+  display: block;
+  @media #{$large-and-down} {
+    display: none !important;
+  }
+}
+.hide-on-large-and-up {
+  display: block;
   @media #{$large-and-up} {
     display: none !important;
+  }
+}
+.hide-on-large {
+  display: block;
+  @media only screen and (min-width: $large-screen-min) and (max-width: $large-screen-max) {
+    display: none !important;
+  }
+}
+.hide-on-xlarge-and-up,
+.hide-on-xlarge {
+  display: block;
+  @media #{$xlarge-and-up} {
+    display: none !important;
+  }
+}
+//show
+.show-on-xlarge,
+.show-on-xlarge-and-up {
+  display: none;
+  @media #{$xlarge-and-up} {
+    display: block !important;
+  }
+}
+.show-on-large-and-up {
+  display: none;
+  @media #{$large-and-up} {
+    display: block !important;
+  }
+}
+.show-on-large-and-down {
+  display: none;
+  @media #{$large-and-down} {
+    display: block !important;
   }
 }
 .show-on-large {
-  @media #{$large-and-up} {
-    display: initial !important;
-  }
-}
-.show-on-medium {
-  @media only screen and (min-width: $small-screen) and (max-width: $medium-screen) {
-    display: initial !important;
-  }
-}
-.show-on-small {
-  @media #{$small-and-down} {
-    display: initial !important;
+  display: none;
+  @media only screen and (min-width: $large-screen-min) and (max-width: $large-screen-max) {
+    display: block !important;
   }
 }
 .show-on-medium-and-up {
+  display: none;
   @media #{$medium-and-up} {
-    display: initial !important;
+    display: block !important;
   }
 }
 .show-on-medium-and-down {
+  display: none;
   @media #{$medium-and-down} {
-    display: initial !important;
+    display: block !important;
+  }
+}
+.show-on-medium {
+  display: none;
+  @media only screen and (min-width: $medium-screen-min) and (max-width: $medium-screen-max) {
+    display: block !important;
+  }
+}
+.show-on-small-and-up {
+  display: none;
+  @media #{$small-and-up} {
+    display: block !important;
+  }
+}
+.show-on-small-and-down {
+  display: none;
+  @media #{$small-and-down} {
+    display: block !important;
+  }
+}
+.show-on-small {
+    display: none;
+    @media only screen and (min-width: $small-screen-min) and (max-width: $small-screen-max) {
+    display: block !important;
+  }
+}
+.show-on-xsmall,
+.show-on-xsmall-and-down {
+  display: none;
+  @media #{$xsmall-and-down} {
+    display: block !important;
   }
 }
 
