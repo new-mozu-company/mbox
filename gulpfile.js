@@ -15,14 +15,14 @@ gulp.task('clean', function(cb){
 
 
 /*
-	Concatonates and minifies JS files
-	Output: dist/js/mbox.js && dist/js/mbox.min.js
+	Concatonates and minifies mbox-materialize JS files
+	Output: dist/js/mbox-materialize.js && dist/js/mbox-materialize.min.js
 */
 gulp.task('js', function(){
-	return gulp.src('js/**/*.js')
-		.pipe(concat('mbox.js'))
+	return gulp.src('js/mbox-materialize/**/*.js')
+		.pipe(concat('mbox-materialize.js'))
 		.pipe(gulp.dest('dist/js'))
-		.pipe(rename('mbox.min.js'))
+		.pipe(rename('mbox-materialize.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('dist/js'));
 });
