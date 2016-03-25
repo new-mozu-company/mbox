@@ -331,10 +331,19 @@ $grey: (
   "darken-4":   #212121
 );
 
+$black:        #000000;
+$white:        #FFFFFF;
+$trans-white:  rgba(255, 255, 255, 0.85);
+$transparent:  transparent;
+
 $shades: (
-  "black":        #000000,
-  "white":        #FFFFFF,
-  "transparent":  transparent
+  "black":        $black,
+  "white":        $white
+);
+
+$transparent-shades: (
+  "trans-white":  $trans-white,
+  "transparent":  $transparent
 );
 
 $colors: (
@@ -395,6 +404,18 @@ $colors: (
   }
 }
 
+// Transparent Classes
+@each $color, $color_value in $transparent-shades {
+  .#{$color} {
+    background-color: $color_value !important;
+  }
+  .text-#{$color} {
+    color: $color_value !important;
+  }
+  .border-#{$color} {
+    border-color: $color_value !important;
+  }
+}
 
 // usage: color("name_of_color", "type_of_color")
 // to avoid to repeating map-get($colors, ...)
