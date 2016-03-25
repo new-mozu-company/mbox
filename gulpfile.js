@@ -19,7 +19,7 @@ gulp.task('clean', function(cb){
 	Output: dist/js/mbox-materialize.js && dist/js/mbox-materialize.min.js
 */
 gulp.task('js', function(){
-	return gulp.src('js/mbox-materialize/**/*.js')
+	return gulp.src(['js/mbox-materialize/**/*.js', '!js/mbox-materialize/bin/**'])
 		.pipe(concat('mbox-materialize.js'))
 		.pipe(gulp.dest('dist/js'))
 		.pipe(rename('mbox-materialize.min.js'))
