@@ -1,54 +1,3 @@
-/*doc
----
-title: Grid System
-name: gridsystem
-category: Materialize
----
-
-See [Materialize CSS Grid][http://materializecss.com/grid.html]
-
-*/
-
-/*doc
----
-title: Gutters
-name: gutters
-parent: gridsystem
-category: Materialize
----
-
-Custom gutter sizes
-
-```html_example
-<div class="row sgutter-l">
-  <div class="col s12">some code</div>
-</div>
-```
-
-Classes            | Description
------------------- | ------------
-`gutter-0`  | no gutter (at all screen sizes)
-`gutter-s`  | small gutter (at all screen sizes)
-`gutter-m`  | medium gutter (at all screen sizes)
-`gutter-l`  | large gutter (at all screen sizes)
-`gutter-xl`  | extra large gutter (at all screen sizes)
-`mgutter-0`  | no gutter (at min-width: 601px screen sizes)
-`mgutter-s`  | small gutter (at min-width: 601px screen sizes)
-`mgutter-m`  | medium gutter (at min-width: 601px screen sizes)
-`mgutter-l`  | large gutter (at min-width: 601px screen sizes)
-`mgutter-xl`  | extra large gutter (at min-width: 601px screen sizes)
-`lgutter-0`  | no gutter  (at min-width: 993px screen sizes)
-`lgutter-s`  | small gutter  (at min-width: 993px screen sizes)
-`lgutter-m`  | medium gutter  (at min-width: 993px screen sizes)
-`lgutter-l`  | large gutter  (at min-width: 993px screen sizes)
-`lgutter-xl`  | extra large gutter  (at min-width: 993px screen sizes)
-`xlgutter-0`  | no gutter  (at min-width: 1601px sreen sizes)
-`xlgutter-s`  | small gutter  (at min-width: 1601px sreen sizes)
-`xlgutter-m`  | medium gutter  (at min-width: 1601px sreen sizes)
-`xlgutter-l`  | large gutter  (at min-width: 1601px sreen sizes)
-`xlgutter-xl`  | extra large gutter  (at min-width: 1601px sreen sizes)
-*/
-
 .container {
   margin: 0 auto;
   max-width: 1502px;
@@ -74,7 +23,6 @@ Classes            | Description
     width: 75%;
   }
 }
-
 .container .row {
   margin-left: (-1 * $gutter-width / 2);
   margin-right: (-1 * $gutter-width / 2);
@@ -203,6 +151,7 @@ Classes            | Description
   }
 }
 
+
 .row {
   margin-left: auto;
   margin-right: auto;
@@ -217,7 +166,7 @@ Classes            | Description
 
   .col {
     float: left;
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     padding: 0 $gutter-width / 2;
 
     &[class*="push-"],
@@ -225,7 +174,7 @@ Classes            | Description
       position: relative;
     }
 
-$i: 0;
+    $i: 0;
     @while $i <= $num-cols {
       $perc: unquote((100 / ($num-cols / $i)) + "%");
       $halfperc : unquote((100 / ($num-cols / ($i+.5))) + "%");
@@ -264,8 +213,7 @@ $i: 0;
       $i: $i + 1;
     }
 
-
-   @media #{$small-and-up} {
+    @media #{$small-and-up} {
 
       $i: 0;
       @while $i <= $num-cols {
@@ -308,23 +256,36 @@ $i: 0;
 
     }//small and up
 
-
     @media #{$medium-and-up} {
 
       $i: 0;
       @while $i <= $num-cols {
         $perc: unquote((100 / ($num-cols / $i)) + "%");
+        $halfperc : unquote((100 / ($num-cols / ($i+.5))) + "%");
         &.m#{$i} {
           width: $perc;
-          margin-left: 0;
+          margin-left: auto;
+          left: auto;
+          right: auto;
         }
-        $i: $i + 1;
+        &.m#{$i}-half {
+          width: $halfperc;
+          margin-left: auto;
+          left: auto;
+          right: auto;
+        }
+        $i: $i + 1
       }
+
       $i: 0;
       @while $i <= $num-cols {
         $perc: unquote((100 / ($num-cols / $i)) + "%");
+        $halfperc : unquote((100 / ($num-cols / ($i+.5))) + "%");
         &.offset-m#{$i} {
           margin-left: $perc;
+        }
+        &.offset-m#{$i}-half {
+          margin-left: $halfperc;
         }
         &.pull-m#{$i} {
           right: $perc;
@@ -334,7 +295,6 @@ $i: 0;
         }
         $i: $i + 1;
       }
-
     }
 
     @media #{$large-and-up} {
@@ -342,17 +302,31 @@ $i: 0;
       $i: 0;
       @while $i <= $num-cols {
         $perc: unquote((100 / ($num-cols / $i)) + "%");
+        $halfperc : unquote((100 / ($num-cols / ($i+.5))) + "%");
         &.l#{$i} {
           width: $perc;
-          margin-left: 0;
+          margin-left: auto;
+          left: auto;
+          right: auto;
+        }
+        &.l#{$i}-half {
+          width: $halfperc;
+          margin-left: auto;
+          left: auto;
+          right: auto;
         }
         $i: $i + 1;
       }
+
       $i: 0;
       @while $i <= $num-cols {
         $perc: unquote((100 / ($num-cols / $i)) + "%");
+        $halfperc : unquote((100 / ($num-cols / ($i+.5))) + "%");
         &.offset-l#{$i} {
           margin-left: $perc;
+        }
+        &.offset-l#{$i}-half {
+          margin-left: $halfperc;
         }
         &.pull-l#{$i} {
           right: $perc;
@@ -362,7 +336,6 @@ $i: 0;
         }
         $i: $i + 1;
       }
-
     }
 
     @media #{$xlarge-and-up} {
@@ -370,56 +343,60 @@ $i: 0;
       $i: 0;
       @while $i <= $num-cols {
         $perc: unquote((100 / ($num-cols / $i)) + "%");
+        $halfperc : unquote((100 / ($num-cols / ($i+.5))) + "%");
         &.xl#{$i} {
           width: $perc;
           margin-left: 0;
+        }
+        &.xl#{$i}-half {
+          width: $halfperc;
+          margin-left: auto;
+          left: auto;
+          right: auto;
         }
         $i: $i + 1;
       }
       $i: 0;
       @while $i <= $num-cols {
         $perc: unquote((100 / ($num-cols / $i)) + "%");
+        $halfperc : unquote((100 / ($num-cols / ($i+.5))) + "%");
         &.offset-xl#{$i} {
           margin-left: $perc;
         }
-        &.pull-xl#{$i} {
-          right: $perc;
-        }
-        &.push-xl#{$i} {
-          left: $perc;
+        &.offset-xl#{$i}-half {
+          margin-left: $halfperc;
         }
         $i: $i + 1;
       }
     }
   }
-
   &.gutter-0 {
-    > .col {
+    .col {
       padding: 0 0;
     }//.col
   }//.gutter-0
   &.gutter-s {
-    > .col {
+    .col {
       padding: 0 $gutter-width / 10;
     }//.col
   }//.gutter-s
   &.gutter-m {
-    > .col {
+    .col {
       padding: 0 $gutter-width / 2;
     }//.col
   }//.gutter-s
   &.gutter-l {
-    > .col {
+    .col {
       padding: 0 $gutter-width;
     }//.col
   }//.gutter-l
   &.gutter-xl {
-    > .col {
+    .col {
       padding: 0 $gutter-width * 2;
     }//.col
   }//.gutter-l
 
-@media #{$small-and-up} {
+  @media #{$small-and-up} {
     &.sgutter-0 {
       .col {
         padding: 0 0;
@@ -446,84 +423,84 @@ $i: 0;
       }//.col
     }//.sgutter-l
   }
-  
   @media #{$medium-and-up} {
     &.mgutter-0 {
-      > .col {
+      .col {
         padding: 0 0;
       }//.col
     }//.mgutter-0
     &.mgutter-s {
-      > .col {
+      .col {
         padding: 0 $gutter-width / 10;
       }//.col
     }//.mgutter-s
     &.mgutter-m {
-      > .col {
+      .col {
         padding: 0 $gutter-width / 2;
       }//.col
     }//.mgutter-s
     &.mgutter-l {
-      > .col {
+      .col {
         padding: 0 $gutter-width;
       }//.col
     }//.mgutter-l
     &.mgutter-xl {
-      > .col {
+      .col {
         padding: 0 $gutter-width * 2;
       }//.col
     }//.mgutter-l
   }
+
   @media #{$large-and-up} {
     &.lgutter-0 {
-      > .col {
+      .col {
         padding: 0 0;
       }//.col
     }//.lgutter-0
     &.lgutter-s {
-      > .col {
+      .col {
         padding: 0 $gutter-width / 10;
       }//.col
     }//.lgutter-s
     &.lgutter-m {
-      > .col {
+      .col {
         padding: 0 $gutter-width / 2;
       }//.col
     }//.lgutter-s
     &.lgutter-l {
-      > .col {
+      .col {
         padding: 0 $gutter-width;
       }//.col
     }//.lgutter-l
     &.lgutter-xl {
-      > .col {
+      .col {
         padding: 0 $gutter-width * 2;
       }//.col
     }//.lgutter-l
   }
   @media #{$xlarge-and-up} {
     &.xlgutter-0 {
-      > .col {
+      .col {
         padding: 0 0;
       }//.col
     }//.xlgutter-0
     &.xlgutter-s {
-      > .col {
+      .col {
         padding: 0 $gutter-width / 10;
       }//.col
     }//.xlgutter-s
     &.xlgutter-m {
-      > .col {
+      .col {
         padding: 0 $gutter-width / 2;
       }//.col
     }//.xlgutter-s
     &.xlgutter-l {
-      > .col {
+      .col {
         padding: 0 $gutter-width;
       }//.col
     }//.xlgutter-l
     &.xlgutter-xl {
-      > .col {
+      .col {
         padding: 0 $gutter-width * 2;
       }//.col
     }//.xlgutter-l

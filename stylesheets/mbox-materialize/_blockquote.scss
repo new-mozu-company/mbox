@@ -1,0 +1,65 @@
+//  Blockquote
+
+blockquote {
+	margin: 0;
+}
+
+.quote-speaker {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: color("grey","darken-2");
+}
+
+//Quote marks
+/* prepend and appends quote icons before and after element */
+.quote-marks {
+	position: relative;
+	padding-left: 40px;
+	padding-right: 40px;
+	font-size: 1.38rem;
+  color: color("grey","darken-2");
+  font-style: italic;
+  font-weight: 300;
+  margin: 20px 0;
+  //margin: 0.56rem 0 0.45rem 0;
+}
+.quote-marks:before,
+.quote-marks:after {
+  content: "";
+  background: url(/assets/images/global-quote-marks.png) no-repeat;
+  position: absolute;
+}
+.quote-marks:before {
+  left: 0px;
+  top: 0;
+  width: 31px;
+  height: 19px;
+  margin-bottom: -25px;
+}
+.quote-marks:after {
+  background-position: -41px 0;
+  width: 19px;
+  height: 16px;
+  display: inline-block;
+  margin-left: 10px;
+}
+@media #{$small-and-down} {
+	.quote-marks {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+	.quote-marks:before {
+		left: 0px;
+		right: auto;
+	}
+}
+@media #{$xsmall-and-down} {
+	.quote-marks {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+	.quote-marks:before {
+		left: 0px;
+		right: auto;
+	}
+}

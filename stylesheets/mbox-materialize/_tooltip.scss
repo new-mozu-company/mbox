@@ -2,33 +2,70 @@
     padding: 10px 8px;
     font-size: 1rem;
     z-index: 2000;
-    background-color: transparent;
+    background-color: #323232;
     border-radius: 2px;
     color: #fff;
     min-height: 36px;
-    line-height: 1rem;
-    // max-width: 350px;
+    line-height: 120%;
     opacity: 0;
     display: none;
     position: absolute;
     text-align: center;
-    overflow: hidden;
-    left:0;
-    top:0;
-
+    max-width: calc(25% - 4px);
+    left: 0;
+    top: 0;
     will-change: top, left;
+    .arrow-left-tooltip {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -10px;
+        margin-left: -10px;
+        border-right: 10px solid #323232;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+    }
+    .arrow-right-tooltip {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -10px;
+        margin-right: -10px;
+        border-left: 10px solid #323232;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+    }
+    .arrow-up-tooltip {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        margin-top: -10px;
+        margin-left: -10px;
+        border-bottom: 10px solid #323232;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+    }
+    .arrow-down-tooltip {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        margin-bottom: -10px;
+        margin-left: -10px;
+        border-top: 10px solid #323232;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+    }
 }
 
 .backdrop {
-  position: absolute;
-  opacity: 0;
-  display: none;
-  height: 7px;
-  width: 14px;
-  border-radius: 0 0 14px 14px;
-  background-color: #323232;
-  z-index: -1;
-  @include transform-origin( 50% 10%);
-
-  will-change: transform, opacity;
+    position: absolute;
+    opacity: 0;
+    display: none;
+    height: 7px;
+    width: 14px;
+    border-radius: 0 0 14px 14px;
+    background-color: #323232;
+    z-index: -1;
+    transform-origin: 50% 10%;
+    will-change: transform, opacity;
 }

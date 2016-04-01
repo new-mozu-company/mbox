@@ -3,28 +3,11 @@
 	height: 0; 
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
-	border-bottom: 20px solid color("mozu-red","base");
+	border-bottom: 20px solid color("red","base");
 	&.arrow-red { border-bottom: 20px solid color("red","base"); }
-	&.arrow-purple { border-bottom: 20px solid color("purple","base"); }
-	&.arrow-blue { border-bottom: 20px solid color("blue","base"); }
-	&.arrow-pink { border-bottom: 20px solid color("pink","base"); }
-	&.arrow-mozu-red { border-bottom: 20px solid color("mozu-red","base"); }
-	&.arrow-green { border-bottom: 20px solid color("green","base"); }
-	&.arrow-yellow { border-bottom: 20px solid color("yellow","base"); }
 	&.arrow-grey { border-bottom: 20px solid color("grey","base"); }
 	&.arrow-white { border-bottom: 20px solid $white; }
 	&.arrow-trans-white { border-bottom: 20px solid $trans-white; }
-	&.arrow-deep-purple { border-bottom: 20px solid color("deep-purple","base"); }
-	&.arrow-indigo { border-bottom: 20px solid color("indigo","base"); }
-	&.arrow-light-blue { border-bottom: 20px solid color("light-blue","base"); }
-	&.arrow-light-green { border-bottom: 20px solid color("light-green","base"); }
-	&.arrow-cyan { border-bottom: 20px solid color("cyan","base"); }
-	&.arrow-lime { border-bottom: 20px solid color("lime","base"); }
-	&.arrow-amber { border-bottom: 20px solid color("amber","base"); }
-	&.arrow-orange { border-bottom: 20px solid color("orange","base"); }
-	&.arrow-deep-orange { border-bottom: 20px solid color("deep-orange","base"); }
-	&.arrow-brown { border-bottom: 20px solid color("brown","base"); }
-	&.arrow-blue-grey { border-bottom: 20px solid color("blue-grey","base"); }
 
 }
 .arrow-down {
@@ -32,82 +15,31 @@
 	height: 0; 
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;	
-	border-top: 20px solid color("mozu-red","base");
+	border-top: 20px solid color("red","base");
 	&.arrow-red { border-top: 20px solid color("red","base"); }
-	&.arrow-purple { border-top: 20px solid color("purple","base"); }
-	&.arrow-blue { border-top: 20px solid color("blue","base"); }
-	&.arrow-pink { border-top: 20px solid color("pink","base"); }
-	&.arrow-mozu-red { border-top: 20px solid color("mozu-red","base"); }
-	&.arrow-green { border-top: 20px solid color("green","base"); }
-	&.arrow-yellow { border-top: 20px solid color("yellow","base"); }
 	&.arrow-grey { border-top: 20px solid color("grey","base"); }
 	&.arrow-white { border-top: 20px solid $white; }
 	&.arrow-trans-white { border-top: 20px solid $trans-white; }
-	&.arrow-deep-purple { border-bottom: 20px solid color("deep-purple","base"); }
-	&.arrow-indigo { border-bottom: 20px solid color("indigo","base"); }
-	&.arrow-light-blue { border-bottom: 20px solid color("light-blue","base"); }
-	&.arrow-light-green { border-bottom: 20px solid color("light-green","base"); }
-	&.arrow-cyan { border-bottom: 20px solid color("cyan","base"); }
-	&.arrow-lime { border-bottom: 20px solid color("lime","base"); }
-	&.arrow-amber { border-bottom: 20px solid color("amber","base"); }
-	&.arrow-orange { border-bottom: 20px solid color("orange","base"); }
-	&.arrow-deep-orange { border-bottom: 20px solid color("deep-orange","base"); }
-	&.arrow-brown { border-bottom: 20px solid color("brown","base"); }
-	&.arrow-blue-grey { border-bottom: 20px solid color("blue-grey","base"); }
 }
 .arrow-right {
 	width: 0; 
 	height: 0; 
 	border-top: 20px solid transparent;
 	border-bottom: 20px solid transparent;	
-	border-left: 20px solid color("mozu-red","base");
+	border-left: 20px solid color("red","base");
 	&.arrow-red { border-left: 20px solid color("red","base"); }
-	&.arrow-purple { border-left: 20px solid color("purple","base"); }
-	&.arrow-blue { border-left: 20px solid color("blue","base"); }
-	&.arrow-pink { border-left: 20px solid color("pink","base"); }
-	&.arrow-mozu-red { border-left: 20px solid color("mozu-red","base"); }
-	&.arrow-green { border-left: 20px solid color("green","base"); }
-	&.arrow-yellow { border-left: 20px solid color("yellow","base"); }
 	&.arrow-grey { border-left: 20px solid color("grey","base"); }
 	&.arrow-white { border-left: 20px solid $white; }
 	&.arrow-trans-white { border-left: 20px solid $trans-white; }
-	&.arrow-deep-purple { border-bottom: 20px solid color("deep-purple","base"); }
-	&.arrow-indigo { border-bottom: 20px solid color("indigo","base"); }
-	&.arrow-light-blue { border-bottom: 20px solid color("light-blue","base"); }
-	&.arrow-light-green { border-bottom: 20px solid color("light-green","base"); }
-	&.arrow-cyan { border-bottom: 20px solid color("cyan","base"); }
-	&.arrow-lime { border-bottom: 20px solid color("lime","base"); }
-	&.arrow-amber { border-bottom: 20px solid color("amber","base"); }
-	&.arrow-orange { border-bottom: 20px solid color("orange","base"); }
-	&.arrow-deep-orange { border-bottom: 20px solid color("deep-orange","base"); }
-	&.arrow-brown { border-bottom: 20px solid color("brown","base"); }
-	&.arrow-blue-grey { border-bottom: 20px solid color("blue-grey","base"); }
 }
 .arrow-left {
 	width: 0; 
 	height: 0; 
 	border-top: 20px solid transparent;
 	border-bottom: 20px solid transparent; 	
-	border-right:20px solid color("mozu-red","base");
+	border-right:20px solid color("red","base");
 	&.arrow-red { border-right: 20px solid color("red","base"); }
-	&.arrow-purple { border-right: 20px solid color("purple","base"); }
-	&.arrow-blue { border-right: 20px solid color("blue","base"); }
-	&.arrow-pink { border-right: 20px solid color("pink","base"); }
-	&.arrow-mozu-red { border-right: 20px solid color("mozu-red","base"); }
-	&.arrow-green { border-right: 20px solid color("green","base"); }
-	&.arrow-yellow { border-right: 20px solid color("yellow","base"); }
 	&.arrow-grey { border-right: 20px solid color("grey","base"); }
 	&.arrow-white { border-right: 20px solid $white; }
 	&.arrow-trans-white { border-right: 20px solid $trans-white; }
-	&.arrow-deep-purple { border-bottom: 20px solid color("deep-purple","base"); }
-	&.arrow-indigo { border-bottom: 20px solid color("indigo","base"); }
-	&.arrow-light-blue { border-bottom: 20px solid color("light-blue","base"); }
-	&.arrow-light-green { border-bottom: 20px solid color("light-green","base"); }
-	&.arrow-cyan { border-bottom: 20px solid color("cyan","base"); }
-	&.arrow-lime { border-bottom: 20px solid color("lime","base"); }
-	&.arrow-amber { border-bottom: 20px solid color("amber","base"); }
-	&.arrow-orange { border-bottom: 20px solid color("orange","base"); }
-	&.arrow-deep-orange { border-bottom: 20px solid color("deep-orange","base"); }
-	&.arrow-brown { border-bottom: 20px solid color("brown","base"); }
-	&.arrow-blue-grey { border-bottom: 20px solid color("blue-grey","base"); }
 }
