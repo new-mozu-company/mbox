@@ -1,48 +1,238 @@
+// Gotham Light -            font-weight: 300;
+// Gotham Book -             font-weight: 400;
+// Gotham Medium -           font-weight: 500;
+// Gotham Bold -             font-weight: 700;
 
-// a {
-//   text-decoration: none;
-// }
+// Gotham Narrow Light -     font-weight: 300;
+// Gotham Narrow Book -      font-weight: 400;
+// Gotham Narrow Medium -    font-weight: 500;
+// Gotham Narrow Bold -      font-weight: 700;
 
-// html{
-//   line-height: 1.5;
+$gotham: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+$gotham-narrow: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif;
 
-//   @media only screen and (min-width: 0) {
-//     font-size: 14px;
-//   }
+html{
+  @media only screen and (min-width: 0) {
+    font-size: 13px;
+  }
 
-//   @media only screen and (min-width: $medium-screen) {
-//     font-size: 14.5px;
-//   }
+  @media only screen and (min-width: $medium-screen-min) {
+    font-size: 13px;
+  }
 
-//   @media only screen and (min-width: $large-screen) {
-//     font-size: 15px;
-//   }
+  @media only screen and (min-width: $large-screen-min) {
+    font-size: 13px;
+  }
 
-//   font-family: "Roboto", sans-serif;
-//   font-weight: normal;
-//   color: $off-black;
-// }
-// h1, h2, h3, h4, h5, h6 {
-// 	font-weight: 400;
-// 	line-height: 1.1;
-// }
+  line-height: 1.84615;
+  font-family: $gotham;
+  font-weight: normal;
+  color: color("grey","darken-1");
+  text-rendering: optimizeLegibility;
+  @extend %text-smooth;
+}
 
 // Header Styles
-// h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
-// h1 { font-size: $h1-fontsize; line-height: 110%; margin: ($h1-fontsize / 2) 0 ($h1-fontsize / 2.5) 0;}
-// h2 { font-size: $h2-fontsize; line-height: 110%; margin: ($h2-fontsize / 2) 0 ($h2-fontsize / 2.5) 0;}
-// h3 { font-size: $h3-fontsize; line-height: 110%; margin: ($h3-fontsize / 2) 0 ($h3-fontsize / 2.5) 0;}
-// h4 { font-size: $h4-fontsize; line-height: 110%; margin: ($h4-fontsize / 2) 0 ($h4-fontsize / 2.5) 0;}
-// h5 { font-size: $h5-fontsize; line-height: 110%; margin: ($h5-fontsize / 2) 0 ($h5-fontsize / 2.5) 0;}
-// h6 { font-size: $h6-fontsize; line-height: 110%; margin: ($h6-fontsize / 2) 0 ($h6-fontsize / 2.5) 0;}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.1;
+}
+h1, .h1 {
+  font-weight: 500;
+  line-height: 110%;
+  text-transform: uppercase;
+  @extend %text-smooth;
+}
+h2, .h2 {
+  font-weight: 300;
+  line-height: 133%;
+  //color: color("grey","darken-3");
+  font-family: $gotham-narrow;
+  @extend %text-smooth;
+}
+h3,
+.h3 {
+  font-weight: 300;
+  line-height: 133%;
+  //color: color("grey","darken-3");
+  @extend %text-smooth;
+}
+h4,
+.h4 {
+  font-weight: 700;
+  line-height: 133%;
+  text-transform: uppercase;
+  //color: color("grey","darken-3");
+}
+
+h5,
+.h5 {
+  font-weight: 700;
+  line-height: 150%;
+  //color: color("grey","darken-3");
+}
+
+h6,
+.h6 {
+  font-weight: 400;
+  line-height: 150%;
+}
+
+// Header Styles
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+.h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a { font-weight: inherit; }
+
+h1, .h1 { font-size: $h1-fontsize; margin: ($h1-fontsize / 2) 0 ($h1-fontsize / 2.5) 0;}
+h2, .h2 { font-size: $h2-fontsize; margin: ($h2-fontsize / 2) 0 ($h2-fontsize / 2.5) 0;}
+h3, .h3 { font-size: $h3-fontsize; margin: ($h3-fontsize / 2) 0 ($h3-fontsize / 2.5) 0;}
+h4, .h4 { font-size: $h4-fontsize; margin: ($h4-fontsize / 2) 0 ($h4-fontsize / 2.5) 0;}
+h5, .h5 { font-size: $h5-fontsize; margin: ($h5-fontsize / 2) 0 ($h5-fontsize / 2.5) 0;}
+h6, .h6 { font-size: $h6-fontsize; margin: ($h6-fontsize / 2) 0 ($h6-fontsize / 2.5) 0;}
+
+@media #{$small-and-down} {
+  h1, .h1 { font-size: (.85 * $h1-fontsize) ; margin: ((.85 * $h1-fontsize) / 2) 0 ((.85 * $h1-fontsize) / 2.5) 0;}
+  h2, .h2 { font-size: (.85 * $h2-fontsize) ; margin: ((.85 * $h2-fontsize) / 2) 0 ((.85 * $h2-fontsize) / 2.5) 0;}
+}
+
+.h-subhead {
+  font-size: 20px;
+  line-height: 150%;
+  //margin: 8px 0 6.4px 0;
+  margin: 20px 0 32px 0;
+  font-weight: $light;
+}
+
+/* sized headings */
+[class^="h-4"] {
+  line-height: 110%;
+}
+[class^="h-3"] {
+  line-height: 120%;
+}
+[class^="h-2"] {
+  line-height: 130%;
+}
+[class^="h-1"] {
+  line-height: 140%;
+}
+.h-48 { 
+font-size: 3.693rem;
+margin: 1.85rem 0 1.48rem 0;
+}
+.h-42 { 
+font-size: 3.23rem; 
+margin: 1.61rem 0 1.29rem 0;
+}
+.h-38 { 
+font-size: 2.92rem; 
+margin: 1.46rem 0 1.17rem 0;
+}
+.h-32 { 
+font-size: 2.46rem; 
+margin: 1.23rem 0 0.98rem 0;
+}
+.h-28 { 
+font-size: 2.15rem; 
+margin: 1.08rem 0 0.86rem 0;
+}
+.h-24 { 
+font-size: 1.85rem; 
+margin: 0.92rem 0 0.74rem 0;
+}
+.h-22 { 
+font-size: 1.69rem; 
+margin: 0.85rem 0 0.68rem 0;
+}
+.h-18 { 
+font-size: 1.38rem; 
+margin: 0.69rem 0 0.55rem 0;
+}
+.h-16 { 
+font-size: 1.23rem; 
+margin: 0.61rem 0 0.49rem 0;
+}
+.h-14 { 
+font-size: 1.08rem; 
+margin: 0.54rem 0 0.43rem 0;
+}
+.h-12 { 
+font-size: 0.92rem; 
+margin: 0.47rem 0 0.37rem 0;
+}
+.h-10 { 
+font-size: 0.77rem; 
+margin: 0.38rem 0 0.31rem 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Text Styles
-em { font-style: italic; }
-strong { font-weight: bold; }
-small { font-size: 75%; }
-.light { font-weight: 300; }
-.thin { font-weight: 200; }
+em { font-style: italic!important; }
+strong { font-weight: $bold!important; }
+small { font-size: 75%!important; }
+.small { font-size: 75%!important; }
+.light { font-weight: $light; }
+.text-italic { font-style: italic!important; }
+.text-em { font-style: italic!important; }
+.text-strong { font-weight: $bold!important; }
+.text-small { font-size: 75%!important; }
+.text-light { font-weight: $light!important; }//300
+.text-regular { font-weight: $regular!important; }//400
+.text-normal { font-weight: $regular!important; }
+.text-semibold { font-weight: $semibold!important; }//600
+.text-bold { font-weight: $bold!important; }//700
+.text-smooth { -webkit-font-smoothing: antialiased!important; -moz-osx-font-smoothing: grayscale!important;}
+.text-narrow {font-family: $gotham-narrow};
+.text-smooth, %text-smooth { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+.text-auto, %text-auto { -webkit-font-smoothing: auto; -moz-osx-font-smoothing: auto;}
 
+// Text Transform
+.ttu,
+.text-uppercase {
+  text-transform: uppercase!important;
+}
+.ttn,
+.text-default-case {
+  text-transform: none!important;
+}
+
+//Line Height
+.line-height-0 { line-height: 0!important; }
+.line-height-s { line-height: 1!important; }
+.line-height-m { line-height: 1.4!important; }
+.line-height-l { line-height: 1.8!important; }
+.line-height-xl { line-height: 2.2!important; }
 
 .flow-text{
   font-weight: 300;

@@ -1,31 +1,3 @@
-/*doc
----
-title: Chips
-name: chips
-category: Materialize
----
-
-Chips can be used to represent small blocks of information. They are most commonly used either for contacts or for tags.
-
-### Contacts
-
-```html_example
-<div class="chip">
-  <img src="images/yuna.jpg" alt="Contact Person">
-  Jane Doe
-</div>
-```
-
-### Tags
-
-```html_example
-<div class="chip">
-  Tag
-  <i class="material-icons">close</i>
-</div>
-```
-
-*/
 .chip {
   display: inline-block;
   height: 32px;

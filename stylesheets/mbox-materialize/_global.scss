@@ -22,29 +22,39 @@ ul {
 }
 
 a {
-	color: $link-color;
-	text-decoration: none;
-
-  // Gets rid of tap active state
+  color: $link-color;
+  text-decoration: none;
   -webkit-tap-highlight-color: transparent;
-}
-
-
-// Positioning
-.valign-wrapper {
-  @include flexbox();
-  @include align(center);
-
-  .valign {
-    display: block;
+  -moz-transition:  all .2s;
+  -o-transition: all .2s;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  &:hover {
+    cursor: pointer;
   }
 }
 
+a:not(.btn) {
+  &:hover {
+    color: $link-hover-color;
+  }
+}
 
-ul {
-  padding: 0;
-  li {
-    list-style-type: none;
+.text-white a {
+  color: #ffffff;
+  &:hover {
+    opacity: .7;
+    color: #ffffff;
+  }
+}
+
+// Positioning
+.valign-wrapper {
+  display: flex;
+  align-items: center;
+
+  .valign {
+    display: block;
   }
 }
 
@@ -77,6 +87,11 @@ ul {
   box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
 }
 
+.hoverable {
+  transition: box-shadow .25s;
+  box-shadow: 0;
+}
+
 .hoverable:hover {
   transition: box-shadow .25s;
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.14), 0 4px 14px 0 rgba(0, 0, 0, 0.12);
@@ -90,14 +105,6 @@ ul {
   background-color: color("grey", "lighten-2");
 }
 
-
-//  Blockquote
-
-blockquote {
-  margin: 20px 0;
-  padding-left: 1.5rem;
-  border-left: 5px solid $primary-color;
-}
 
 // Icon Styles
 
@@ -116,7 +123,7 @@ i {
     font-size: 1rem;
   }
   &.small {
-    font-size: 2rem;
+    font-size: 2rem!important;
   }
   &.medium {
     font-size: 4rem;
@@ -128,6 +135,7 @@ i {
 
 // Images
 img.responsive-img,
+img.img-responsive,
 video.responsive-video {
   max-width: 100%;
   height: auto;
@@ -146,7 +154,7 @@ video.responsive-video {
     border-radius: 0px;
     text-align: center;
 
-    a { color: color("mozu-red", "base"); }
+    a { color: color("red", "base"); }
 
     &.active a { color: color("grey", "base"); }
 
@@ -185,6 +193,40 @@ video.responsive-video {
   }
 }
 
+// Breadcrumbs
+.breadcrumb {
+  font-size: 18px;
+  color: rgba(255,255,255, .7);
+
+  i,
+  [class^="mdi-"], [class*="mdi-"],
+  i.material-icons {
+    display: inline-block;
+    float: left;
+    font-size: 24px;
+  }
+
+  &:before {
+    content: '\E5CC';
+    color: rgba(255,255,255, .7);
+    vertical-align: top;
+    display: inline-block;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 25px;
+    margin: 0 10px 0 8px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  &:first-child:before {
+    display: none;
+  }
+
+  &:last-child {
+    color: #fff;
+  }
+}
 
 // Parallax
 .parallax-container {
@@ -235,151 +277,8 @@ ul.staggered-list li {
   transform-origin: 0 50%;
 }
 
-
-/*********************
-  Media Query Classes
-**********************/
-.hide-on-xsmall,
-.hide-on-xsmall-and-down {
-  display: block;
-  @media #{$xsmall-and-down} {
-    display: none !important;
-  }
-}
-.hide-on-small-and-down {
-  display: block;
-  @media #{$small-and-down} {
-    display: none !important;
-  }
-}
-.hide-on-small-and-up {
-  display: block;
-  @media #{$small-and-up} {
-    display: none !important;
-  }
-}
-.hide-on-small {
-  display: block;
-  @media only screen and (min-width: $small-screen-min) and (max-width: $small-screen-max) {
-    display: none !important;
-  }
-}
-.hide-on-medium-and-down {
-  display: block;
-  @media #{$medium-and-down} {
-    display: none !important;
-  }
-}
-.hide-on-medium-and-up {
-  display: block;
-  @media #{$medium-and-up} {
-    display: none !important;
-  }
-}
-.hide-on-medium {
-  display: block;
-  @media only screen and (min-width: $medium-screen-min) and (max-width: $medium-screen-max) {
-    display: none !important;
-  }
-}
-.hide-on-large-and-down {
-  display: block;
-  @media #{$large-and-down} {
-    display: none !important;
-  }
-}
-.hide-on-large-and-up {
-  display: block;
-  @media #{$large-and-up} {
-    display: none !important;
-  }
-}
-.hide-on-large {
-  display: block;
-  @media only screen and (min-width: $large-screen-min) and (max-width: $large-screen-max) {
-    display: none !important;
-  }
-}
-.hide-on-xlarge-and-up,
-.hide-on-xlarge {
-  display: block;
-  @media #{$xlarge-and-up} {
-    display: none !important;
-  }
-}
-//show
-.show-on-xlarge,
-.show-on-xlarge-and-up {
-  display: none;
-  @media #{$xlarge-and-up} {
-    display: block !important;
-  }
-}
-.show-on-large-and-up {
-  display: none;
-  @media #{$large-and-up} {
-    display: block !important;
-  }
-}
-.show-on-large-and-down {
-  display: none;
-  @media #{$large-and-down} {
-    display: block !important;
-  }
-}
-.show-on-large {
-  display: none;
-  @media only screen and (min-width: $large-screen-min) and (max-width: $large-screen-max) {
-    display: block !important;
-  }
-}
-.show-on-medium-and-up {
-  display: none;
-  @media #{$medium-and-up} {
-    display: block !important;
-  }
-}
-.show-on-medium-and-down {
-  display: none;
-  @media #{$medium-and-down} {
-    display: block !important;
-  }
-}
-.show-on-medium {
-  display: none;
-  @media only screen and (min-width: $medium-screen-min) and (max-width: $medium-screen-max) {
-    display: block !important;
-  }
-}
-.show-on-small-and-up {
-  display: none;
-  @media #{$small-and-up} {
-    display: block !important;
-  }
-}
-.show-on-small-and-down {
-  display: none;
-  @media #{$small-and-down} {
-    display: block !important;
-  }
-}
-.show-on-small {
-    display: none;
-    @media only screen and (min-width: $small-screen-min) and (max-width: $small-screen-max) {
-    display: block !important;
-  }
-}
-.show-on-xsmall,
-.show-on-xsmall-and-down {
-  display: none;
-  @media #{$xsmall-and-down} {
-    display: block !important;
-  }
-}
-
-
 // Center text on mobile
-.center-on-small-only {
+.center-on-small {
   @media #{$small-and-down} {
     text-align: center;
   }
@@ -426,7 +325,7 @@ table {
   }
 
   &.highlight > tbody > tr {
-    @include transition(background-color .25s ease);
+    transition: background-color .25s ease;
     &:hover {
       background-color: $table-striped-color;
     }
@@ -441,12 +340,13 @@ table {
 
 }
 
-thead {
+thead,
+tbody {
   border-bottom: 1px solid $table-border-color;
 }
 
 td, th{
-  padding: 15px 5px;
+  padding: 10px 5px;
   display: table-cell;
   text-align: left;
   vertical-align: middle;
@@ -562,7 +462,6 @@ td, th{
         text-align: center;
       }
 
-
       .title {
         font-size: 16px;
       }
@@ -576,9 +475,7 @@ td, th{
         top: 16px;
         right: 16px;
       }
-
     }
-
 
     &:last-child {
       border-bottom: none;
@@ -595,8 +492,8 @@ td, th{
   }
   a.collection-item{
     display: block;
-    @include transition(.25s);
-    color: $secondary-color;
+    transition: .25s;
+    color: $collection-link-color;
     &:not(.active) {
       &:hover {
         background-color: $collection-hover-bg-color;
@@ -641,7 +538,7 @@ span.badge {
   color: color('grey', 'darken-1');
   position: absolute;
   right: 15px;
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 
   &.new {
     font-weight: 300;
@@ -664,12 +561,8 @@ nav ul a span.badge {
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
-    padding-top: 30px;
     height: 0;
     overflow: hidden;
-    &.no-controls {
-      padding-top: 0;
-    }
 
     iframe, object, embed {
       position: absolute;
@@ -697,7 +590,7 @@ nav ul a span.badge {
     left: 0;
     bottom: 0;
     background-color: $progress-bar-color;
-    @include transition(width .3s linear);
+    transition: width .3s linear;
   }
   .indeterminate {
     background-color: $progress-bar-color;
@@ -710,7 +603,7 @@ nav ul a span.badge {
       bottom: 0;
       will-change: left, right;
       // Custom bezier
-      @include animation(indeterminate 2.1s cubic-bezier(0.650, 0.815, 0.735, 0.395) infinite);
+      animation: indeterminate 2.1s cubic-bezier(0.650, 0.815, 0.735, 0.395) infinite;
 
     }
     &:after {
@@ -722,95 +615,37 @@ nav ul a span.badge {
       bottom: 0;
       will-change: left, right;
       // Custom bezier
-      @include animation(indeterminate-short 2.1s cubic-bezier(0.165, 0.840, 0.440, 1.000) infinite);
-      @include animation-delay(1.15s);
+      animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.840, 0.440, 1.000) infinite;
+      animation-delay: 1.15s;
     }
   }
 }
-@include keyframes(indeterminate) {
+@keyframes indeterminate {
     0% {
-            left: -35%;
-            right:100%;
-        }
+      left: -35%;
+      right:100%;
+    }
     60% {
-        left: 100%;
-        right: -90%;
+      left: 100%;
+      right: -90%;
     }
     100% {
-        left: 100%;
-        right: -90%;
+      left: 100%;
+      right: -90%;
     }
 }
 
-@include keyframes(indeterminate-short) {
+@keyframes indeterminate-short {
     0% {
-        left: -200%;
-        right: 100%;
+      left: -200%;
+      right: 100%;
     }
     60% {
-        left: 107%;
-        right: -8%;
+      left: 107%;
+      right: -8%;
     }
     100% {
       left: 107%;
       right: -8%;
     }
-}
-
-
-/*******************
-  Utility Classes
-*******************/
-
-.hide {
-  display: none !important;
-}
-
-// Text Align
-.left-align {
-  text-align: left;
-}
-.right-align {
-  text-align: right
-}
-.center, .center-align {
-  text-align: center;
-}
-
-.left {
-  float: left !important;
-}
-.right {
-  float: right !important;
-}
-
-// No Text Select
-.no-select {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.circle {
-  border-radius: 50%;
-}
-
-.center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.truncate {
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.no-padding {
-  padding: 0 !important;
 }

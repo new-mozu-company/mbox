@@ -1,48 +1,5 @@
 // shared styles
-/*doc
----
-title: Special buttons
-name: materialbuttons
-category: Materialize
----
-
-In addition to mbox base buttons, materialize offers the additional special button attributes.
-
-```html_example
-<a class="btn-flat">Button</a>
-<a class="btn-floating">Button</a>
-<a class="btn-block">Button</a>
-<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-    <a class="btn-floating btn-large red">
-      <i class="large material-icons">mode_edit</i>
-    </a>
-    <ul>
-      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-    </ul>
-  </div>
-<a class="btn disabled">Button</a>
-```
-
-*/
-
-.btn {
-  // height: $button-height;
-  // line-height: $button-line-height;
-  // padding: 0 2rem;
-  // vertical-align: middle;
-  // // Gets rid of tap active state
-  // -webkit-tap-highlight-color: transparent;
-  // i {
-  //   font-size: $button-font-size-shared;
-  //   line-height: inherit;
-  // }
-  // cursor: pointer;
-}
-
-.btn-flat {
+.btn, %btn, .btn-flat {
   border: none;
   border-radius: 0px;
   display: inline-block;
@@ -55,10 +12,43 @@ In addition to mbox base buttons, materialize offers the additional special butt
   vertical-align: middle;
   // Gets rid of tap active state
   -webkit-tap-highlight-color: transparent;
+  font-weight: bold;
+  @extend %text-auto;
+}
+
+// Large button
+.btn-large {
+  @extend %btn;
+  @media #{$medium-and-up} {
+    height: 5rem; //65px
+    line-height: 5rem;
+    i {
+    }
+  }
+}
+
+.btn-small {
+  @extend %btn;
+  font-size: 0.81rem;
+  height: 2.46rem; //32px
+  line-height: 2.46rem;
+  font-weight: 600;
+  padding-left: 1.15rem;
+  padding-right: 1.15rem;
+  i {
+    font-size: 0.81rem;
+  }
 }
 
 // Disabled shared style
-.btn.disabled, .btn-floating.disabled, .btn:disabled, .btn-floating:disabled {
+.btn.disabled,
+.btn-floating.disabled,
+.btn-large.disabled,
+.btn-small.disabled,
+.btn:disabled,
+.btn-large:disabled,
+.btn-small:disabled,
+.btn-floating:disabled {
   background-color: $button-bg-color-disabled !important;
   box-shadow: none;
   color: $button-color-disabled !important;
@@ -73,10 +63,31 @@ In addition to mbox base buttons, materialize offers the additional special butt
   }
 }
 // Shared icon styles
-.btn-floating, .btn-flat {
+.btn,
+.btn-floating,
+.btn-large,
+.btn-small,
+.btn-flat {
   i {
     font-size: $button-font-size-shared;
     line-height: inherit;
+  }
+}
+
+// Raised Button
+.btn, %btn {
+  text-decoration:none;
+  color: $button-color-raised;
+  background-color: $button-color;
+  text-align: center;
+  letter-spacing: .5px;
+  transition: .2s ease-out;
+  cursor: pointer;
+  //fixes hover bug on opacity transition
+  -webkit-transform: translateZ(0px);
+
+  &:hover {
+    background-color: lighten($button-color, 5%);
   }
 }
 
@@ -108,6 +119,7 @@ In addition to mbox base buttons, materialize offers the additional special butt
   }
 
   &:hover {
+    background-color: $button-color;
     @extend .z-depth-1-half;
   }
   &:before {
@@ -120,7 +132,13 @@ In addition to mbox base buttons, materialize offers the additional special butt
       line-height: $button-floating-size * 1.5;
     }
   }
-
+  &.btn-small {
+    width: $button-floating-size * .7;
+    height: $button-floating-size * .7;
+    i{
+      line-height: $button-floating-size * .7;
+    }
+  }
 }
 // button fix
 button.btn-floating {
@@ -129,6 +147,28 @@ button.btn-floating {
 
 // Fixed Action Button
 .fixed-action-btn {
+  &.active {
+    ul {
+     visibility: visible;
+    }
+  }
+  &.horizontal {
+    padding: 0 0 0 15px;
+    ul {
+      text-align: right;
+      right: 64px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 100%;
+      left: initial;
+      width: 500px; /*width 100% only goes to width of button container */
+
+      li {
+        display: inline-block;
+        margin: 15px 15px 0 0;
+      }
+    }
+  }
   position: fixed;
   right: 23px;
   bottom: 23px;
@@ -143,6 +183,7 @@ button.btn-floating {
     position: absolute;
     bottom: 64px;
     margin: 0;
+    visibility: hidden;
 
     li {
       margin-bottom: 15px;
@@ -160,10 +201,22 @@ button.btn-floating {
   background-color: transparent;
   color: $button-color-flat;
   cursor: pointer;
-
+  &:hover {
+    color: lighten($button-color, 5%);
+  }
   &.disabled {
     color: lighten(#999, 10%);
     cursor: default;
+  }
+}
+
+// Multiline button
+.btn-multiline {
+  height: auto;
+  line-height: 1.6rem;
+  padding: .7rem 2rem;
+  i {
+    line-height: 3.2rem;
   }
 }
 
