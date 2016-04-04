@@ -828,6 +828,8 @@ else {
       var placeholder = $('<div></div>').addClass('material-placeholder');
       var originalWidth = 0;
       var originalHeight = 0;
+      var ancestorsChanged;
+      var ancestor;
       origin.wrap(placeholder);
 
 
@@ -856,7 +858,6 @@ else {
         overlayActive = true;
 
         // Set positioning for placeholder
-
         placeholder.css({
           width: placeholder[0].getBoundingClientRect().width,
           height: placeholder[0].getBoundingClientRect().height,
@@ -865,7 +866,23 @@ else {
           left: 0
         });
 
-
+        // Find ancestor with overflow: hidden; and remove it
+        ancestorsChanged = undefined;
+        ancestor = placeholder[0].parentNode;
+        var count = 0;
+        while (ancestor !== null && !$(ancestor).is(document)) {
+          var curr = $(ancestor);
+          if (curr.css('overflow') === 'hidden') {
+            curr.css('overflow', 'visible');
+            if (ancestorsChanged === undefined) {
+              ancestorsChanged = curr;
+            }
+            else {
+              ancestorsChanged = ancestorsChanged.add(curr);
+            }
+          }
+          ancestor = ancestor.parentNode;
+        }
 
         // Set css on origin
         origin.css({position: 'absolute', 'z-index': 1000})
@@ -896,8 +913,6 @@ else {
           $photo_caption.velocity({opacity: 1}, {duration: inDuration, queue: false, easing: 'easeOutQuad'});
         }
 
-
-
         // Resize Image
         var ratio = 0;
         var widthPercent = originalWidth / windowWidth;
@@ -915,6 +930,27 @@ else {
           newWidth = (windowHeight * 0.9) * ratio;
           newHeight = windowHeight * 0.9;
         }
+
+        var leftPos =  (windowWidth - newWidth) / 2;
+        var topPos =  (windowHeight - newHeight) / 2;
+
+        // Add and animate x btn
+        var $xBtn = $('<i id="materialbox-close" class="material-icons">close</i>');
+        $('body').append($xBtn);
+        $xBtn.css({
+          opacity : 0,
+          "display": "fixed",
+          bottom: topPos + newHeight + "px",
+          left: leftPos + newWidth + "px",
+          color: "white"
+        });
+        $xBtn.velocity({
+          opacity: 1
+        }, {
+          duration: inDuration,
+          queue: false,
+          easing: 'easeOutQuad'
+        });
 
         // Animate image + set z-index
         if(origin.hasClass('responsive-img')) {
@@ -969,12 +1005,22 @@ else {
 
       // Return on ESC
       $(document).keyup(function(e) {
-
         if (e.keyCode === 27 && doneAnimating === true) {   // ESC key
           if (overlayActive) {
             returnToOriginal();
           }
         }
+      });
+
+      // Return on close button click or touch
+      $("body").on('click', '#materialbox-close', function () {
+        if (overlayActive ) {
+          returnToOriginal();
+        }
+      });
+
+      $("body").on('touchstart', '#materialbox-close', function () {
+        $( "#materialbox-close" ).trigger( "click" );
       });
 
 
@@ -1019,6 +1065,8 @@ else {
           );
 
           // Remove Caption + reset css settings on image
+          $('#materialbox-close').velocity("stop", true);
+          $('#materialbox-close').velocity({ opacity: 0 });
           $('.materialbox-caption').velocity({opacity: 0}, {
             duration: outDuration, // Delay prevents animation overlapping
             queue: false, easing: 'easeOutQuad',
@@ -1045,6 +1093,12 @@ else {
               origin.removeClass('active');
               doneAnimating = true;
               $(this).remove();
+              $('#materialbox-close').remove();
+
+              // Remove overflow overrides on ancestors
+              if (ancestorsChanged) {
+                ancestorsChanged.css('overflow', '');
+              }
             }
           });
 
@@ -1057,7 +1111,6 @@ $(document).ready(function(){
 });
 
 }( jQuery ));
-
 (function ($) {
 
     $.fn.parallax = function () {
@@ -1249,9 +1302,6 @@ $(document).ready(function(){
 (function ($) {
     $.fn.tooltip = function (options) {
         var timeout = null,
-        counter = null,
-        started = false,
-        counterInterval = null,
         margin = 5;
 
       // Defaults
@@ -1263,6 +1313,7 @@ $(document).ready(function(){
       if (options === "remove") {
         this.each(function(){
           $('#' + $(this).attr('data-tooltip-id')).remove();
+          $(this).off('mouseenter.tooltip mouseleave.tooltip');
         });
         return false;
       }
@@ -1276,154 +1327,201 @@ $(document).ready(function(){
         origin.attr('data-tooltip-id', tooltipId);
 
         // Create Text span
-        var tooltip_text = $('<span></span>').text(origin.attr('data-tooltip'));
-
+        var tooltip_text = $('<span class="tooltip-text"></span>').text(origin.attr('data-tooltip'));
+        
+        // Data Position for arrow
+        var tooltipPos = origin.attr('data-position');
+    
+        var tooltipArrowPos;
+        switch(tooltipPos) {
+        case 'left':
+            tooltipArrowPos = 'right';
+            break;
+        case 'right':
+            tooltipArrowPos = 'left';
+            break;
+        case 'top':
+            tooltipArrowPos = 'down';
+            break;
+        case 'bottom':
+            tooltipArrowPos = 'up';
+            break;
+         
+    }
+        var tooltipArrow = $('<span class="arrow-'+tooltipArrowPos+'-tooltip"></span>');
         // Create tooltip
         var newTooltip = $('<div></div>');
-        newTooltip.addClass('material-tooltip').append(tooltip_text)
+        newTooltip.addClass('material-tooltip data-pos-'+tooltipPos).append(tooltip_text, tooltipArrow)
           .appendTo($('body'))
           .attr('id', tooltipId);
 
         var backdrop = $('<div></div>').addClass('backdrop');
         backdrop.appendTo(newTooltip);
-        backdrop.css({ top: 0, left:0 });
+        backdrop.css({ top: 0, left:0, display: 'none' });
 
 
-       //Destroy previously binded events
+      //Destroy previously binded events
       origin.off('mouseenter.tooltip mouseleave.tooltip');
-        // Mouse In
+      // Mouse In
+      var started = false, timeoutRef;
       origin.on({
         'mouseenter.tooltip': function(e) {
-          var tooltip_delay = origin.data("delay");
-          tooltip_delay = (tooltip_delay === undefined || tooltip_delay === '') ? options.delay : tooltip_delay;
-          counter = 0;
-          counterInterval = setInterval(function(){
-            counter += 10;
-            if (counter >= tooltip_delay && started === false) {
-              started = true;
-              newTooltip.css({ display: 'block', left: '0px', top: '0px' });
+          var tooltip_delay = origin.attr('data-delay');
+          tooltip_delay = (tooltip_delay === undefined || tooltip_delay === '') ?
+              options.delay : tooltip_delay;
+          timeoutRef = setTimeout(function(){
+            started = true;
+            newTooltip.velocity('stop');
+            backdrop.velocity('stop');
+            newTooltip.css({ display: 'block', left: '0px', top: '0px' });
 
-              // Set Tooltip text
-              newTooltip.children('span').text(origin.attr('data-tooltip'));
+            // Set Tooltip text
+            newTooltip.children('span.tooltip-text').text(origin.attr('data-tooltip'));
 
-              // Tooltip positioning
-              var originWidth = origin.outerWidth();
-              var originHeight = origin.outerHeight();
-              var tooltipPosition =  origin.attr('data-position');
-              var tooltipHeight = newTooltip.outerHeight();
-              var tooltipWidth = newTooltip.outerWidth();
-              var tooltipVerticalMovement = '0px';
-              var tooltipHorizontalMovement = '0px';
-              var scale_factor = 8;
+            // Tooltip positioning
+            var originWidth = origin.outerWidth();
+            var originHeight = origin.outerHeight();
+            var tooltipPosition =  origin.attr('data-position');
+            var tooltipHeight = newTooltip.outerHeight();
+            var tooltipWidth = newTooltip.outerWidth();
+            var tooltipVerticalMovement = '0px';
+            var tooltipHorizontalMovement = '0px';
+            var scale_factor = 8;
+            var targetTop, targetLeft, newCoordinates;
 
-              if (tooltipPosition === "top") {
+            if (tooltipPosition === "top") {
               // Top Position
-              newTooltip.css({
-                top: origin.offset().top - tooltipHeight - margin,
-                left: origin.offset().left + originWidth/2 - tooltipWidth/2
-              });
+              targetTop = origin.offset().top - tooltipHeight - margin;
+              targetLeft = origin.offset().left + originWidth/2 - tooltipWidth/2;
+              newCoordinates = repositionWithinScreen(targetLeft, targetTop, tooltipWidth, tooltipHeight);
+
               tooltipVerticalMovement = '-10px';
               backdrop.css({
                 borderRadius: '14px 14px 0 0',
                 transformOrigin: '50% 90%',
                 marginTop: tooltipHeight,
                 marginLeft: (tooltipWidth/2) - (backdrop.width()/2)
-
               });
-              }
-              // Left Position
-              else if (tooltipPosition === "left") {
-                newTooltip.css({
-                  top: origin.offset().top + originHeight/2 - tooltipHeight/2,
-                  left: origin.offset().left - tooltipWidth - margin
-                });
-                tooltipHorizontalMovement = '-10px';
-                backdrop.css({
-                  width: '14px',
-                  height: '14px',
-                  borderRadius: '14px 0 0 14px',
-                  transformOrigin: '95% 50%',
-                  marginTop: tooltipHeight/2,
-                  marginLeft: tooltipWidth
-                });
-              }
-              // Right Position
-              else if (tooltipPosition === "right") {
-                newTooltip.css({
-                  top: origin.offset().top + originHeight/2 - tooltipHeight/2,
-                  left: origin.offset().left + originWidth + margin
-                });
-                tooltipHorizontalMovement = '+10px';
-                backdrop.css({
-                  width: '14px',
-                  height: '14px',
-                  borderRadius: '0 14px 14px 0',
-                  transformOrigin: '5% 50%',
-                  marginTop: tooltipHeight/2,
-                  marginLeft: '0px'
-                });
-              }
-              else {
-                // Bottom Position
-                newTooltip.css({
-                  top: origin.offset().top + origin.outerHeight() + margin,
-                  left: origin.offset().left + originWidth/2 - tooltipWidth/2
-                });
-                tooltipVerticalMovement = '+10px';
-                backdrop.css({
-                  marginLeft: (tooltipWidth/2) - (backdrop.width()/2)
-                });
-              }
+            }
+            // Left Position
+            else if (tooltipPosition === "left") {
+              targetTop = origin.offset().top + originHeight/2 - tooltipHeight/2;
+              targetLeft =  origin.offset().left - tooltipWidth - margin;
+              newCoordinates = repositionWithinScreen(targetLeft, targetTop, tooltipWidth, tooltipHeight);
 
-              // Calculate Scale to fill
-              scale_factor = tooltipWidth / 8;
-              if (scale_factor < 8) {
-                scale_factor = 8;
-              }
-              if (tooltipPosition === "right" || tooltipPosition === "left") {
-                scale_factor = tooltipWidth / 10;
-                if (scale_factor < 6)
-                  scale_factor = 6;
-              }
+              tooltipHorizontalMovement = '-10px';
+              backdrop.css({
+                width: '14px',
+                height: '14px',
+                borderRadius: '14px 0 0 14px',
+                transformOrigin: '95% 50%',
+                marginTop: tooltipHeight/2,
+                marginRight: tooltipWidth
+              });
+            }
+            // Right Position
+            else if (tooltipPosition === "right") {
+              targetTop = origin.offset().top + originHeight/2 - tooltipHeight/2;
+              targetLeft = origin.offset().left + originWidth + margin;
+              newCoordinates = repositionWithinScreen(targetLeft, targetTop, tooltipWidth, tooltipHeight);
 
-              newTooltip.velocity({ marginTop: tooltipVerticalMovement, marginLeft: tooltipHorizontalMovement}, { duration: 350, queue: false })
-                .velocity({opacity: 1}, {duration: 300, delay: 50, queue: false});
-              backdrop.css({ display: 'block' })
+              tooltipHorizontalMovement = '+10px';
+              backdrop.css({
+                width: '14px',
+                height: '14px',
+                borderRadius: '0 14px 14px 0',
+                transformOrigin: '5% 50%',
+                marginTop: tooltipHeight/2,
+                marginLeft: '0px'
+              });
+            }
+            else {
+              // Bottom Position
+              targetTop = origin.offset().top + origin.outerHeight() + margin;
+              targetLeft = origin.offset().left + originWidth/2 - tooltipWidth/2;
+              newCoordinates = repositionWithinScreen(targetLeft, targetTop, tooltipWidth, tooltipHeight);
+              tooltipVerticalMovement = '+10px';
+              backdrop.css({
+                marginLeft: (tooltipWidth/2) - (backdrop.width()/2)
+              });
+            }
+
+            // Set tooptip css placement
+            newTooltip.css({
+              top: newCoordinates.y,
+              left: newCoordinates.x
+            });
+
+            // Calculate Scale to fill
+            scale_factor = tooltipWidth / 8;
+            if (scale_factor < 8) {
+              scale_factor = 8;
+            }
+            if (tooltipPosition === "right" || tooltipPosition === "left") {
+              scale_factor = tooltipWidth / 10;
+              if (scale_factor < 6)
+                scale_factor = 6;
+            }
+
+            newTooltip.velocity({ marginTop: tooltipVerticalMovement, marginLeft: tooltipHorizontalMovement}, { duration: 350, queue: false })
+              .velocity({opacity: 1}, {duration: 300, delay: 50, queue: false});
+            backdrop.css({ display: 'none' })
               .velocity({opacity:1},{duration: 55, delay: 0, queue: false})
               .velocity({scale: scale_factor}, {duration: 300, delay: 0, queue: false, easing: 'easeInOutQuad'});
 
-            }
-          }, 10); // End Interval
+
+          }, tooltip_delay); // End Interval
 
         // Mouse Out
         },
         'mouseleave.tooltip': function(){
           // Reset State
-          clearInterval(counterInterval);
-          counter = 0;
+          started = false;
+          clearTimeout(timeoutRef);
 
           // Animate back
-          newTooltip.velocity({
-            opacity: 0, marginTop: 0, marginLeft: 0}, { duration: 225, queue: false, delay: 225 }
-          );
-          backdrop.velocity({opacity: 0, scale: 1}, {
-            duration:225,
-            delay: 275, queue: false,
-            complete: function(){
-              backdrop.css('display', 'none');
-              newTooltip.css('display', 'none');
-              started = false;}
-          });
+          setTimeout(function() {
+            if (started != true) {
+              newTooltip.velocity({
+                opacity: 0, marginTop: 0, marginLeft: 0}, { duration: 225, queue: false});
+              backdrop.velocity({opacity: 0, scale: 1}, {
+                duration:225,
+                queue: false,
+                complete: function(){
+                  backdrop.css('display', 'none');
+                  newTooltip.css('display', 'none');
+                  started = false;}
+              });
+            }
+          },225);
         }
         });
     });
+  };
+
+  var repositionWithinScreen = function(x, y, width, height) {
+    var newX = x
+    var newY = y;
+
+    if (newX < 0) {
+      newX = 4;
+    } else if (newX + width > window.innerWidth) {
+      newX -= newX + width - window.innerWidth;
+    }
+
+    if (newY < 0) {
+      newY = 4;
+    } else if (newY + height > window.innerHeight + $(window).scrollTop) {
+      newY -= newY + height - window.innerHeight;
+    }
+
+    return {x: newX, y: newY};
   };
 
   $(document).ready(function(){
      $('.tooltipped').tooltip();
    });
 }( jQuery ));
-
 /*!
  * Waves v0.6.4
  * http://fian.my.id/Waves
