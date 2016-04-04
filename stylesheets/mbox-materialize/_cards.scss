@@ -105,12 +105,9 @@
     padding: $card-padding;
 
     a:not(.btn):not(.btn-large):not(.btn-floating) {
-      color: $card-link-color;
       margin-right: $card-padding;
       transition: color .3s ease;
       text-transform: uppercase;
-
-      &:hover { color: $card-link-color-light; }
     }
   }
 

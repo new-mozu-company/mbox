@@ -1,7 +1,11 @@
 //  Blockquote
 
-blockquote {
+blockquote, %blockquote {
 	margin: 0;
+	font-size: 1.38rem;
+  color: color("grey","darken-2");
+  font-style: italic;
+  font-weight: 300;
 }
 
 .quote-speaker {
@@ -13,14 +17,12 @@ blockquote {
 //Quote marks
 /* prepend and appends quote icons before and after element */
 .quote-marks {
+	@extend %blockquote;
 	position: relative;
 	padding-left: 40px;
 	padding-right: 40px;
-	font-size: 1.38rem;
-  color: color("grey","darken-2");
-  font-style: italic;
-  font-weight: 300;
   margin: 20px 0;
+
   //margin: 0.56rem 0 0.45rem 0;
 }
 .quote-marks:before,

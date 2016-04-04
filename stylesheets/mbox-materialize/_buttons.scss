@@ -13,17 +13,16 @@
   // Gets rid of tap active state
   -webkit-tap-highlight-color: transparent;
   font-weight: bold;
+  @extend %text-auto;
 }
 
 // Large button
 .btn-large {
   @extend %btn;
   @media #{$medium-and-up} {
-    font-size: 1.566rem;
     height: 5rem; //65px
     line-height: 5rem;
     i {
-      font-size: 1.566rem;
     }
   }
 }
@@ -34,6 +33,8 @@
   height: 2.46rem; //32px
   line-height: 2.46rem;
   font-weight: 600;
+  padding-left: 1.15rem;
+  padding-right: 1.15rem;
   i {
     font-size: 0.81rem;
   }
@@ -74,7 +75,7 @@
 }
 
 // Raised Button
-.btn {
+.btn, %btn {
   text-decoration:none;
   color: $button-color-raised;
   background-color: $button-color;

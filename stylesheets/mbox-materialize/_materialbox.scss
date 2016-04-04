@@ -40,3 +40,54 @@
   z-index: 1000;
   -webkit-font-smoothing: antialiased;
 }
+
+#materialbox-close {
+  position: fixed;
+  color: white;
+  z-index: 1001;
+  &:hover {
+    cursor: pointer;
+  }
+  @media #{$small-and-down} {
+    padding: 10px;
+    top: 0;
+    left: auto!important;
+    bottom: auto!important;
+    right: 0;
+  }
+}
+
+@media #{$medium-and-up} {
+  #materialbox-close {
+    font-size: 2.4rem;
+  }
+}
+
+.gallery-btn {
+    text-indent: -9999px;
+    position: relative;
+    &:before {
+      position: absolute;
+      top: -41px;
+      font-family: 'Material Icons';
+      text-indent: 0;
+      color: $trans-white;
+      font-size: 82px;
+      -moz-transition:  all .2s;
+      -o-transition: all .2s;
+      -webkit-transition: all .2s;
+      transition: all .2s;
+      opacity: .7;
+    }
+    &:hover:before {
+      opacity: 1;
+    }
+  }
+  .gallery-next:before {
+      right: 0;
+      content: '\E409';
+  }
+  .gallery-prev:before {
+      left: 0;
+      content: '\E408';
+  }

@@ -506,3 +506,41 @@
     }//.xlgutter-l
   }
 }
+
+/*****************************
+* *   Flex Grid    * *
+******************************/
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media #{$xsmall-and-up} {
+  .xsflex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media #{$small-and-up} {
+  .sflex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media #{$medium-and-up} {
+  .mflex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media #{$large-and-up} {
+  .lflex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media #{$xlarge-and-up} {
+  .xlflex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

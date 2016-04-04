@@ -58,21 +58,6 @@ a:not(.btn) {
   }
 }
 
-//Lists
-ul {
-  padding: 0;
-  li {
-    list-style-type: none;
-  }
-}
-
-ul.ul-basic {
-  padding-left: 40px;
-  > li {
-    list-style: disc outside;
-  }
-}
-
 // classic clearfix
 .clearfix {
   clear: both;
@@ -138,7 +123,7 @@ i {
     font-size: 1rem;
   }
   &.small {
-    font-size: 2rem;
+    font-size: 2rem!important;
   }
   &.medium {
     font-size: 4rem;

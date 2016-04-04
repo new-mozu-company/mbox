@@ -6,6 +6,7 @@
 	border-bottom: 20px solid color("red","base");
 	&.arrow-red { border-bottom: 20px solid color("red","base"); }
 	&.arrow-grey { border-bottom: 20px solid color("grey","base"); }
+	&.arrow-black { border-bottom: 20px solid $black; }
 	&.arrow-white { border-bottom: 20px solid $white; }
 	&.arrow-trans-white { border-bottom: 20px solid $trans-white; }
 
@@ -18,6 +19,7 @@
 	border-top: 20px solid color("red","base");
 	&.arrow-red { border-top: 20px solid color("red","base"); }
 	&.arrow-grey { border-top: 20px solid color("grey","base"); }
+	&.arrow-black { border-top: 20px solid $black; }
 	&.arrow-white { border-top: 20px solid $white; }
 	&.arrow-trans-white { border-top: 20px solid $trans-white; }
 }
@@ -29,6 +31,7 @@
 	border-left: 20px solid color("red","base");
 	&.arrow-red { border-left: 20px solid color("red","base"); }
 	&.arrow-grey { border-left: 20px solid color("grey","base"); }
+	&.arrow-black { border-left: 20px solid $black; }
 	&.arrow-white { border-left: 20px solid $white; }
 	&.arrow-trans-white { border-left: 20px solid $trans-white; }
 }
@@ -40,6 +43,7 @@
 	border-right:20px solid color("red","base");
 	&.arrow-red { border-right: 20px solid color("red","base"); }
 	&.arrow-grey { border-right: 20px solid color("grey","base"); }
+	&.arrow-black { border-right: 20px solid $black; }
 	&.arrow-white { border-right: 20px solid $white; }
 	&.arrow-trans-white { border-right: 20px solid $trans-white; }
 }
