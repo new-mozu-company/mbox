@@ -95,12 +95,18 @@ h6, .h6 { font-size: $h6-fontsize; margin: ($h6-fontsize / 2) 0 ($h6-fontsize / 
 }
 
 .h-subhead {
-  font-size: 20px;
-  line-height: 150%;
+  font-size: 16px;
   //margin: 8px 0 6.4px 0;
   margin: 20px 0 32px 0;
   font-weight: $light;
 }
+// .h-subhead-l {
+//   font-size: 20px;
+//   line-height: 150%;
+//   //margin: 8px 0 6.4px 0;
+//   margin: 20px 0 32px 0;
+//   font-weight: $light;
+// }
 
 /* sized headings */
 [class^="h-4"] {
@@ -142,6 +148,10 @@ margin: 0.92rem 0 0.74rem 0;
 .h-22 { 
 font-size: 1.69rem; 
 margin: 0.85rem 0 0.68rem 0;
+}
+.h-20 { 
+font-size: 1.54rem;
+margin: 0.77rem 0 0.62rem 0;
 }
 .h-18 { 
 font-size: 1.38rem; 
