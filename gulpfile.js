@@ -31,6 +31,7 @@ gulp.task('js', function(){
 			"js/mbox-materialize/dropdown.js",
 			"js/mbox-materialize/leanModal.js",
 			"js/mbox-materialize/materialbox.js",
+			"js/mbox-materialize/materialboxgallery.js",
 			"js/mbox-materialize/parallax.js",
 			"js/mbox-materialize/tabs.js",
 			"js/mbox-materialize/tooltip.js",
