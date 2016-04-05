@@ -210,21 +210,20 @@ margin: 0.38rem 0 0.31rem 0;
 // Text Styles
 em { font-style: italic!important; }
 strong { font-weight: $bold!important; }
-small { font-size: 75%!important; }
-.small { font-size: 75%!important; }
+small { font-size: 80%!important; }
+.small { font-size: 80%!important; }
 .light { font-weight: $light; }
+.text-small { font-size: 80%!important; }
 .text-italic { font-style: italic!important; }
 .text-em { font-style: italic!important; }
-.text-strong { font-weight: $bold!important; }
-.text-small { font-size: 75%!important; }
+.text-normal { font-style: normal!important; }
 .text-light { font-weight: $light!important; }//300
 .text-regular { font-weight: $regular!important; }//400
-.text-normal { font-weight: $regular!important; }
 .text-semibold { font-weight: $semibold!important; }//600
 .text-bold { font-weight: $bold!important; }//700
-.text-smooth { -webkit-font-smoothing: antialiased!important; -moz-osx-font-smoothing: grayscale!important;}
+.text-strong { font-weight: $bold!important; }
 .text-narrow {font-family: $gotham-narrow};
-.text-smooth, %text-smooth { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+.text-smooth, %text-smooth { -webkit-font-smoothing: antialiased!important; -moz-osx-font-smoothing: grayscale!important;}
 .text-auto, %text-auto { -webkit-font-smoothing: auto; -moz-osx-font-smoothing: auto;}
 
 // Text Transform

@@ -11,7 +11,7 @@
 .circle {
   border-radius: 50%;
 }
-f
+
 .truncate {
   display: block;
   white-space: nowrap;
@@ -46,10 +46,10 @@ f
 /*****************************
 * *   Direction    * *
 ******************************/
-.dir-rtl {
+.rtl {
   direction: rtl;
 }
-.dir-lrt {
+.lrt {
   direction: ltr;
 }
 
@@ -76,6 +76,19 @@ f
   height: auto!important;
 }
 
+/*****************************
+* *   Max Width Containers    * *
+******************************/
+.mw-950 {
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mw-600 {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto; 
+}
 
 
 /*****************************
