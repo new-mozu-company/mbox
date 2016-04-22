@@ -1,105 +1,4 @@
-/*doc
----
-title: Cards
-name: cards
-category: Materialize
----
 
-### Basic card
-
-```html_example
-<div class="row">
-  <div class="col s12 m6">
-    <div class="card blue-grey darken-1">
-      <div class="card-content white-text">
-        <span class="card-title">Card Title</span>
-        <p>I am a very simple card. I am good at containing small bits of information.
-        I am convenient because I require little markup to use effectively.</p>
-      </div>
-      <div class="card-action">
-        <a href="#">This is a link</a>
-        <a href="#">This is a link</a>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-### Image card
-
-```html_example
-<div class="row">
-  <div class="col s12 m7">
-    <div class="card">
-      <div class="card-image">
-        <img src="images/sample-1.jpg">
-        <span class="card-title">Card Title</span>
-      </div>
-      <div class="card-content">
-        <p>I am a very simple card. I am good at containing small bits of information.
-        I am convenient because I require little markup to use effectively.</p>
-      </div>
-      <div class="card-action">
-        <a href="#">This is a link</a>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-### Card reveal
-
-```html_example
-<div class="card">
-  <div class="card-image waves-effect waves-block waves-light">
-    <img class="activator" src="images/office.jpg">
-  </div>
-  <div class="card-content">
-    <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-    <p><a href="#">This is a link</a></p>
-  </div>
-  <div class="card-reveal">
-    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-  </div>
-</div>
-```
-
-### Card sizes
-
-```html_example
-<div class="card small">
-  <!-- Card Content -->
-</div>
-
-<div class="card medium">
-  <!-- Card Content -->
-</div>
-
-<div class="card large">
-  <!-- Card Content -->
-</div>
-
-
-
-```
-
-### Card panel
-
-```html_example
-<div class="row">
-  <div class="col s12 m5">
-    <div class="card-panel teal">
-      <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-      I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-      </span>
-    </div>
-  </div>
-</div>
-```
-
-
-*/
 
 .card-panel {
   transition: box-shadow .25s;
@@ -112,21 +11,19 @@ category: Materialize
 
 .card {
   position: relative;
-  overflow: hidden;
   margin: $element-top-margin 0 $element-bottom-margin 0;
   background-color: $card-bg-color;
   transition: box-shadow .25s;
   border-radius: 2px;
   @extend .z-depth-1;
 
-  .activator {
-    cursor: pointer;
-  }
 
   .card-title {
-    color: $card-bg-color;
     font-size: 24px;
     font-weight: 300;
+    &.activator {
+      cursor: pointer;
+    }
   }
 
   // Card Sizes
@@ -134,9 +31,11 @@ category: Materialize
     position: relative;
 
     .card-image {
+      max-height: 60%;
       overflow: hidden;
     }
     .card-content {
+      max-height: 40%;
       overflow: hidden;
     }
     .card-action {
@@ -144,41 +43,21 @@ category: Materialize
       bottom: 0;
       left: 0;
       right: 0;
+      z-index: 1;
+      background-color: inherit;
     }
   }
 
   &.small {
     height: 300px;
-
-    .card-image {
-      height: 150px;
-    }
-    .card-content {
-      height: 150px;
-    }
-
   }
 
   &.medium {
     height: 400px;
-
-    .card-image {
-      height: 250px;
-    }
-    .card-content {
-      height: 150px;
-    }
   }
 
   &.large {
     height: 500px;
-
-    .card-image {
-      height: 330px;
-    }
-    .card-content {
-      height: 170px;
-    }
   }
 
 
@@ -198,6 +77,7 @@ category: Materialize
     }
 
     .card-title {
+      color: $card-bg-color;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -224,13 +104,10 @@ category: Materialize
     border-top: 1px solid rgba(160,160,160,.2);
     padding: $card-padding;
 
-    a {
-      color: $card-link-color;
+    a:not(.btn):not(.btn-large):not(.btn-floating) {
       margin-right: $card-padding;
-      @include transition(color .3s ease);
+      transition: color .3s ease;
       text-transform: uppercase;
-
-      &:hover { color: $card-link-color-light; }
     }
   }
 

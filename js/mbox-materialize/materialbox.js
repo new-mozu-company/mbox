@@ -18,6 +18,8 @@
       var placeholder = $('<div></div>').addClass('material-placeholder');
       var originalWidth = 0;
       var originalHeight = 0;
+      var ancestorsChanged;
+      var ancestor;
       origin.wrap(placeholder);
 
 
@@ -46,7 +48,6 @@
         overlayActive = true;
 
         // Set positioning for placeholder
-
         placeholder.css({
           width: placeholder[0].getBoundingClientRect().width,
           height: placeholder[0].getBoundingClientRect().height,
@@ -55,7 +56,23 @@
           left: 0
         });
 
-
+        // Find ancestor with overflow: hidden; and remove it
+        ancestorsChanged = undefined;
+        ancestor = placeholder[0].parentNode;
+        var count = 0;
+        while (ancestor !== null && !$(ancestor).is(document)) {
+          var curr = $(ancestor);
+          if (curr.css('overflow') === 'hidden') {
+            curr.css('overflow', 'visible');
+            if (ancestorsChanged === undefined) {
+              ancestorsChanged = curr;
+            }
+            else {
+              ancestorsChanged = ancestorsChanged.add(curr);
+            }
+          }
+          ancestor = ancestor.parentNode;
+        }
 
         // Set css on origin
         origin.css({position: 'absolute', 'z-index': 1000})
@@ -86,8 +103,6 @@
           $photo_caption.velocity({opacity: 1}, {duration: inDuration, queue: false, easing: 'easeOutQuad'});
         }
 
-
-
         // Resize Image
         var ratio = 0;
         var widthPercent = originalWidth / windowWidth;
@@ -105,6 +120,27 @@
           newWidth = (windowHeight * 0.9) * ratio;
           newHeight = windowHeight * 0.9;
         }
+
+        var leftPos =  (windowWidth - newWidth) / 2;
+        var topPos =  (windowHeight - newHeight) / 2;
+
+        // Add and animate x btn
+        var $xBtn = $('<i id="materialbox-close" class="material-icons">close</i>');
+        $('body').append($xBtn);
+        $xBtn.css({
+          opacity : 0,
+          "display": "fixed",
+          bottom: topPos + newHeight + "px",
+          left: leftPos + newWidth + "px",
+          color: "white"
+        });
+        $xBtn.velocity({
+          opacity: 1
+        }, {
+          duration: inDuration,
+          queue: false,
+          easing: 'easeOutQuad'
+        });
 
         // Animate image + set z-index
         if(origin.hasClass('responsive-img')) {
@@ -159,12 +195,22 @@
 
       // Return on ESC
       $(document).keyup(function(e) {
-
         if (e.keyCode === 27 && doneAnimating === true) {   // ESC key
           if (overlayActive) {
             returnToOriginal();
           }
         }
+      });
+
+      // Return on close button click or touch
+      $("body").on('click', '#materialbox-close', function () {
+        if (overlayActive ) {
+          returnToOriginal();
+        }
+      });
+
+      $("body").on('touchstart', '#materialbox-close', function () {
+        $( "#materialbox-close" ).trigger( "click" );
       });
 
 
@@ -209,6 +255,8 @@
           );
 
           // Remove Caption + reset css settings on image
+          $('#materialbox-close').velocity("stop", true);
+          $('#materialbox-close').velocity({ opacity: 0 });
           $('.materialbox-caption').velocity({opacity: 0}, {
             duration: outDuration, // Delay prevents animation overlapping
             queue: false, easing: 'easeOutQuad',
@@ -235,6 +283,12 @@
               origin.removeClass('active');
               doneAnimating = true;
               $(this).remove();
+              $('#materialbox-close').remove();
+
+              // Remove overflow overrides on ancestors
+              if (ancestorsChanged) {
+                ancestorsChanged.css('overflow', '');
+              }
             }
           });
 

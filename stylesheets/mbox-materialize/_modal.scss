@@ -30,8 +30,7 @@
     cursor: pointer;
   }
 
-  .modal-footer,
-  .modal-header {
+  .modal-footer {
     border-radius: 0 0 2px 2px;
     background-color: #fafafa;
     padding: 4px 6px;
@@ -42,9 +41,6 @@
       float: right;
       margin: 6px 0;
     }
-  }
-  .modal-header {
-    border-radius: 2px 2px 0 0 ;
   }
 }
 .lean-overlay {
