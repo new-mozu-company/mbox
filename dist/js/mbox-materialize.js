@@ -4330,7 +4330,6 @@ Materialize.scrollFire = function(options, executeOnLoad) {
 
     // execute when item is in view
     function _inViewTrigger(value, callback){
-      console.log("in view");
       value.oovDone = false;
 
       if(value.done !== true){
@@ -4341,13 +4340,11 @@ Materialize.scrollFire = function(options, executeOnLoad) {
           callbackFunc();
         }
         value.done = true;
-        console.log("in triggered");
       }
     }
 
     // execute when item is out of view
     function _outOfView(value, callback, retrigger){
-      console.log("out of view");
       //if we want to be able to retrigger the inview callback
       if(retrigger){
         value.done = false;
@@ -4363,7 +4360,6 @@ Materialize.scrollFire = function(options, executeOnLoad) {
         }
 
         value.oovDone = true;
-        console.log("out triggered");
       }
     }
   };
