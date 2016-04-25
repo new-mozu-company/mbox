@@ -4300,8 +4300,8 @@ Materialize.scrollFire = function(options, executeOnLoad) {
         if(currentElement === null) continue; // if no element found, bye.
 
         // get elements top and bottom position
-        var elementTopOffset = currentElement.getBoundingClientRect().top + window.scrollY;
-        var elementBottomOffset = currentElement.getBoundingClientRect().bottom + window.scrollY;
+        var elementTopOffset = currentElement.getBoundingClientRect().top + window.pageYOffset;
+        var elementBottomOffset = currentElement.getBoundingClientRect().bottom + window.pageYOffset;
 
         // if its visibly in view and its already triggered, don't mess with it;
         if(value.done && (window_bottom > elementTopOffset && window_top < elementBottomOffset)){
