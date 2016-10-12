@@ -5,14 +5,14 @@
   "main": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/volusiondx/mbox.git"
+    "url": "git+https://github.com/new-mozu-company/mbox.git"
   },
   "author": "Katie Garcia",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/volusiondx/mbox/issues"
+    "url": "https://github.com/new-mozu-company/mbox/issues"
   },
-  "homepage": "https://github.com/volusiondx/mbox",
+  "homepage": "https://github.com/new-mozu-company/mbox",
   "scripts": {
     "build": "gulp build",
     "version": "npm run build && git add -A dist"

@@ -22,14 +22,14 @@ Mbox is a collection of sass, js, and html files to be included in Mozu sites us
 ## Usage with Compass
 Using this as a Compass extension has the marked disadvantage of providing access only to files within the /stylesheets directory. In other words, Compass lets you leverage the mbox scss but not the shared html or js.
 
-For an example of a site using mbox-bootstrap running Compass, see [www-mozu](https://github.com/volusiondx/www-mozu).
+For an example of a site using mbox-bootstrap running Compass, see [www-mozu](https://github.com/new-mozu-company/www-mozu).
 
 ### Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'mbox', :git => 'https://github.com/volusiondx/mbox.git'
+gem 'mbox', :git => 'https://github.com/new-mozu-company/mbox.git'
 ```
 
 And then execute:
@@ -74,14 +74,14 @@ To update the mbox gem and get the latest changes, run:
 ## Usage with npm
 Using this with npm provides more flexibility to incldue different file types, but this may require customization that depends on your build tool.
 
-For an example of a site using mbox-materialize using node and gulp, see [mozu-static](https://github.com/volusiondx/mozu-static).
+For an example of a site using mbox-materialize using node and gulp, see [mozu-static](https://github.com/new-mozu-company/mozu-static).
 
 
 ### Installation
 
 Add this your package.json file:
 
-    "mbox": "https://github.com/volusiondx/mbox"
+    "mbox": "https://github.com/new-mozu-company/mbox"
 
 And then execute:
 
@@ -231,7 +231,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/volusiondx/mbox.
+Bug reports and pull requests are welcome on GitHub at https://github.com/new-mozu-company/mbox.
 
 
 ## License
