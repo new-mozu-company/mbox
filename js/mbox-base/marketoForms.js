@@ -97,7 +97,7 @@ formatForm = (function(){
     }
     loadMarketoScript = function(options){
         //load marketo forms2.js
-        jQuery.getScript(newProtocol+"//app-sjg.marketo.com/js/forms2/js/forms2.min.js", function() {
+        jQuery.getScript(newProtocol+"//app-sjg.marketo.com/js/forms2/js/forms2.min.js", function() { 
             postLoadFunctions(options);
         });
     }
